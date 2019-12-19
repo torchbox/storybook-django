@@ -1,0 +1,6 @@
+django==2.2.4
+django-pattern-library==0.2.5
+djangorestframework==3.11.0
+black==19.3b0
+isort==4.2.5
+flake8==3.7.8

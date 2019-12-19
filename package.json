@@ -1,0 +1,67 @@
+{
+  "name": "storybook-django",
+  "version": "0.1.0",
+  "description": "Develop Django UI components in isolation, with Hot Reloading",
+  "author": "Torchbox",
+  "license": "MIT",
+  "homepage": "https://github.com/torchbox/storybook-django",
+  "main": "src/storybook-django.js",
+  "module": "src/storybook-django.js",
+  "sideEffects": false,
+  "files": [
+    "src/*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torchbox/storybook-django.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torchbox/storybook-django/issues"
+  },
+  "keywords": [
+    "styleguide",
+    "storybook",
+    "storybookjs",
+    "components",
+    "documentation",
+    "frontend",
+    "patternlab",
+    "django",
+    "django-pattern-library",
+    "django-templates",
+    "jinja2",
+    "nunjucks"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-notes": "^5.3.13",
+    "@storybook/addon-viewport": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-torchbox": "^0.3.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "http-proxy-middleware": "^1.0.0",
+    "js-yaml-loader": "^1.2.2",
+    "prettier": "1.19.1",
+    "raw-loader": "^4.0.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006 -c demo/storybook",
+    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml,html}'",
+    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml,html}'",
+    "test:ci": "npm run lint -s"
+  }
+}
