@@ -1,0 +1,150 @@
+/* ------------------------------------ *\
+    $TYPOGRAPHY
+\* ------------------------------------ */
+
+/* ============================================
+    Base font
+*/
+html {
+    font-size: ($base-font-size / 16px) * 100%;
+    line-height: $base-line-height / $base-font-size;
+    color: $color--dark-grey;
+}
+
+/* ============================================
+    Families – one mixin per typeface
+    :: For each font mixin defined here, make sure each property is negated (set
+    :: to its default value, usually `inherit`) in all other font mixins.
+*/
+@mixin heading-text() {
+    font-family: $font--primary;
+    font-style: inherit;
+    font-weight: inherit;
+    letter-spacing: 0.25px;
+}
+
+@mixin body-text() {
+    font-family: $font--primary;
+    font-style: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    letter-spacing: 0.25px;
+}
+
+@mixin quote-text() {
+    font-family: $font--secondary;
+    font-style: italic;
+    font-weight: inherit;
+    text-transform: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-text {
+    @include heading-text();
+}
+
+html,
+.body-text {
+    @include body-text();
+}
+
+blockquote {
+    @include quote-text();
+}
+
+// Default sizes
+h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    color: $color--blue;
+    font-weight: 800;
+
+    @include media-query(tablet-portrait) {
+        @include font-size(xxl);
+    }
+}
+
+h2 {
+    @include font-size(xl);
+    color: $color--blue;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+h3 {
+    @include font-size(m);
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+h4 {
+    @include font-size(m);
+    color: $color--blue;
+    font-weight: 800;
+    line-height: 26px;
+}
+
+h5 {
+    @include font-size(m);
+}
+
+h6 {
+    @include font-size(m);
+}
+
+small {
+    @include font-size(xxs);
+}
+
+.page-title {
+    margin: 0 0 50px;
+}
+
+.page-title--icon {
+    display: flex;
+    flex-direction: column;
+
+    @include media-query(tablet-portrait) {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.standfirst {
+    @include font-size(l);
+    margin: 0 0 30px;
+    color: $color--blue;
+}
+
+p {
+    @include font-size(m);
+    letter-spacing: 0.25px;
+}
+
+.link {
+    transition: color $transition;
+    font-weight: $weight--semibold;
+
+    &--pink {
+        color: $color--pink;
+
+        &:hover {
+            color: $color--purple;
+            text-decoration: underline;
+        }
+    }
+}

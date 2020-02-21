@@ -1,0 +1,110 @@
+@keyframes spinner-animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.loading-indicator {
+    $root: &;
+    padding: 10px 15px;
+
+    @include media-query(tablet-portrait) {
+        padding: 0;
+    }
+
+    &__heading {
+        @include font-size(xl);
+        color: $color--blue;
+    }
+
+    &__message {
+        @include font-size(m);
+        color: $color--dark-grey;
+    }
+
+    // Generated from https://loading.io
+    &__animation {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        transform: translate(-48px, -48px) scale(0.48) translate(48px, 48px);
+
+        > div {
+            position: absolute;
+            left: 88px;
+            top: 28px;
+            animation: spinner-animation linear 1s infinite;
+            background: $color--pink;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            transform-origin: 12px 72px;
+
+            &:nth-child(1) {
+                transform: rotate(0deg);
+                animation-delay: -0.875s;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                animation-delay: -0.75s;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(90deg);
+                animation-delay: -0.625s;
+            }
+
+            &:nth-child(4) {
+                transform: rotate(135deg);
+                animation-delay: -0.5s;
+            }
+
+            &:nth-child(5) {
+                transform: rotate(180deg);
+                animation-delay: -0.375s;
+            }
+
+            &:nth-child(6) {
+                transform: rotate(225deg);
+                animation-delay: -0.25s;
+            }
+
+            &:nth-child(7) {
+                transform: rotate(270deg);
+                animation-delay: -0.125s;
+            }
+
+            &:nth-child(8) {
+                transform: rotate(315deg);
+                animation-delay: 0s;
+            }
+        }
+    }
+
+    &--centre {
+        text-align: center;
+
+        #{$root}__animation {
+            margin: 0 auto;
+        }
+    }
+
+    // Re-order elements for LTR layout
+    &--left {
+        text-align: left;
+        display: flex;
+
+        #{$root}__animation {
+            order: 1;
+        }
+
+        #{$root}__content {
+            order: 2;
+            padding: 6px 0 0 20px;
+        }
+    }
+}

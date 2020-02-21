@@ -1,0 +1,34 @@
+<table class="customers-table">
+    <caption class="u-visually-hidden">Customers list</caption>
+    <thead class="customers-table__head">
+        <th>
+            Name {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+        </th>
+        <th>
+            User ID {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+        </th>
+        <th>
+            Status {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+        </th>
+    </thead>
+    <tbody class="customers-table__body">
+        {% for programme in programme_list %}
+            <tr>
+                <td>
+                    <a href="/test">
+                        {{ programme.client.user.get_full_name }}
+                        {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+                    </a>
+                </td>
+                <td>{{ programme.user_id_display }}</td>
+                <td>{{ programme.get_state_display }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td class="customers-table__no-results" colspan="100%">
+                    No results found. Try a different search.
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

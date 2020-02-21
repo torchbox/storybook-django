@@ -1,0 +1,13 @@
+<form class="customers-header" action="{{ request.path }}" method="get">
+    <h1 class="customers-header__heading">Customers overview</h1>
+
+    {# Search #}
+    <div class="customers-header__search-wrapper">
+        <label for="id_search" class="u-visually-hidden">Search user</label>
+        <input type="search" placeholder="Search user" id="id_search" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+        <button type="submit" value="submit">
+            <span class="u-visually-hidden">Submit</span>
+            {% include "patterns/atoms/icons/icon.html" with name="search" %}
+        </button>
+    </div>
+</form>

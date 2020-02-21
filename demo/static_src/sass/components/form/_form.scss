@@ -1,0 +1,78 @@
+.form {
+    $root: &;
+
+    &--restricted-width {
+        max-width: 720px;
+
+        input {
+            max-width: 300px;
+        }
+    }
+
+    p:not(.standfirst) {
+        @include font-size(m);
+        margin: 30px 0;
+        color: $color--dark-grey;
+    }
+
+    &__fieldset {
+        border: 0;
+        margin: 0 0 20px;
+        padding: 0;
+
+        @include media-query(tablet-portrait) {
+            &:last-of-type {
+                margin-bottom: 60px;
+            }
+        }
+    }
+
+    &__legend {
+        @include font-size(l);
+        color: $color--blue;
+        font-weight: $weight--bold;
+        margin-bottom: 45px;
+    }
+
+    &__container {
+        margin-bottom: 20px;
+    }
+
+    &__errors {
+        @include font-size(s);
+        padding: 20px;
+        margin-bottom: 15px;
+        color: $color--white;
+        background-color: $color--tertiary;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            margin: 0 0 20px;
+        }
+
+        @include media-query(tablet-portrait) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .button {
+                margin: 0;
+            }
+
+            // Right align last/only button
+            .button:last-of-type {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.form-heading {
+    @include font-size(m);
+    margin-bottom: 35px;
+    color: $color--dark-grey;
+}

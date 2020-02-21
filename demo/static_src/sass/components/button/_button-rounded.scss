@@ -1,0 +1,65 @@
+.button-rounded {
+    border-radius: 3px;
+    padding: 14px 37px;
+    text-align: center;
+    border: 1px solid transparent;
+    font-weight: 600;
+    transition: background-color $transition, color $transition;
+
+    &--small {
+        font-size: 0.75rem;
+        padding: 9px 12px;
+    }
+
+    &--pink {
+        background-color: $color--pink;
+        color: $color--white;
+
+        @include media-query(tablet-portrait) {
+            &:hover,
+            &:focus {
+                background-color: $color--purple;
+                color: $color--white;
+            }
+        }
+    }
+
+    &--pink-ghost {
+        border-color: $color--pink;
+        color: $color--pink;
+
+        @include media-query(tablet-portrait) {
+            &:hover,
+            &:focus {
+                background-color: $color--pink;
+                color: $color--white;
+            }
+        }
+    }
+
+    &--blue {
+        background-color: $color--blue;
+        color: $color--white;
+
+        @include media-query(tablet-portrait) {
+            &:hover,
+            &:focus {
+                background-color: $color--purple;
+                color: $color--white;
+            }
+        }
+    }
+
+    &--blue-ghost {
+        border-color: $color--blue;
+        color: $color--blue;
+
+        @include media-query(tablet-portrait) {
+            &:hover,
+            &:focus {
+                background-color: $color--blue;
+                color: $color--white;
+            }
+        }
+    }
+}
