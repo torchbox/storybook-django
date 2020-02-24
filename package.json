@@ -60,8 +60,8 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006 -c demo/storybook",
-    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml,html}'",
-    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml,html}'",
+    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
+    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "test:ci": "npm run lint -s"
   }
 }

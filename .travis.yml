@@ -1,0 +1,7 @@
+version: ~> 1.0
+dist: bionic
+language: node_js
+install:
+  - npm ci
+script:
+  - npm run lint
