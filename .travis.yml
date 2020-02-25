@@ -5,3 +5,5 @@ install:
   - npm ci
 script:
   - npm run lint
+notifications:
+  email: false
