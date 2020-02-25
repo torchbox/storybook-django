@@ -10,5 +10,8 @@ urlpatterns = [
         views.RenderPatternView.as_view(),
         name="render_pattern_api",
     ),
+    re_path(
+        r"^$", serve, {"path": "index.html", "document_root": settings.STORYBOOK_DIR}
+    ),
     re_path(r"^(?P<path>.*)$", serve, {"document_root": settings.STORYBOOK_DIR}),
 ]
