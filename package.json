@@ -63,6 +63,7 @@
     "build": "build-storybook -c demo/storybook -o demo/storybook_compiled --quiet",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
-    "test:ci": "npm run lint -s"
+    "test:ci": "npm run lint -s",
+    "heroku-postbuild": "npm run build -s"
   }
 }
