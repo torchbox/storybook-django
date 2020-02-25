@@ -87,6 +87,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-PATTERN_LIBRARY_TEMPLATE_DIR = os.path.join(PROJECT_DIR, "templates", "patterns")
+PATTERN_LIBRARY_TEMPLATE_PREFIX = "patterns"
+PATTERN_LIBRARY_TEMPLATE_SUFFIX = ".html"
+PATTERN_LIBRARY_TEMPLATE_DIR = os.path.join(PROJECT_DIR, "demo", "core", "templates")
 
-STORYBOOK_DIR = os.path.join(PROJECT_DIR, "storybook_compiled")
+STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")
