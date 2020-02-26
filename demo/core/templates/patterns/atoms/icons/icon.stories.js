@@ -6,7 +6,7 @@ import './icon.html';
 
 const IconPattern = (props) => (
     <TemplatePattern
-        apiPath="/storybook/api/v1/pattern-library/"
+        apiPath="/api/v1/pattern-library/"
         template="patterns/atoms/icons/icon.html"
         context={props}
     />

@@ -12,7 +12,7 @@ const restream = (proxyReq, req) => {
  * Initialises a http-proxy-middleware for Storybook to talk to Django without CORS issues.
  * @param {object} options options
  * @param {object} options.proxy http-proxy-middleware module
- * @param {string} options.apiPath e.g. /storybook/api/v1/pattern-library/
+ * @param {string} options.apiPath e.g. /api/v1/pattern-library/
  * @param {string} options.djangoDomain e.g. http://localhost:8000
  */
 const createDjangoAPIMiddleware = (options) => {

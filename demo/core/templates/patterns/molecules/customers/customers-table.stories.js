@@ -7,7 +7,7 @@ import config from './customers-table.yaml';
 
 const Table = ({ tags = [], ...props }) => (
     <TemplatePattern
-        apiPath="/storybook/api/v1/pattern-library/"
+        apiPath="/api/v1/pattern-library/"
         template={__filename
             .replace('demo/core/templates/', '')
             .replace('.stories.js', '.html')}

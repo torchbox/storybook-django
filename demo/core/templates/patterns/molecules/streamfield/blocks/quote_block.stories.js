@@ -9,7 +9,7 @@ import source from './quote_block.html';
 
 const Block = (props) => (
     <TemplatePattern
-        apiPath="/storybook/api/v1/pattern-library/"
+        apiPath="/api/v1/pattern-library/"
         template="patterns/molecules/streamfield/blocks/quote_block.html"
         context={{
             value: props,

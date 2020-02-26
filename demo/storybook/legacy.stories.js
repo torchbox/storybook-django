@@ -20,7 +20,7 @@ req.keys().forEach((path) => {
         () => {
             return (
                 <TemplatePattern
-                    apiPath="/storybook/api/v1/pattern-library/"
+                    apiPath="/api/v1/pattern-library/"
                     template={`patterns/${cleanPath}.html`}
                     context={yaml.context}
                     tags={yaml.tags}

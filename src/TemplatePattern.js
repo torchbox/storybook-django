@@ -22,7 +22,7 @@ const insertHTMLWithScripts = (element, html) => {
 /**
  * Renders a Django pattern library pattern via the API.
  * @param {object} props Props
- * @param {string} props.apiPath e.g. /storybook/api/v1/pattern-library/
+ * @param {string} props.apiPath e.g. /api/v1/pattern-library/
  * @param {string} props.template e.g. patterns/atoms/icons/icon.html
  * @param {object} props.context Context for the Django template partial.
  * @param {object} props.tags Tags overrides for Django pattern library.
