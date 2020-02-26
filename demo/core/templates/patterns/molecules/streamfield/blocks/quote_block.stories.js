@@ -23,8 +23,11 @@ storiesOf('StreamField', module)
         'quote_block',
         () => (
             <Block
-                quote={text('quote', 'Some quote')}
-                attribution={text('attribution', 'Some attribution')}
+                quote={text('quote', 'Comedy = Tragedy + Time')}
+                attribution={text(
+                    'attribution',
+                    'Bekah / Tig Notaro / Carol Burnett / Steve Allen',
+                )}
             />
         ),
         {
