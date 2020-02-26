@@ -60,7 +60,8 @@
   },
   "scripts": {
     "start": "start-storybook -c demo/storybook -p 6006",
-    "build": "build-storybook -c demo/storybook -o demo/storybook_compiled --quiet",
+    "build": "build-storybook -c demo/storybook -o demo/storybook_compiled --quiet && npm run build:css -s",
+    "build:css": "sass --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "test:ci": "npm run lint -s",

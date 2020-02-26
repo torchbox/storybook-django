@@ -4,5 +4,5 @@ const { createDjangoAPIMiddleware } = require('../../src/middleware');
 module.exports = createDjangoAPIMiddleware({
     proxy: createProxyMiddleware,
     apiPath: '/api/v1/pattern-library/',
-    djangoDomain: 'http://localhost:8000',
+    djangoDomain: 'http://localhost:8001',
 });
