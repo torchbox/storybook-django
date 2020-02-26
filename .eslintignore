@@ -1,4 +1,5 @@
 node_modules
 coverage
 static_compiled
+storybook_compiled
 venv

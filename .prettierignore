@@ -1,4 +1,5 @@
 static_compiled
+storybook_compiled
 *.html
 coverage
 venv
