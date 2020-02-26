@@ -84,8 +84,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
 STATIC_URL = "/static/"
+
+# This is where Django will put files collected from application directories
+# and custom direcotires set in "STATICFILES_DIRS" when
+# using "django-admin collectstatic" command.
+# https://docs.djangoproject.com/en/stable/ref/settings/#static-root
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 PATTERN_LIBRARY_TEMPLATE_PREFIX = "patterns"
 PATTERN_LIBRARY_TEMPLATE_SUFFIX = ".html"
