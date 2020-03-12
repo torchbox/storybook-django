@@ -119,7 +119,7 @@ const TemplatePattern = ({ apiPath, template, context, tags }) => {
         }
     }, [error]);
 
-    return <div ref={ref} />;
+    return React.createElement('div', { ref });
 };
 
 TemplatePattern.defaultProps = {
@@ -129,7 +129,11 @@ TemplatePattern.defaultProps = {
 };
 
 export const Pattern = ({ filename, tags, ...props }) => {
-    return <TemplatePattern template={filename} tags={tags} context={props} />;
+    return React.createElement(TemplatePattern, {
+        template: filename,
+        tags,
+        context: props,
+    });
 };
 
 export default TemplatePattern;
