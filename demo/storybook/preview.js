@@ -14,3 +14,5 @@ configure(() => {
 
     require('../static_src/main.scss');
 }, module);
+
+window.patternLibraryAPI = '/api/v1/pattern-library/';

@@ -30,10 +30,11 @@ const insertHTMLWithScripts = (element, html) => {
 const TemplatePattern = ({ apiPath, template, context, tags }) => {
     const [error, setError] = useState(null);
     const ref = useRef(null);
+    const url = apiPath || window.patternLibraryAPI;
 
     useEffect(() => {
         window
-            .fetch(apiPath, {
+            .fetch(url, {
                 method: 'POST',
                 mode: 'same-origin',
                 cache: 'no-cache',
@@ -118,6 +119,7 @@ const TemplatePattern = ({ apiPath, template, context, tags }) => {
 };
 
 TemplatePattern.defaultProps = {
+    apiPath: null,
     context: null,
     tags: null,
 };

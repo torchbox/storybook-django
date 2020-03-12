@@ -10,12 +10,7 @@ const template = __filename
     .replace('.stories.js', '.html');
 
 const Pagination = ({ tags = [], ...props }) => (
-    <TemplatePattern
-        apiPath="/api/v1/pattern-library/"
-        template={template}
-        context={props}
-        tags={tags}
-    />
+    <TemplatePattern template={template} context={props} tags={tags} />
 );
 
 export default {
