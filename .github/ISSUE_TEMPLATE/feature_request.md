@@ -1,9 +1,9 @@
 ---
-name: "🚀 Feature request"
+name: '🚀 Feature request'
 about: Suggest an idea for improving this project
-title: ""
+title: ''
 labels: enhancement
-assignees: ""
+assignees: ''
 ---
 
 ### Is your proposal related to a problem?
