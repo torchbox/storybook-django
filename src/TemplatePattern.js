@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 /**
  * Inserts HTML into an element, executing embedded script tags.
@@ -28,6 +28,7 @@ const insertHTMLWithScripts = (element, html) => {
  * @param {object} props.tags Tags overrides for Django pattern library.
  */
 const TemplatePattern = ({ apiPath, template, context, tags }) => {
+    const [error, setError] = useState(null);
     const ref = useRef(null);
 
     useEffect(() => {
@@ -48,13 +49,70 @@ const TemplatePattern = ({ apiPath, template, context, tags }) => {
                     },
                 }),
             })
-            .then((res) => res.text())
+            .catch(() => {
+                if (ref.current) {
+                    insertHTMLWithScripts(ref.current, 'Network error');
+                }
+            })
+            .then((res) => {
+                if (res.ok) {
+                    setError(null);
+
+                    return res.text();
+                }
+
+                return res.text().then((serverError) => {
+                    let errName = serverError.split('\n')[0];
+                    let stack = serverError;
+
+                    if (serverError.includes('TemplateSyntaxError')) {
+                        try {
+                            let templateError;
+                            templateError = serverError.split(
+                                'Template error:',
+                            )[1];
+                            templateError = templateError.split(
+                                'Traceback:',
+                            )[0];
+                            templateError = templateError
+                                .split('\n')
+                                .filter((l) => l.startsWith('   '))
+                                .map((l) => l.replace(/^\s\s\s/, ''))
+                                .join('\n');
+
+                            const errCleanup = document.createElement('div');
+                            errCleanup.innerHTML = templateError;
+                            stack = errCleanup.innerText;
+
+                            let location = serverError
+                                .split('\n')
+                                .find((l) => l.startsWith('In template'));
+                            errName = `TemplateSyntaxError ${
+                                location ? location : ''
+                            }`;
+                        } catch {}
+                    }
+
+                    const error = new Error(errName);
+                    error.stack = stack;
+
+                    setError(error);
+
+                    return 'Server error';
+                });
+            })
             .then((html) => {
                 if (ref.current) {
                     insertHTMLWithScripts(ref.current, html);
                 }
             });
     });
+
+    useEffect(() => {
+        if (error) {
+            throw error;
+        }
+    }, [error]);
 
     return <div ref={ref} />;
 };
