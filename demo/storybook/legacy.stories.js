@@ -14,6 +14,15 @@ req.keys().forEach((path) => {
     const pathElts = cleanPath.split('/');
     const filename = pathElts.pop();
     const source = require(`../core/templates/patterns/${cleanPath}.html`);
+    const rawYaml = require(`!!raw-loader!../core/templates/patterns/${cleanPath}.yaml`);
+
+    const usage = Object.keys(yaml.context)
+        .map((key) => {
+            const val = yaml.context[key];
+            const wrappedVal = typeof val === 'string' ? `"${val}"` : val;
+            return `${key}=${wrappedVal}`;
+        })
+        .join(' ');
 
     storiesOf(`Legacy / ${pathElts.join('/')}`, module).add(
         filename,
@@ -29,9 +38,17 @@ req.keys().forEach((path) => {
         {
             notes: {
                 markdown: `
+                ### Usage (experimental)
+
+                \`\`\`html\n{% include "patterns/${cleanPath}.html" with ${usage} %}\n\`\`\`
+
+                ### Source
+
                 \`\`\`html\n${source.default}\n\`\`\`
 
-                \`\`\`yaml\n${JSON.stringify(yaml, null, 2)}\n\`\`\``,
+                ### YAML
+
+                \`\`\`yaml\n${rawYaml.default}\n\`\`\``,
             },
         },
     );
