@@ -1,1 +1,1 @@
-export { default as TemplatePattern } from './TemplatePattern';
+export { default as TemplatePattern, Pattern } from './TemplatePattern';

@@ -30,7 +30,11 @@ const insertHTMLWithScripts = (element, html) => {
 const TemplatePattern = ({ apiPath, template, context, tags }) => {
     const [error, setError] = useState(null);
     const ref = useRef(null);
-    const url = apiPath || window.patternLibraryAPI;
+    const url = apiPath || window.PATTERN_LIBRARY_API;
+    let template_name = window.PATTERN_LIBRARY_TEMPLATE_DIR
+        ? template.replace(window.PATTERN_LIBRARY_TEMPLATE_DIR, '')
+        : template;
+    template_name = template_name.replace('.stories.js', '.html');
 
     useEffect(() => {
         window
@@ -43,7 +47,7 @@ const TemplatePattern = ({ apiPath, template, context, tags }) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    template_name: template,
+                    template_name,
                     config: {
                         context,
                         tags,
@@ -122,6 +126,10 @@ TemplatePattern.defaultProps = {
     apiPath: null,
     context: null,
     tags: null,
+};
+
+export const Pattern = ({ filename, tags, ...props }) => {
+    return <TemplatePattern template={filename} tags={tags} context={props} />;
 };
 
 export default TemplatePattern;

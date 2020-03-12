@@ -1,19 +1,11 @@
 import React from 'react';
 
-import { TemplatePattern } from '../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../../src/storybook-django';
 
 import './customers-table.html';
 import config from './customers-table.yaml';
 
-const Table = ({ tags = [], ...props }) => (
-    <TemplatePattern
-        template={__filename
-            .replace('demo/core/templates/', '')
-            .replace('.stories.js', '.html')}
-        context={props}
-        tags={tags}
-    />
-);
+const Table = (props) => <Pattern filename={__filename} {...props} />;
 
 export default {
     component: Table,
