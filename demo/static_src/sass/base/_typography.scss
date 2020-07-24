@@ -1,14 +1,10 @@
-/* ------------------------------------ *\
-    $TYPOGRAPHY
-\* ------------------------------------ */
-
 /* ============================================
     Base font
 */
 html {
     font-size: ($base-font-size / 16px) * 100%;
     line-height: $base-line-height / $base-font-size;
-    color: $color--dark-grey;
+    color: $color--default;
 }
 
 /* ============================================
@@ -19,16 +15,17 @@ html {
 @mixin heading-text() {
     font-family: $font--primary;
     font-style: inherit;
-    font-weight: inherit;
-    letter-spacing: 0.25px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 @mixin body-text() {
+    @include font-size(xs);
     font-family: $font--primary;
     font-style: inherit;
     font-weight: inherit;
     text-transform: inherit;
-    letter-spacing: 0.25px;
+    line-height: 1.5;
 }
 
 @mixin quote-text() {
@@ -38,13 +35,9 @@ html {
     text-transform: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0 0 1rem;
+html,
+.body-text {
+    @include body-text();
 }
 
 h1,
@@ -53,13 +46,9 @@ h3,
 h4,
 h5,
 h6,
-.heading-text {
+.heading {
     @include heading-text();
-}
-
-html,
-.body-text {
-    @include body-text();
+    margin: 0 0 1rem;
 }
 
 blockquote {
@@ -67,43 +56,77 @@ blockquote {
 }
 
 // Default sizes
-h1 {
-    font-size: 2rem;
-    line-height: 1.25;
-    color: $color--blue;
-    font-weight: 800;
-
+h1,
+.heading--1 {
+    @include font-size(xl);
     @include media-query(tablet-portrait) {
         @include font-size(xxl);
     }
 }
 
-h2 {
-    @include font-size(xl);
-    color: $color--blue;
-    font-weight: 800;
-    line-height: 1.25;
+h2,
+.heading--2 {
+    @include font-size(l);
+    line-height: 1.2;
+    @include media-query(tablet-portrait) {
+        @include font-size(xl);
+        line-height: 1;
+    }
 }
 
-h3 {
+h3,
+.heading--3 {
     @include font-size(m);
-    font-weight: 800;
+    line-height: 1.2;
+    @include media-query(tablet-portrait) {
+        @include font-size(l);
+    }
+}
+
+h4,
+.heading--4 {
+    @include font-size(s);
+    line-height: 1.2;
+    @include media-query(tablet-portrait) {
+        @include font-size(m);
+        line-height: 1.5;
+    }
+}
+
+h5,
+.heading--5 {
+    @include font-size(xs);
     line-height: 1.5;
+    @include media-query(tablet-portrait) {
+        @include font-size(s);
+    }
 }
 
-h4 {
-    @include font-size(m);
-    color: $color--blue;
-    font-weight: 800;
-    line-height: 26px;
+h6,
+.heading--6 {
+    @include font-size(xxs);
 }
 
-h5 {
-    @include font-size(m);
+small,
+.supporting-text {
+    @include font-size(xxs);
+    line-height: 1.3;
+
+    @include media-query(tablet-portrait) {
+        @include font-size(xs);
+        line-height: 1.5;
+    }
 }
 
-h6 {
-    @include font-size(m);
+.page-introduction {
+    @include font-size(s);
+    line-height: 1.5;
+    font-weight: $weight--bold;
+    margin: 0;
+
+    @include media-query(tablet-portrait) {
+        @include font-size(m);
+    }
 }
 
 small {

@@ -1,0 +1,32 @@
+.quote-block {
+    $dash-base: 25px;
+    position: relative;
+    margin: 0;
+    padding-top: 40px;
+    padding-left: $dash-base + 5px;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1em;
+        left: $dash-base / 2;
+        width: 1px;
+        height: 56.8px;
+        transform: rotate(26deg);
+        background-color: $color--light-blue;
+    }
+
+    &__quote {
+        margin-top: 0;
+        margin-bottom: 10px;
+
+        @include media-query(tablet-portrait) {
+            margin-bottom: 20px;
+        }
+    }
+    &__attribution {
+        color: $color--light-blue;
+        letter-spacing: 0;
+    }
+}

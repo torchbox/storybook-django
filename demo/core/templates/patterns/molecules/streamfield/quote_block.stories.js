@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import { Pattern } from '../../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../../src/storybook-django';
 
 import docs from './quote_block.md';
 import source from './quote_block.html';

@@ -16,7 +16,6 @@
 // Components
 @import './sass/components/button/button';
 @import './sass/components/button/button-rounded';
-@import './sass/components/blockquote';
 @import './sass/components/form/form';
 @import './sass/components/form/form-item';
 @import './sass/components/icon';
@@ -29,6 +28,7 @@
 // Molecules
 @import '../core/templates/patterns/molecules/customers/customers-table';
 @import '../core/templates/patterns/molecules/customers/customers-header';
+@import '../core/templates/patterns/molecules/streamfield/quote_block.scss';
 
 // Pages
 @import '../core/templates/patterns/pages/users/user-detail';
