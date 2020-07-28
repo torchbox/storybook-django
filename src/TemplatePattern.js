@@ -27,7 +27,7 @@ const insertHTMLWithScripts = (element, html) => {
  * @param {object} props.context Context for the Django template partial.
  * @param {object} props.tags Tags overrides for Django pattern library.
  */
-const TemplatePattern = ({ apiPath, template, context, tags }) => {
+const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
     const [error, setError] = useState(null);
     const ref = useRef(null);
     const url = apiPath || window.PATTERN_LIBRARY_API;
@@ -119,17 +119,19 @@ const TemplatePattern = ({ apiPath, template, context, tags }) => {
         }
     }, [error]);
 
-    return React.createElement('div', { ref });
+    return React.createElement(element, { ref });
 };
 
 TemplatePattern.defaultProps = {
+    element: 'div',
     apiPath: null,
     context: null,
     tags: null,
 };
 
-export const Pattern = ({ filename, tags, ...props }) => {
+export const Pattern = ({ element, filename, tags, ...props }) => {
     return React.createElement(TemplatePattern, {
+        element: element,
         template: filename,
         tags,
         context: props,

@@ -4,6 +4,10 @@
 
 ## Unreleased
 
+### Added
+
+- Add `element` prop to `TemplatePattern` and `Pattern` components to configure which element wraps the rendered pattern.
+
 ## [[v0.2.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.2.0) (2020-03-12)
 
 ### Added
