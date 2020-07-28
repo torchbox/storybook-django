@@ -1,0 +1,29 @@
+.call-to-action {
+    $root: &;
+    @include pattern-bg($percentage: 32%, $size: auto, $direction: 320deg);
+    background-position: right;
+    background-color: $color--dark-blue;
+    color: $color--white;
+    padding: 30px;
+
+    @include media-query(tablet-landscape) {
+        padding: 50px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include media-query(tablet-landscape) {
+            width: 50%;
+        }
+    }
+
+    .rich-text {
+        margin-top: 0;
+    }
+
+    &__button {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,12 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<a class="teaser-card" href="{% pageurl value.case_study %}">
+    <div class="teaser-card__image-wrapper">
+        {% image value.case_study.hero_image fill-285x160 class="teaser-card__image" %}
+    </div>
+    <div class="teaser-card__content">
+        <span class="teaser-card__title heading--5">Case Study<span class="u-sr-only">.</span></span>
+        <p class="teaser-card__teaser-text heading--5">
+            {% firstof value.teaser_text value.case_study.title %}
+        </p>
+    </div>
+</a>

@@ -1,36 +1,33 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { Title, Description, Primary } from '@storybook/addon-docs/blocks';
+// import {  } from '@storybook/addon-controls';
 
 import { Pattern } from '../../../../../../src/storybook-django';
 
 import docs from './quote_block.md';
-import source from './quote_block.html';
+import template from './quote_block.html';
 
 const Block = (props) => <Pattern filename={__filename} value={props} />;
 
-storiesOf('StreamField', module)
-    .addDecorator(withKnobs)
-    .add(
-        'quote_block',
-        () => (
-            <Block
-                quote={text('quote', 'Comedy = Tragedy + Time')}
-                attribution={text(
-                    'attribution',
-                    'Bekah / Tig Notaro / Carol Burnett / Steve Allen',
-                )}
-            />
-        ),
-        {
-            notes: {
-                markdown: `
-                    ${docs}
+export default {
+    title: 'StreamField / quote_block',
+    component: Block,
+    argTypes: {
+        quote: { control: { type: 'text' } },
+        attribution: { control: { type: 'text' } },
+    },
+};
 
-                    \`\`\`html
-                    ${source}
-                    \`\`\`
-                    `,
-            },
-        },
-    );
+export const Default = (args) => <Block {...args} />;
+Default.args = {
+    quote:
+        'Someone believed in me once and now it’s time for me to do the same.',
+    attribution: 'Young person',
+};
+
+Default.parameters = {
+    docs: {
+        source: { code: template },
+        extractComponentDescription: () => docs,
+    },
+};

@@ -1,37 +1,30 @@
 // --------------------------------- Colors -------------------------------------
-$color--primary: #6a737c;
-$color--secondary: #eaeaea;
-$color--tertiary: #f9f9f9;
-
 $color--white: #fff;
-$color--white-95: rgba(255, 255, 255, 0.95);
 $color--black: #000;
-$color--black-90: rgba(0, 0, 0, 0.9);
-$color--black-50: rgba(0, 0, 0, 0.5);
-$color--off-black: #141414;
+$color--off-black: #14143e;
 $color--grey: #6a737c;
-$color--mid-grey: #767676;
-$color--light-grey: #dadada;
-
 $color--dark-grey: #4a4a4a;
-$color--blue: #596cd7;
-$color--sky-blue: #157ab6;
-$color--light-blue: #e6f6fc;
+$color--light-grey: #dadada;
+$color--off-white: #f3f3f5;
+$color--dark-blue: #251855;
+$color--light-blue: #009de0;
+$color--pink: #ff4e68;
+$color--purple: #ff4e68;
+$color--green: #3caa67;
+$color--red: #ff4e68;
+$color--blue: #251855;
 $color--pale-blue: #f2fbfd;
-$color--border-blue: #d0e1ec;
 $color--mid-blue: #157ab6;
-$color--pink: #a353b3;
-$color--purple: #8261c0;
-$color--red: #f00;
 $color--input-focus-bg: #e7f1f9;
 $color--table-border: #c3d9e6;
-
-$color--default: $color--off-black;
+$color--border: $color--light-grey;
 
 // --------------------------------- Fonts --------------------------------------
 
-$font--primary: Sans-Serif;
-$font--secondary: Sans-Serif;
+$font--primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$font--secondary: $font--primary;
 
 // Font weights
 $weight--bold: 700;
@@ -58,21 +51,38 @@ $font-sizes: (
 // Ensure that all breakpoints are duplicated in the gutters array
 
 $breakpoints: (
-    'tablet-portrait' '(min-width: 900px)',
+    'mob-portrait' '(min-width: 320px)',
+    'mob-landscape' '(min-width: 480px)',
+    'tablet-portrait' '(min-width: 768px)',
     'tablet-landscape' '(min-width: 1024px)',
-    'desktop' '(min-width: 1280px)'
+    'desktop' '(min-width: 1280px)',
+    'desktop-wide' '(min-width: 2556px)'
 );
 
 // --------------------------------- Grid Dimensions --------------------------------------
 
 // Wrappers
-$site-width: 1200px;
+$site-width: 1440px;
+$site-horizontal-padding: 70px;
+$wrapper--large: $site-width - $site-horizontal-padding * 2;
+$wrapper--medium: 1160px;
 $wrapper--small: 790px;
+$centered-content-width: 800px;
+
+// Grid setup
+$grid: 20px;
+
+// These should match the breakpoints array
+$gutters: (
+    'default': $grid,
+    'mob-portrait': $grid,
+    'mob-landscape': $grid,
+    'tablet-portrait': $grid,
+    'tablet-landscape': $grid * 1.25,
+    'desktop': $grid * 1.25,
+    'desktop-wide': $grid * 1.5,
+) !default;
 
 // --------------------------------- Transitions --------------------------------------
 
 $transition: 0.25s ease-out;
-
-// --------------------------------- Shadows --------------------------------------
-
-$default-shadow: 0 0 4px 0 rgba(50, 50, 48, 0.2);

@@ -1,0 +1,10 @@
+context:
+  label: Get started
+  theme: primary
+  target_url: /
+  target_page:
+    title: Get started
+tags:
+  pageurl:
+    target_page:
+      raw: /

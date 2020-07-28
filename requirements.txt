@@ -1,4 +1,5 @@
 django==2.2.4
+wagtail==2.10rc1
 django-pattern-library==0.2.8
 djangorestframework==3.11.0
 black==19.3b0

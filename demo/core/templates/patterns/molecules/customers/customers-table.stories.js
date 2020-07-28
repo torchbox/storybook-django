@@ -9,7 +9,7 @@ const Table = (props) => <Pattern filename={__filename} {...props} />;
 
 export default {
     component: Table,
-    title: 'Customers',
+    title: 'Customers / Table',
 };
 
 const stubProgrammes = [

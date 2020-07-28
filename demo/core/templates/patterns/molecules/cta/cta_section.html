@@ -1,0 +1,23 @@
+{% load wagtailimages_tags %}
+
+<div class="cta-section">
+    <div class="cta-section__image-wrapper">
+        {% image destination_image fill-889x500 class="cta-section__image" alt="" %}
+    </div>
+
+    <div class="cta-section__content">
+        <h2 class="cta-section__title">
+            {{ title }}
+        </h2>
+
+        {% if description %}
+            <div class="cta-section__description">
+                {{ description }}
+            </div>
+        {% endif %}
+
+        {% if link_url or link_page %}
+            {% include "patterns/molecules/button/button.html" with theme="primary" label=link_copy target_url=link_url target_page=link_page classname="cta-section__button" %}
+        {% endif %}
+    </div>
+</div>

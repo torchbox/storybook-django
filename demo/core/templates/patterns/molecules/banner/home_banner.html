@@ -1,0 +1,32 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="split-banner split-banner--home">
+
+    <div class="split-banner__wrapper-grid split-banner__wrapper-grid--image">
+        {% image hero_image fill-822x650 as img %}
+        <div class="split-banner__image-wrapper">
+            <img class="split-banner__image" src="{{ img.url }}" width="{{ img.width }}" height="{{ img.height }}" alt="">
+        </div>
+        <div class="split-banner__image-spacer"></div>
+    </div>
+
+    <div class="wrapper--site wrapper--pad wrapper--relative split-banner__wrapper-inner">
+        <div class="split-banner__wrapper-grid">
+            <div class="split-banner__content">
+                <h1 class="split-banner__title heading--2">
+                    {% firstof hero_title title %}
+                </h1>
+                {% if description %}
+                <span class="split-banner__description heading--5">
+                    {{ description }}
+                </span>
+                {% endif %}
+                {% if link_url %}
+                    {% include "patterns/molecules/button/button.html" with theme="primary" label=link_text target_url=link_url classname="split-banner__button" %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+

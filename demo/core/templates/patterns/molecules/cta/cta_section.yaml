@@ -1,0 +1,10 @@
+context:
+  title: Find the right balance in life
+  description: <p>Use our 6 step implementation process</p>
+  link_copy: Get started
+  link_url: /
+tags:
+  image:
+    destination_image fill-889x500 class="cta-section__image" alt="":
+      raw: |
+        <img src="https://source.unsplash.com/Yh6K2eTr_FY/889x500" width="889" height="500" class="cta-section__image" alt="">

@@ -1,0 +1,6 @@
+context:
+  call_to_action:
+    title: Create your requirements template
+    summary: We’ll get you started by asking you a few questions about your business.
+    get_link_text: Sign up for useful updates
+    get_link_url: '#'

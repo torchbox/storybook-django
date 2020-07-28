@@ -9,29 +9,24 @@
 // Base
 @import './sass/base/base';
 @import './sass/base/typography';
-
-// Layout
-@import './sass/layout/footer';
+@import './sass/base/wrapper';
+@import './sass/base/section';
 
 // Components
-@import './sass/components/button/button';
-@import './sass/components/button/button-rounded';
-@import './sass/components/form/form';
-@import './sass/components/form/form-item';
-@import './sass/components/icon';
-@import './sass/components/wrapper';
-
-// React components
-@import './components/InfoBox/InfoBox';
-@import './components/LoadingIndicator/LoadingIndicator';
-
-// Molecules
-@import '../core/templates/patterns/molecules/customers/customers-table';
+@import '../core/templates/patterns/atoms/icons/icon';
+@import '../core/templates/patterns/molecules/button/button';
+@import '../core/templates/patterns/molecules/accordion/accordion';
+@import '../core/templates/patterns/molecules/banner/split_banner';
+@import '../core/templates/patterns/molecules/cta/call_to_action';
+@import '../core/templates/patterns/molecules/cta/cta_section';
+@import '../core/templates/patterns/molecules/customers/customer-detail';
 @import '../core/templates/patterns/molecules/customers/customers-header';
-@import '../core/templates/patterns/molecules/streamfield/quote_block.scss';
-
-// Pages
-@import '../core/templates/patterns/pages/users/user-detail';
+@import '../core/templates/patterns/molecules/customers/customers-table';
+@import '../core/templates/patterns/molecules/InfoBox/InfoBox';
+@import '../core/templates/patterns/molecules/LoadingIndicator/LoadingIndicator';
+@import '../core/templates/patterns/molecules/pagination/next_stage_link';
+@import '../core/templates/patterns/molecules/streamfield/casestudy_teaser_block';
+@import '../core/templates/patterns/molecules/streamfield/quote_block';
 
 // Utilities
 @import './sass/utilities/utilities';

@@ -82,7 +82,7 @@
 */
 @mixin wrapper-border() {
     border-radius: 4px;
-    box-shadow: $default-shadow;
+    box-shadow: 0 0 4px 0 rgba(50, 50, 48, 0.2);
 }
 
 // Bullet lists with custom bullet styles.
@@ -123,5 +123,84 @@
 
     .icon {
         transition: transform $transition;
+    }
+}
+
+/* ============================================
+    Pattern BG
+
+     description: for adding textured backgrounds. Can pass in the percentage of the gradient, the pattern size and the direction: to bottom or to right
+*/
+@mixin pattern-bg($percentage: 35%, $size: auto, $direction: to bottom) {
+    background-image: linear-gradient(
+        $direction,
+        rgba($color--dark-blue, 0) 0%,
+        rgba($color--dark-blue, 1) $percentage
+    );
+    background-repeat: repeat;
+    background-position: center;
+    background-size: $size;
+}
+
+@mixin light-pattern-bg($percentage: 35%, $size: auto, $direction: to bottom) {
+    background-image: linear-gradient(
+        $direction,
+        rgba($color--light-blue, 0) 0%,
+        rgba($color--light-blue, 1) $percentage
+    );
+    background-repeat: repeat;
+    background-position: center;
+    background-size: $size;
+}
+
+/* ============================================
+    Box Border Backdrop
+
+     description: for adding a hard edge shadow effect to images and videos
+*/
+@mixin box-border-backdrop() {
+    box-shadow: 10px 10px 0 0 $color--border;
+}
+
+/* ============================================
+    z index
+*/
+@mixin z-index($key) {
+    z-index: z-index($key);
+}
+
+@mixin image-cover() {
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    max-width: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+@mixin link-underline() {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color--pink;
+        transition: width $transition;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+            transform-origin: left;
+        }
     }
 }

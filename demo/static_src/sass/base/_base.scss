@@ -29,9 +29,6 @@ html {
 }
 
 body {
-    @include sticky-footer();
-    background-color: $color--white;
-
     &.no-scroll {
         overflow-y: hidden;
     }
@@ -61,11 +58,11 @@ select {
 }
 
 a {
-    color: $color--primary;
+    color: $color--blue;
     transition: color $transition;
 
     &:hover {
-        color: darken($color--primary, 20%);
+        color: darken($color--blue, 20%);
         cursor: pointer;
     }
 }

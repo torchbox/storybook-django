@@ -1,0 +1,14 @@
+context:
+  value:
+    case_study:
+      title: Stories from our Salesforce migration
+    teaser_text: See how Dan and the team at Greensail UK decided on which challenges to tackle
+
+tags:
+  image:
+    value.case_study.hero_image fill-285x160 class="teaser-card__image":
+      raw: |
+        <img src="https://source.unsplash.com/VLdaxYyXJvw/285x160" class="teaser-card__image" width="285" height="160" alt="">
+  pageurl:
+    value.case_study:
+      raw: '#'

@@ -1,0 +1,20 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="split-banner">
+    <div class="split-banner__image-wrapper">
+        {% image image fill-889x500 class="split-banner__image" alt="" %}
+    </div>
+
+    <div class="split-banner__content {% if anchor_links_exist %} split-banner__content--anchor-links {% endif %}">
+        <h1 class="split-banner__title heading--2">
+            {{ title }}
+            {% if description %}
+            <br>
+            <span class="split-banner__description">
+                {{ description }}
+            </span>
+            {% endif %}
+        </h1>
+
+    </div>
+</div>

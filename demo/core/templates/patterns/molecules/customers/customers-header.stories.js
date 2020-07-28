@@ -4,7 +4,7 @@ import { Pattern } from '../../../../../../src/storybook-django';
 
 import './customers-header.html';
 
-export default { component: Pattern, title: 'Customers' };
+export default { component: Pattern, title: 'Customers / Header' };
 
 export const header = () => (
     <Pattern

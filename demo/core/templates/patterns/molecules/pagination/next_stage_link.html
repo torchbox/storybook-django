@@ -1,0 +1,16 @@
+<nav class="stage-link" aria-label="Next step">
+    <div class="stage-link__inner">
+        <div class="stage-link__content {% if next_step %} stage-link__content--with-link {% endif %}">
+            <h4 class="stage-link__title heading--5">What to expect next</h4>
+            <p class="stage-link__text heading--5">{{ outcome }}</p>
+        </div>
+        {% if next_step %}
+            <a class="stage-link__link-wrapper heading--5" href="{{ next_step }}" rel="next">
+                <span class="stage-link__link-inner">
+                Go to step {{ step_number }}
+                {% include 'patterns/atoms/icons/icon.html' with name='arrow-right' %}
+                </span>
+            </a>
+        {% endif %}
+    </div>
+</nav>
