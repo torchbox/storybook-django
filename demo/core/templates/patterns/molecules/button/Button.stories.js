@@ -52,7 +52,7 @@ export const ViewAllDjango = () =>
     BUTTON_THEMES.map((theme) => (
         <Pattern
             key={theme}
-            filename={__filename}
+            filename={__filename.toLowerCase()}
             label={theme}
             theme={theme}
             target_url="/"
