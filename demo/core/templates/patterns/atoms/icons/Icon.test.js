@@ -1,32 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import Icon from './Icon';
 
 describe('Icon', () => {
     it('renders', () => {
-        expect(shallow(<Icon name="rocket" />)).toMatchInlineSnapshot(`
-            <svg
-              aria-hidden="true"
-              className="icon icon--rocket "
-            >
-              <use
-                xlinkHref="#rocket"
-              />
-            </svg>
-        `);
-    });
-
-    it('#className', () => {
-        expect(shallow(<Icon name="rocket" className="red" />))
-            .toMatchInlineSnapshot(`
-            <svg
-              aria-hidden="true"
-              className="icon icon--rocket red"
-            >
-              <use
-                xlinkHref="#rocket"
-              />
-            </svg>
-        `);
+        const { container } = render(<Icon name="microphone-on" />);
+        const icon = container.querySelector('svg');
+        expect(icon).toBeInTheDocument();
     });
 });

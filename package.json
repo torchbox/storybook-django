@@ -42,6 +42,9 @@
     "@storybook/addon-docs": "^6.0.0-rc.15",
     "@storybook/addon-viewport": "^6.0.0-rc.15",
     "@storybook/react": "^6.0.0-rc.15",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
+    "babel-jest": "^26.1.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
@@ -66,6 +69,8 @@
   },
   "scripts": {
     "start": "start-storybook -c demo/storybook -s demo/public -p 6006 --quiet --no-version-updates",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "build-storybook -c demo/storybook -s demo/public -o demo/storybook_compiled --quiet && npm run build:css -s",
     "build:css": "sass --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
