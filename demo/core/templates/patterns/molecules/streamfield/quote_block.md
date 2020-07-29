@@ -1,3 +1,1 @@
-# Quote block molecule
-
-Quote block is pretty cool.
+Quote block is pretty cool. It’s a block, with a `quote`, and an `attribution`.
