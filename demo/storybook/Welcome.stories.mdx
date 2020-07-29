@@ -1,5 +1,17 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Description } from '@storybook/addon-docs/blocks';
+
+import README from '../../README.md';
 
 <Meta title="Welcome" parameters={{ viewMode: 'docs' }} />
 
 # Storybook for Django
+
+<Description>
+    {README.split('\n')
+        .slice(1)
+        .join('\n')
+        .replace(
+            '![Screenshot of the Storybook UI, with a Django UI component displaying](.github/storybook-django-screenshot.png)',
+            '',
+        )}
+</Description>
