@@ -1,14 +1,5 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-// import { text, number, array, object } from '@storybook/addon-knobs';
-import {
-    Title,
-    Subtitle,
-    Description,
-    Primary,
-    Props,
-    Stories,
-} from '@storybook/addon-docs/blocks';
 
 import { TemplatePattern } from '../../src/storybook-django';
 

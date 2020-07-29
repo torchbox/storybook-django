@@ -1,5 +1,3 @@
-import { configure } from '@storybook/react';
-
 import iconSprite from '../core/templates/patterns/atoms/sprites/sprites.html';
 
 const hasIcons = document.querySelector('[data-storybook-svg-icons]');

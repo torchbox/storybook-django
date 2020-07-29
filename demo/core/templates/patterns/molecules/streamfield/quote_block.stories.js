@@ -1,6 +1,4 @@
 import React from 'react';
-import { Title, Description, Primary } from '@storybook/addon-docs/blocks';
-// import {  } from '@storybook/addon-controls';
 
 import { Pattern } from '../../../../../../src/storybook-django';
 
