@@ -7,7 +7,7 @@
   "homepage": "https://github.com/torchbox/storybook-django",
   "main": "src/storybook-django.js",
   "module": "src/storybook-django.js",
-  "sideEffects": false,
+  "sideEffects": true,
   "files": [
     "src/*.js"
   ],
