@@ -109,6 +109,12 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
             .then((html) => {
                 if (ref.current) {
                     insertHTMLWithScripts(ref.current, html);
+                    window.document.dispatchEvent(
+                        new Event('DOMContentLoaded', {
+                            bubbles: true,
+                            cancelable: true,
+                        }),
+                    );
                 }
             });
     });
