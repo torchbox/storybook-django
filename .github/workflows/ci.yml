@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'renovate/**'
+  pull_request:
+
+jobs:
+  test_node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: nvm
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm install --no-optional --no-audit --no-fund --progress=false
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run test
