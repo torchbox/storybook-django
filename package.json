@@ -53,14 +53,16 @@
     "jest": "^27.0.6",
     "js-yaml-loader": "^1.2.2",
     "prettier": "^2.3.2",
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "sass": "^1.35.1",
+    "sass-loader": "^10.1.1"
   },
   "scripts": {
     "start": "start-storybook -c demo/storybook -s demo/public -p 6006 --quiet --no-version-updates",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "build-storybook -c demo/storybook -s demo/public -o demo/storybook_compiled --quiet && npm run build:css -s",
-    "build:css": "sass --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
+    "build:css": "npm --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "heroku-postbuild": "npm run build -s"

@@ -34,7 +34,7 @@
             @supports (display: grid) {
                 width: 100%;
                 // Add a max-width equivalent to the proportion of the layout that this takes.
-                max-width: $site-width * (2 / 5);
+                max-width: $site-width * (2 * 0.2);
             }
         }
     }

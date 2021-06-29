@@ -1,9 +1,11 @@
 /* ============================================
     Base font
 */
+@use "sass:math";
+
 html {
-    font-size: ($base-font-size / 16px) * 100%;
-    line-height: $base-line-height / $base-font-size;
+    font-size: math.div($base-font-size, 16px) * 100%;
+    line-height: math.div($base-line-height, $base-font-size);
     color: $color--off-black;
 }
 
