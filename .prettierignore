@@ -3,3 +3,5 @@ storybook_compiled
 *.html
 coverage
 venv
+.venv
+backstop_data

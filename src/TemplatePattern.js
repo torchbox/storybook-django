@@ -73,12 +73,10 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
                     if (serverError.includes('TemplateSyntaxError')) {
                         try {
                             let templateError;
-                            templateError = serverError.split(
-                                'Template error:',
-                            )[1];
-                            templateError = templateError.split(
-                                'Traceback:',
-                            )[0];
+                            templateError =
+                                serverError.split('Template error:')[1];
+                            templateError =
+                                templateError.split('Traceback:')[0];
                             templateError = templateError
                                 .split('\n')
                                 .filter((l) => l.startsWith('   '))

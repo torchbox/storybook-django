@@ -18,8 +18,7 @@ export default {
 
 export const Default = (args) => <Block {...args} />;
 Default.args = {
-    quote:
-        'Someone believed in me once and now it’s time for me to do the same.',
+    quote: 'Someone believed in me once and now it’s time for me to do the same.',
     attribution: 'Young person',
 };
 
