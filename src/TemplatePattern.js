@@ -32,7 +32,9 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
     const ref = useRef(null);
     const url = apiPath || window.PATTERN_LIBRARY_API;
     let template_name = window.PATTERN_LIBRARY_TEMPLATE_DIR
-        ? template.replace(window.PATTERN_LIBRARY_TEMPLATE_DIR, '')
+        ? template
+              .replace(window.PATTERN_LIBRARY_TEMPLATE_DIR, ';;;')
+              .replace(/^.+;;;/, '')
         : template;
     template_name = template_name.replace('.stories.js', '.html');
 
@@ -73,12 +75,10 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
                     if (serverError.includes('TemplateSyntaxError')) {
                         try {
                             let templateError;
-                            templateError = serverError.split(
-                                'Template error:',
-                            )[1];
-                            templateError = templateError.split(
-                                'Traceback:',
-                            )[0];
+                            templateError =
+                                serverError.split('Template error:')[1];
+                            templateError =
+                                templateError.split('Traceback:')[0];
                             templateError = templateError
                                 .split('\n')
                                 .filter((l) => l.startsWith('   '))
