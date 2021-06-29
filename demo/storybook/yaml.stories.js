@@ -78,13 +78,13 @@ req.keys().forEach((path) => {
     const blockKey = Object.keys(context)[0];
 
     const folders =
-        pathElts.join('/').replace('molecules', 'Django Patterns') ||
+        pathElts.join('/').replace('components', 'Django Patterns') ||
         'Templates';
     const htmlPath = `patterns/${cleanPath}.html`;
     const description = `${rawMarkdown}
 ### Usage
 
-🚧  Experimental, use your judgement before copy-pasting 🙈 🙉 🙊
+🚧  Experimental, use your own judgement before copy-pasting 🙈 🙉 🙊
 
 \`\`\`django\n{% include "patterns/${cleanPath}.html" with ${usage} %}\n\`\`\`
 

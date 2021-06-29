@@ -23,7 +23,7 @@ const insertHTMLWithScripts = (element, html) => {
  * Renders a Django pattern library pattern via the API.
  * @param {object} props Props
  * @param {string} props.apiPath e.g. /api/v1/pattern-library/
- * @param {string} props.template e.g. patterns/atoms/icons/icon.html
+ * @param {string} props.template e.g. patterns/components/icon/icon.html
  * @param {object} props.context Context for the Django template partial.
  * @param {object} props.tags Tags overrides for Django pattern library.
  */
@@ -73,10 +73,12 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
                     if (serverError.includes('TemplateSyntaxError')) {
                         try {
                             let templateError;
-                            templateError =
-                                serverError.split('Template error:')[1];
-                            templateError =
-                                templateError.split('Traceback:')[0];
+                            templateError = serverError.split(
+                                'Template error:',
+                            )[1];
+                            templateError = templateError.split(
+                                'Traceback:',
+                            )[0];
                             templateError = templateError
                                 .split('\n')
                                 .filter((l) => l.startsWith('   '))

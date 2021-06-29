@@ -1,10 +1,10 @@
 {% load wagtailcore_tags %}
 <a href="{% if target_url %}{{ target_url }}{% else %}{% pageurl target_page %}{% endif %}" class="button button-rounded{% if theme == 'primary' %} button--primary{% else %} button--default{% endif %} {{ classname }}">
     {% if icon_before %}
-        {% include 'patterns/atoms/icons/icon.html' with name=icon_before classname='button__icon button__icon--before' %}
+        {% include 'patterns/components/icon/icon.html' with name=icon_before classname='button__icon button__icon--before' %}
     {% endif %}
     {% if label %}{{ label }}{% else %}{{ target_page.title }}{% endif %}
     {% if icon_after %}
-        {% include 'patterns/atoms/icons/icon.html' with name=icon_after classname='button__icon button__icon--after' %}
+        {% include 'patterns/components/icon/icon.html' with name=icon_after classname='button__icon button__icon--after' %}
     {% endif %}
 </a>

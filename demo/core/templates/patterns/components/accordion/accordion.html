@@ -5,7 +5,7 @@
             <h3 class="accordion__title heading heading--4">
                 <button class="accordion__toggle" type="button" data-accordion-toggle aria-pressed="true" aria-expanded="true" aria-controls="{{ id_prefix }}-content-{{ forloop.counter }}">
                     <span class="accordion__title-inner">{{ accordion.title }}</span>
-                    {% include "patterns/atoms/icons/icon.html" with name="chevron-down" classname="accordion__icon" %}
+                    {% include "patterns/components/icon/icon.html" with name="chevron-down" classname="accordion__icon" %}
                 </button>
             </h3>
             <div id="{{ id_prefix }}-content-{{ forloop.counter }}" class="accordion__content" data-accordion-content>

@@ -13,20 +13,20 @@
 @import './sass/base/section';
 
 // Components
-@import '../core/templates/patterns/atoms/icons/icon';
-@import '../core/templates/patterns/molecules/button/button';
-@import '../core/templates/patterns/molecules/accordion/accordion';
-@import '../core/templates/patterns/molecules/banner/split_banner';
-@import '../core/templates/patterns/molecules/cta/call_to_action';
-@import '../core/templates/patterns/molecules/cta/cta_section';
-@import '../core/templates/patterns/molecules/customers/customer-detail';
-@import '../core/templates/patterns/molecules/customers/customers-header';
-@import '../core/templates/patterns/molecules/customers/customers-table';
-@import '../core/templates/patterns/molecules/InfoBox/InfoBox';
-@import '../core/templates/patterns/molecules/LoadingIndicator/LoadingIndicator';
-@import '../core/templates/patterns/molecules/pagination/next_stage_link';
-@import '../core/templates/patterns/molecules/streamfield/casestudy_teaser_block';
-@import '../core/templates/patterns/molecules/streamfield/quote_block';
+@import '../core/templates/patterns/components/icon/icon';
+@import '../core/templates/patterns/components/button/button';
+@import '../core/templates/patterns/components/accordion/accordion';
+@import '../core/templates/patterns/components/banner/split_banner';
+@import '../core/templates/patterns/components/cta/call_to_action';
+@import '../core/templates/patterns/components/cta/cta_section';
+@import '../core/templates/patterns/components/customers/customer-detail';
+@import '../core/templates/patterns/components/customers/customers-header';
+@import '../core/templates/patterns/components/customers/customers-table';
+@import '../core/templates/patterns/components/InfoBox/InfoBox';
+@import '../core/templates/patterns/components/LoadingIndicator/LoadingIndicator';
+@import '../core/templates/patterns/components/pagination/next_stage_link';
+@import '../core/templates/patterns/components/streamfield/casestudy_teaser_block';
+@import '../core/templates/patterns/components/streamfield/quote_block';
 
 // Utilities
 @import './sass/utilities/utilities';

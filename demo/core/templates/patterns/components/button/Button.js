@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 
-import Icon from '../../atoms/icons/Icon';
+import Icon from '../../components/icon/Icon';
 
 const THEMES = {
     default: 'button',

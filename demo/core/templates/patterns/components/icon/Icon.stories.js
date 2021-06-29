@@ -35,7 +35,7 @@ export const ViewAllReact = () =>
 
 ViewAllReact.storyName = 'View all (React)';
 
-const path = 'patterns/atoms/icons/icon.html';
+const path = 'patterns/components/icon/icon.html';
 
 const IconPattern = (props) => (
     <TemplatePattern element="span" template={path} context={props} />
@@ -53,7 +53,7 @@ export const ViewAllDjango = () =>
         >
             <IconPattern name={icon} />
             <div>
-                <code>{`{% include "patterns/atoms/icons/icon.html" with name="${icon}" %}`}</code>
+                <code>{`{% include "patterns/components/icon/icon.html" with name="${icon}" %}`}</code>
             </div>
         </div>
     ));

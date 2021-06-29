@@ -1,4 +1,4 @@
-import { initAccordions } from '../core/templates/patterns/molecules/accordion/accordion';
+import { initAccordions } from '../core/templates/patterns/components/accordion/accordion';
 
 import './main.scss';
 

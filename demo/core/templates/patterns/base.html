@@ -10,7 +10,7 @@
     </head>
 
     <body class="{% block body_class %}template-{{ page.get_verbose_name|slugify }}{% endblock %}">
-        {% include "patterns/atoms/sprites/sprites.html" %}
+        {% include "patterns/sprites/sprites.html" %}
 
         <main data-main-elt class="wrapper--site">
             {% block wrapped_content %}

@@ -1,4 +1,4 @@
-import iconSprite from '../core/templates/patterns/atoms/sprites/sprites.html';
+import iconSprite from '../core/templates/patterns/sprites/sprites.html';
 
 const hasIcons = document.querySelector('[data-storybook-svg-icons]');
 

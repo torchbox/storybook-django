@@ -111,8 +111,9 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "demo", "static_compiled")
 ]
 
-PATTERN_LIBRARY_TEMPLATE_PREFIX = "patterns"
-PATTERN_LIBRARY_TEMPLATE_SUFFIX = ".html"
-PATTERN_LIBRARY_TEMPLATE_DIR = os.path.join(PROJECT_DIR, "demo", "core", "templates")
+PATTERN_LIBRARY = {
+    "SECTIONS": (("components", ["patterns/components"]),),
+    "PATTERN_BASE_TEMPLATE_NAME": "patterns/base.html",
+}
 
 STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")

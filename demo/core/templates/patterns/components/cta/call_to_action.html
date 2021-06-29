@@ -4,7 +4,7 @@ This template can be used in different places. In streamfield block
 or directly in a page template. To use this template pass `call_to_action` into context.
 
 Example:
-    {% include "patterns/molecules/cta/call_to_action.html" with call_to_action=call_to_action %}
+    {% include "patterns/components/cta/call_to_action.html" with call_to_action=call_to_action %}
 
 {% endcomment %}
 
@@ -16,7 +16,7 @@ Example:
             <div class="heading--4">{{ call_to_action.summary }}</div>
 
             {% if call_to_action.get_link_text or call_to_action.get_link_url %}
-                {% include "patterns/molecules/button/button.html" with theme="primary" label=call_to_action.get_link_text target_url=call_to_action.get_link_url  classname="call-to-action__button" %}
+                {% include "patterns/components/button/button.html" with theme="primary" label=call_to_action.get_link_text target_url=call_to_action.get_link_url  classname="call-to-action__button" %}
             {% endif %}
         </div>
     </div>

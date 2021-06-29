@@ -2,13 +2,13 @@
     <caption class="u-visually-hidden">Customers list</caption>
     <thead class="customers-table__head">
         <th>
-            Name {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+            Name {% include "patterns/components/icon/icon.html" with name="chevron-right" %}
         </th>
         <th>
-            User ID {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+            User ID {% include "patterns/components/icon/icon.html" with name="chevron-right" %}
         </th>
         <th>
-            Status {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+            Status {% include "patterns/components/icon/icon.html" with name="chevron-right" %}
         </th>
     </thead>
     <tbody class="customers-table__body">
@@ -17,7 +17,7 @@
                 <td>
                     <a href="/test">
                         {{ programme.client.user.get_full_name }}
-                        {% include "patterns/atoms/icons/icon.html" with name="chevron-right" %}
+                        {% include "patterns/components/icon/icon.html" with name="chevron-right" %}
                     </a>
                 </td>
                 <td>{{ programme.user_id_display }}</td>
