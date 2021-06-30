@@ -62,7 +62,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "build-storybook -c demo/storybook -s demo/public -o demo/storybook_compiled --quiet && npm run build:css -s",
-    "build:css": "npm --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
+    "build:css": "sass --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/css/main.css",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "heroku-postbuild": "npm run build -s"
