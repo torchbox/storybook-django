@@ -23,11 +23,18 @@ jobs:
           key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-python-
+      - run: python -m venv venv
+      - run: source venv/bin/activate
       - run: pip install -r requirements.txt
       - run: flake8 demo
       - run: black demo --check
       - run: python manage.py check
       - run: python manage.py render_patterns
+      - uses: actions/upload-artifact@v2
+        with:
+          name: venv
+          path: venv
+          retention-days: 1
   test_node:
     runs-on: ubuntu-latest
     steps:
@@ -46,4 +53,27 @@ jobs:
       - run: npm install --no-optional --no-audit --no-fund --progress=false
       - run: npm run lint
       - run: npm run build
+      - run: npm run test
+      - uses: actions/upload-artifact@v2
+        with:
+          name: node_modules
+          path: node_modules
+          retention-days: 1
+  test_storyshots:
+    runs-on: ubuntu-latest
+    needs:
+      - test_python
+      - test_node
+      - uses: actions/checkout@v2
+      - id: nvm
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - uses: actions/download-artifact@v2
+      - run: source venv/bin/activate
+      - run: python manage.py runserver 0:8001 &
       - run: npm run test
