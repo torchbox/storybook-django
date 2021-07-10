@@ -1,6 +1,7 @@
 module.exports = {
     moduleNameMapper: {
-        '\\.(scss|html|md)$': '<rootDir>/demo/static_src/tests/assetMock.js',
+        '\\.(scss|html|md|mdx)$':
+            '<rootDir>/demo/static_src/tests/assetMock.js',
     },
     moduleFileExtensions: ['js', 'jsx', 'json', 'yml'],
     transform: {
