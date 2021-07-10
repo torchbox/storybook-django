@@ -34,7 +34,7 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
     let template_name = window.PATTERN_LIBRARY_TEMPLATE_DIR
         ? template
               .replace(window.PATTERN_LIBRARY_TEMPLATE_DIR, ';;;')
-              .replace(/^.+;;;/, '')
+              .replace(/^.*;;;/, '')
         : template;
     template_name = template_name.replace('.stories.js', '.html');
 
