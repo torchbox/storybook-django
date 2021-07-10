@@ -23,8 +23,6 @@ jobs:
           key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-python-
-      - run: python -m venv venv
-      - run: source venv/bin/activate
       - run: pip install -r requirements.txt
       - run: flake8 demo
       - run: black demo --check
@@ -72,7 +70,6 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.7'
-      - uses: actions/download-artifact@v2
       - uses: actions/cache@v2
         with:
           path: ~/.npm
@@ -80,6 +77,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm install --no-optional --no-audit --no-fund --progress=false
-      - run: source venv/bin/activate
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-
+      - run: pip install -r requirements.txt
       - run: python manage.py runserver 0:8001 &
       - run: npm run test
