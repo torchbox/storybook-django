@@ -8,6 +8,26 @@ on:
   pull_request:
 
 jobs:
+  test_python:
+    runs-on: ubuntu-latest
+    env:
+      DJANGO_SETTINGS_MODULE: demo.settings
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-
+      - run: pip install -r requirements.txt
+      - run: flake8 demo
+      - run: black demo --check
+      - run: python manage.py check
+      - run: python manage.py render_patterns
   test_node:
     runs-on: ubuntu-latest
     steps:
