@@ -62,16 +62,17 @@ jobs:
   test_storyshots:
     runs-on: ubuntu-latest
     needs: [test_python, test_node]
-    - uses: actions/checkout@v2
-    - id: nvm
-      run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
-    - uses: actions/setup-node@v2-beta
-      with:
-        node-version: '${{ steps.nvm.outputs.NVMRC }}'
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.7'
-    - uses: actions/download-artifact@v2
-    - run: source venv/bin/activate
-    - run: python manage.py runserver 0:8001 &
-    - run: npm run test
+    steps:
+      - uses: actions/checkout@v2
+      - id: nvm
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - uses: actions/download-artifact@v2
+      - run: source venv/bin/activate
+      - run: python manage.py runserver 0:8001 &
+      - run: npm run test
