@@ -1,5 +1,4 @@
 import React from 'react';
-import { Title, Primary } from '@storybook/addon-docs/blocks';
 import { Pattern } from '../../../../../../src/storybook-django';
 
 import template from './split_banner.html';
