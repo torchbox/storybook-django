@@ -21,7 +21,7 @@ module.exports = {
                 ],
                 '@babel/preset-react',
             ],
+            plugins: ['transform-require-context'],
         },
     },
-    plugins: ['transform-require-context'],
 };
