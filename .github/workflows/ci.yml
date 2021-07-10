@@ -61,9 +61,7 @@ jobs:
           retention-days: 1
   test_storyshots:
     runs-on: ubuntu-latest
-    needs:
-      - test_python
-      - test_node
+    needs: [test_python, test_node]
     - uses: actions/checkout@v2
     - id: nvm
       run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
