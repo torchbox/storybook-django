@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
  * @param {Element} element
  * @param {string} html
  */
-const insertHTMLWithScripts = (element, html) => {
+export const insertHTMLWithScripts = (element, html) => {
     element.innerHTML = html;
 
     Array.from(element.querySelectorAll('script')).forEach((script) => {
@@ -19,18 +19,9 @@ const insertHTMLWithScripts = (element, html) => {
     });
 };
 
-/**
- * Renders a Django pattern library pattern via the API.
- * @param {object} props Props
- * @param {string} props.apiPath e.g. /api/v1/pattern-library/
- * @param {string} props.template e.g. patterns/components/icon/icon.html
- * @param {object} props.context Context for the Django template partial.
- * @param {object} props.tags Tags overrides for Django pattern library.
- */
-const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
-    const [error, setError] = useState(null);
-    const ref = useRef(null);
-    const url = apiPath || window.PATTERN_LIBRARY_API;
+export const renderPattern = (apiPath, template, context, tags) => {
+    const endpoint = apiPath || window.PATTERN_LIBRARY_API;
+
     let template_name = window.PATTERN_LIBRARY_TEMPLATE_DIR
         ? template
               .replace(window.PATTERN_LIBRARY_TEMPLATE_DIR, ';;;')
@@ -38,24 +29,37 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
         : template;
     template_name = template_name.replace('.stories.js', '.html');
 
+    return window.fetch(endpoint, {
+        method: 'POST',
+        mode: 'same-origin',
+        cache: 'no-cache',
+        credentials: 'omit',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            template_name,
+            config: {
+                context,
+                tags,
+            },
+        }),
+    });
+};
+
+/**
+ * Renders a Django pattern library pattern via the API.
+ * @param {object} props Props
+ * @param {string} props.apiPath e.g. /pattern-library/api/v1/render-pattern
+ * @param {string} props.template e.g. patterns/components/icon/icon.html
+ * @param {object} props.context Context for the Django template partial.
+ * @param {object} props.tags Tags overrides for Django pattern library.
+ */
+const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
+    const [error, setError] = useState(null);
+    const ref = useRef(null);
     useEffect(() => {
-        window
-            .fetch(url, {
-                method: 'POST',
-                mode: 'same-origin',
-                cache: 'no-cache',
-                credentials: 'omit',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    template_name,
-                    config: {
-                        context,
-                        tags,
-                    },
-                }),
-            })
+        renderPattern(apiPath, template, context, tags)
             .catch(() => {
                 if (ref.current) {
                     insertHTMLWithScripts(ref.current, 'Network error');
@@ -69,41 +73,7 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
                 }
 
                 return res.text().then((serverError) => {
-                    let errName = serverError.split('\n')[0];
-                    let stack = serverError;
-
-                    if (serverError.includes('TemplateSyntaxError')) {
-                        try {
-                            let templateError;
-                            templateError =
-                                serverError.split('Template error:')[1];
-                            templateError =
-                                templateError.split('Traceback:')[0];
-                            templateError = templateError
-                                .split('\n')
-                                .filter((l) => l.startsWith('   '))
-                                .map((l) => l.replace(/^\s\s\s/, ''))
-                                .join('\n');
-
-                            const errCleanup = document.createElement('div');
-                            errCleanup.innerHTML = templateError;
-                            stack = errCleanup.innerText;
-
-                            let location = serverError
-                                .split('\n')
-                                .find((l) => l.startsWith('In template'));
-                            errName = `TemplateSyntaxError ${
-                                location ? location : ''
-                            }`;
-                        } catch {}
-                    }
-
-                    const error = new Error(errName);
-                    error.stack = stack;
-
-                    setError(error);
-
-                    return 'Server error';
+                    setError(serverError);
                 });
             })
             .then((html) => {
@@ -117,15 +87,12 @@ const TemplatePattern = ({ element, apiPath, template, context, tags }) => {
                     );
                 }
             });
+    }, []);
+
+    return React.createElement(element, {
+        ref,
+        dangerouslySetInnerHTML: { __html: error },
     });
-
-    useEffect(() => {
-        if (error) {
-            throw error;
-        }
-    }, [error]);
-
-    return React.createElement(element, { ref });
 };
 
 TemplatePattern.defaultProps = {

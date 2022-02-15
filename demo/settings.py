@@ -117,3 +117,5 @@ PATTERN_LIBRARY = {
 }
 
 STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")
+
+X_FRAME_OPTIONS = "SAMEORIGIN"

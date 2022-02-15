@@ -11,5 +11,5 @@ if (!hasIcons) {
 
 require('../static_src/main');
 
-window.PATTERN_LIBRARY_API = '/api/v1/pattern-library/';
+window.PATTERN_LIBRARY_API = '/pattern-library/api/v1/render-pattern';
 window.PATTERN_LIBRARY_TEMPLATE_DIR = 'demo/core/templates/';
