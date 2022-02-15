@@ -32,6 +32,9 @@
     "jinja2",
     "nunjucks"
   ],
+  "dependencies": {
+    "http-proxy-middleware": "^2.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@storybook/addon-actions": "^6.3.1",
@@ -42,6 +45,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "babel-loader": "^8.2.2",
+    "babel-jest": "^27.0.6",
     "babel-plugin-transform-require-context": "^0.1.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -51,7 +55,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "http-proxy-middleware": "^2.0.0",
     "jest": "^27.0.6",
     "jest-axe": "^5.0.1",
     "jest-yaml-transform": "^0.2.0",
@@ -71,8 +74,5 @@
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,yaml,yml}'",
     "heroku-postbuild": "npm run build -s"
-  },
-  "dependencies": {
-    "babel-jest": "^27.0.6"
   }
 }
