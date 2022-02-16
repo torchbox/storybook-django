@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from '@reach/router';
 
 import Icon from '../../components/icon/Icon';
 
@@ -52,14 +51,6 @@ const Button = ({
             ) : null}
         </>
     );
-
-    if (to) {
-        return (
-            <Link to={to} {...rest} className={btnClassName}>
-                {contents}
-            </Link>
-        );
-    }
 
     if (href) {
         return (
