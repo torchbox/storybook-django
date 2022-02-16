@@ -1,6 +1,6 @@
 {
   "name": "storybook-django",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Develop Django UI components in isolation, with Hot Reloading",
   "author": "Torchbox",
   "license": "MIT",

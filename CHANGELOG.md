@@ -4,9 +4,12 @@
 
 ## Unreleased
 
-### Added
+## [[v0.3.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.3.0) (2022-02-16)
 
-- Add `element` prop to `TemplatePattern` and `Pattern` components to configure which element wraps the rendered pattern.
+### Changed
+
+- Move `http-proxy-middleware` to be a dependency of this package.
+- Change public API to be completely framework-agnostic.
 
 ## [[v0.2.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.2.0) (2020-03-12)
 
