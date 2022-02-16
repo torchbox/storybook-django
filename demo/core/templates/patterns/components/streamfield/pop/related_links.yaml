@@ -40,6 +40,6 @@ tags:
       raw: |
         <a href="/internal-page/#hash">Link to an external page</a>
   # Option 2 – other template
-  include_block:
-    link:
-      template_name: 'patterns/components/streamfield/pop/related_link.html'
+  # include_block:
+  #   link:
+  #     template_name: 'patterns/components/streamfield/pop/related_link.html'
