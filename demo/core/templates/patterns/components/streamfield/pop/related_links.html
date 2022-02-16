@@ -1,0 +1,13 @@
+{% load wagtailcore_tags %}
+​
+{% if value.heading %}
+  {% include_block value.heading %}
+{% endif %}
+​
+<ul class="md:mt-8 mt-5">
+  {% for link in value.links %}
+    <li>
+      {% include_block link %}
+    </li>
+  {% endfor %}
+</ul>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pattern } from '../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import './customers-table.html';
 import config from './customers-table.yaml';

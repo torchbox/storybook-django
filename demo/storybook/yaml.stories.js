@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { TemplatePattern } from '../../src/storybook-django';
+import { TemplatePattern } from '../storybook/TemplatePattern';
 
 import '../core/templates/patterns/base.html';
 

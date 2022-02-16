@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pattern } from '../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import template from './split_banner.html';
 

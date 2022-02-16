@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pattern } from '../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import docs from './quote_block.md';
 import template from './quote_block.html';

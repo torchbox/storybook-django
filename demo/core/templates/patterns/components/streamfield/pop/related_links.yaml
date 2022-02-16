@@ -1,0 +1,45 @@
+context:
+  value:
+    heading:
+      - value:
+          computed_level: h2
+          computed_class: text-h3
+          text: Heading 2
+    links:
+      - value:
+          text: Link to an internal page
+          page:
+            url: /internal-page/
+          url_append: '#hash'
+          document:
+            url: /documents/example.pdf
+          url: https://www.example.com/
+          aria_label: 'ARIA label'
+      - value:
+          text: Link to a document
+          page:
+            url: /documents/example.pdf
+          url_append: ''
+          document:
+            url:
+          url:
+          aria_label: Download the document in PDF format
+      - value:
+          text: Link to a custom URL
+          page:
+            url:
+          url_append: ''
+          document:
+            url:
+          url: https://www.example.com/
+          aria_label: ''
+tags:
+  # Option 1 – hard-coded HTML
+  include_block:
+    link:
+      raw: |
+        <a href="/internal-page/#hash">Link to an external page</a>
+  # Option 2 – other template
+  include_block:
+    link:
+      template_name: 'patterns/components/streamfield/pop/related_link.html'

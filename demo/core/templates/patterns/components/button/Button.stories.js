@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pattern } from '../../../../../../src/storybook-django';
+import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import Button, { BUTTON_THEMES } from './Button';
 import buttonTemplate from './button.html';

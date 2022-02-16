@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TemplatePattern } from '../../../../../../src/storybook-django';
+import { TemplatePattern } from '../../../../../storybook/TemplatePattern';
 
 import Icon from './Icon';
 import iconTemplate from './icon.html';
