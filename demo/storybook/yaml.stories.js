@@ -74,7 +74,7 @@ req.keys().forEach((path) => {
 
     const isBlock =
         Object.keys(context).length === 1 &&
-        typeof Object.values(context)[0] === 'object';
+        typeof Object.values(context)[0] === 'object' && !Array.isArray(Object.values(context)[0]);
     const blockKey = Object.keys(context)[0];
 
     const folders =

@@ -12,16 +12,16 @@
         </th>
     </thead>
     <tbody class="customers-table__body">
-        {% for programme in programme_list %}
+        {% for customer in customers %}
             <tr>
                 <td>
                     <a href="/test">
-                        {{ programme.client.user.get_full_name }}
+                        {{ customer.get_full_name }}
                         {% include "patterns/components/icon/icon.html" with name="chevron-right" %}
                     </a>
                 </td>
-                <td>{{ programme.user_id_display }}</td>
-                <td>{{ programme.get_state_display }}</td>
+                <td>{{ customer.user_id_display }}</td>
+                <td>{{ customer.get_state_display }}</td>
             </tr>
         {% empty %}
             <tr>

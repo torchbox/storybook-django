@@ -14,38 +14,26 @@ export default {
 
 const stubProgrammes = [
     {
-        client: {
-            user: { get_full_name: 'Anthony Richardson' },
-            url: '#',
-            user_id: '655992',
-        },
+        get_full_name: 'Anthony Richardson',
         user_id_display: '655992',
         get_state_display: 'Pending',
     },
     {
-        client: {
-            user: { get_full_name: 'Benjamin Cole-Hawkins' },
-            url: '#',
-            user_id: '708993',
-        },
+        get_full_name: 'Benjamin Cole-Hawkins',
         user_id_display: '708993',
         get_state_display: 'Open',
     },
     {
-        client: {
-            user: { get_full_name: 'Charlie Nicholls' },
-            url: '#',
-            user_id: '183',
-        },
+        get_full_name: 'Charlie Nicholls',
         user_id_display: '000183',
         get_state_display: 'Closed',
     },
 ];
 
-export const emptyTable = () => <Table programme_list={[]} />;
+export const emptyTable = () => <Table customers={[]} />;
 
-export const fullTable = () => <Table programme_list={stubProgrammes} />;
+export const fullTable = () => <Table customers={stubProgrammes} />;
 
 export const fromYAML = () => (
-    <Table programme_list={config.context.customers} />
+    <Table customers={config.context.customers} />
 );

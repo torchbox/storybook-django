@@ -17,10 +17,12 @@ export default {
 
 export const Default = (args) => (
     <SplitBanner
-        img={{
-            url: 'https://source.unsplash.com/M_sreLCqT6k/870x500',
-            width: 870,
-            height: 500,
+        tags={{
+          image: {
+            'image fill-889x500 class="split-banner__image" alt=""': {
+              raw: '<img src="https://source.unsplash.com/M_sreLCqT6k/889x500" width="889" height="500" class="split-banner__image" alt="">'
+            }
+          }
         }}
         {...args}
     />
