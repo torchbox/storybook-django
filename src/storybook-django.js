@@ -39,6 +39,13 @@ export const simulateLoading = (element, html) => {
 };
 
 export const renderPattern = (endpoint, template_name, context, tags) => {
+    const config = {};
+    if (context) {
+        config.context = context;
+    }
+    if (tags) {
+        config.tags = tags;
+    }
     return window.fetch(endpoint, {
         method: 'POST',
         mode: 'same-origin',
@@ -49,10 +56,7 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
         },
         body: JSON.stringify({
             template_name,
-            config: {
-                context,
-                tags,
-            },
+            config,
         }),
     });
 };
