@@ -65,6 +65,6 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}-
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
       - run: source .venv/bin/activate && python manage.py runserver 0:8001 &
       - run: npm run test
