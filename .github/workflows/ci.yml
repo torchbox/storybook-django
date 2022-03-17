@@ -41,7 +41,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
       - if: steps.node-cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm ci --no-audit
       - run: npm run lint:js
       - run: npm run lint:format
       - run: npm run build
