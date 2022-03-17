@@ -14,11 +14,7 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  webpackFinal: (config, { configType }) => {
-    const isProduction = configType === 'PRODUCTION';
-
-    config.devtool = isProduction ? 'none' : 'cheap-module-source-map';
-
+  webpackFinal: (config) => {
     const rules = [
       {
         test: /\.(css|scss)$/,
