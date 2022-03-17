@@ -1,16 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const THEMES = {
     centre: 'loading-indicator loading-indicator--centre',
     left: 'loading-indicator loading-indicator--left',
-};
+} as const;
+type Theme = keyof typeof THEMES;
 export const INDICATOR_THEMES = Object.keys(THEMES);
+
+interface LoadingIndicatorProps {
+    children: JSX.Element;
+    theme?: Theme;
+    className?: string;
+}
 
 /**
  * This component uses markup generated from https://loading.io
  */
-const LoadingIndicator = ({ children, theme, className }) => {
+const LoadingIndicator = ({ children, theme = 'centre', className }: LoadingIndicatorProps) => {
     const indicatorClassName = `${THEMES[theme]} ${className || ''}`;
 
     return (
@@ -33,18 +39,6 @@ const LoadingIndicator = ({ children, theme, className }) => {
             </div>
         </div>
     );
-};
-
-LoadingIndicator.propTypes = {
-    children: PropTypes.node,
-    theme: PropTypes.oneOf(INDICATOR_THEMES),
-    className: PropTypes.string,
-};
-
-LoadingIndicator.defaultProps = {
-    children: null,
-    theme: 'centre',
-    className: null,
 };
 
 export default LoadingIndicator;

@@ -3,7 +3,6 @@ import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import template from './split_banner.html';
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const SplitBanner = (props) => <Pattern filename={__filename} {...props} />;
 
 export default {

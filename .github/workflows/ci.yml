@@ -13,72 +13,59 @@ jobs:
     env:
       DJANGO_SETTINGS_MODULE: demo.settings
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
         with:
           python-version: '3.10'
-      - uses: actions/cache@v2
+      - id: pip-cache
+        uses: actions/cache@v3
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-python-
-      - run: pip install -r requirements.txt
+          path: .venv
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
+      - if: steps.pip-cache.outputs.cache-hit != 'true'
+        run: python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
       - run: flake8 demo
       - run: black demo --check
       - run: python manage.py check
       - run: python manage.py render_patterns
-      - uses: actions/upload-artifact@v2
-        with:
-          name: venv
-          path: venv
-          retention-days: 1
   test_node:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-      - uses: actions/cache@v2
+      - id: node-cache
+        uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      - run: npm run lint
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
+      - if: steps.node-cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm run lint:js
+      - run: npm run lint:format
       - run: npm run build
-      # - run: npm run test
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: node_modules
-      #     path: node_modules
-      #     retention-days: 1
   test_storyshots:
     runs-on: ubuntu-latest
     needs: [test_python, test_node]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
       - uses: actions/setup-python@v2
         with:
           python-version: '3.10'
-      - uses: actions/cache@v2
+      - id: node-cache
+        uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      - uses: actions/cache@v2
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
+      - id: pip-cache
+        uses: actions/cache@v3
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-python-
-      - run: pip install -r requirements.txt
+          path: .venv
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}-
+      - run: source .venv/bin/activate
       - run: python manage.py runserver 0:8001 &
       - run: npm run test

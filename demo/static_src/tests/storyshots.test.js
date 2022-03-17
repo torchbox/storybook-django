@@ -15,7 +15,7 @@ initStoryshots({
         // Rendering the story already constitutes a smoke test – if it fails to render there is a runtime error to investigate.
         const { container } = render(story.render());
 
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise((r) => { setTimeout(r, 2000) });
 
         // See https://github.com/nickcolley/jest-axe.
         const results = await axe(container, {

@@ -1,9 +1,12 @@
 import React from 'react';
+import YAML from 'yaml'
 
 import { Pattern } from '../../../../../storybook/TemplatePattern';
 
 import './customers-table.html';
-import config from './customers-table.yaml';
+import rawConfig from './customers-table.yaml';
+
+const config = YAML.parse(rawConfig)
 
 const Table = (props) => <Pattern filename={__filename} {...props} />;
 

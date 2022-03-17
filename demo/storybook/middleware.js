@@ -1,6 +1,8 @@
 const { createDjangoAPIMiddleware } = require('../../src/middleware');
 
+const origin = process.env.TEST_ORIGIN ?? 'http://localhost:8001';
+
 module.exports = createDjangoAPIMiddleware({
-    origin: 'http://localhost:8001',
-    apiPath: '/pattern-library/api/v1/render-pattern',
+    origin,
+    apiPath: ['/pattern-library/'],
 });

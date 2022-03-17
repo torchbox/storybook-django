@@ -1,7 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Icon from '../../components/icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 
 const THEMES = {
     default: 'button',
@@ -9,20 +9,34 @@ const THEMES = {
     ghost: 'button button--primary-ghost',
     secondary: 'button button--secondary',
     secondaryGhost: 'button button--secondary-ghost',
-};
+} as const;
+type Theme = keyof typeof THEMES;
 export const BUTTON_THEMES = Object.keys(THEMES);
+
+interface ButtonProps {
+    children: React.ReactNode;
+    to?: string;
+    href?: string;
+    theme?: Theme;
+    className?: string;
+    target?: string;
+    rel?: string;
+    icon?: IconName;
+    iconBefore?: IconName;
+    iconAfter?: IconName;
+}
 
 const Button = ({
     children,
     to,
     href,
-    theme,
+    theme = 'default',
     className,
     icon,
     iconBefore,
     iconAfter,
     ...rest
-}) => {
+}: ButtonProps) => {
     const btnClassName = `${THEMES[theme]} ${className || ''} ${
         icon ? 'button--icon-only' : ''
     }`;
@@ -65,48 +79,6 @@ const Button = ({
             {contents}
         </button>
     );
-};
-
-const ICONS = [
-    'close',
-    'cancel',
-    'arrow',
-    'microphone-on',
-    'microphone-off',
-    'phone',
-    'fullscreen-enter',
-    'fullscreen-exit',
-    'off-site',
-    'arrows',
-    'information',
-    'search',
-    'arrow-right',
-    'chevron-down',
-    'chevron-right',
-    'profile-avatar',
-    'checkmark',
-];
-
-Button.propTypes = {
-    children: PropTypes.node,
-    to: PropTypes.string,
-    href: PropTypes.string,
-    theme: PropTypes.oneOf(BUTTON_THEMES),
-    className: PropTypes.string,
-    icon: PropTypes.oneOf(ICONS),
-    iconBefore: PropTypes.oneOf(ICONS),
-    iconAfter: PropTypes.oneOf(ICONS),
-};
-
-Button.defaultProps = {
-    children: null,
-    to: null,
-    href: null,
-    theme: 'default',
-    className: null,
-    icon: null,
-    iconBefore: null,
-    iconAfter: null,
 };
 
 export default Button;

@@ -1,26 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Icon from '../../components/icon/Icon';
+import Icon, { IconName } from '../icon/Icon';
 import Button from '../button/Button';
 
 const THEMES = {
     default: 'info-box info-box--default',
     checkmark: 'info-box info-box--checkmark',
-};
+} as const;
+type Theme = keyof typeof THEMES;
 
-const THEME_ICONS = {
+const THEME_ICONS: {[key in Theme]: IconName}  = {
     default: 'information',
     checkmark: 'checkmark',
 };
 
 export const INFOBOX_THEMES = Object.keys(THEMES);
 
+interface InfoBoxProps {
+  children: React.ReactNode;
+  ctaLabel?: string;
+  ctaTo?: string;
+  ctaHref?: string;
+  theme?: string;
+  className?: string;
+}
+
 /**
  * A wrapper for arbitrary rich text content, usually displayed in a sidebar.
  * Can optionally have a call to action link at the bottom.
  */
-const InfoBox = ({ children, ctaLabel, ctaTo, ctaHref, theme, className }) => {
+const InfoBox = ({ children, ctaLabel, ctaTo, ctaHref, theme = 'default', className }: InfoBoxProps) => {
     const infoBoxClassName = `${THEMES[theme]} ${className || ''}`;
     const iconName = THEME_ICONS[theme];
 
@@ -35,7 +44,7 @@ const InfoBox = ({ children, ctaLabel, ctaTo, ctaHref, theme, className }) => {
                         to={ctaTo}
                         href={ctaHref}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                     >
                         {ctaLabel}
                     </Button>
@@ -43,23 +52,6 @@ const InfoBox = ({ children, ctaLabel, ctaTo, ctaHref, theme, className }) => {
             ) : null}
         </aside>
     );
-};
-
-InfoBox.propTypes = {
-    children: PropTypes.node.isRequired,
-    ctaLabel: PropTypes.string,
-    ctaTo: PropTypes.string,
-    ctaHref: PropTypes.string,
-    theme: PropTypes.oneOf(INFOBOX_THEMES),
-    className: PropTypes.string,
-};
-
-InfoBox.defaultProps = {
-    ctaLabel: null,
-    ctaTo: null,
-    ctaHref: null,
-    theme: 'default',
-    className: null,
 };
 
 export default InfoBox;

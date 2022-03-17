@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es2020",
+    "noImplicitAny": false, // TODO: Enable once all existing code is typed
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "downlevelIteration": true
+  },
+  "include": ["src", "demo"],
+  "exclude": ["node_modules", "static"]
+}

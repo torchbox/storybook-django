@@ -3,11 +3,16 @@ module.exports = {
         '\\.(scss|html|md|mdx)$':
             '<rootDir>/demo/static_src/tests/assetMock.js',
     },
-    moduleFileExtensions: ['js', 'jsx', 'json', 'yml'],
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx",
+      "json"
+    ],
     transform: {
-        '^.+\\.yml$': 'jest-yaml-transform',
-        '^.+\\.js$': 'babel-jest',
-        '^.+\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
+        '\\.(yml|yaml)$': 'jest-raw-loader',
+        "\\.(js|ts|tsx)$": "ts-jest",
+        '\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
     },
     testPathIgnorePatterns: [
         '/node_modules/',

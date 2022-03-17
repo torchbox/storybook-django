@@ -3,14 +3,18 @@ const path = require('path');
 module.exports = {
     stories: ['../**/Welcome.stories.mdx', '../**/*.stories.*'],
     addons: [
-        '@storybook/addon-essentials',
+        // '@storybook/addon-essentials',
         // '@storybook/addon-viewport',
-        // '@storybook/addon-docs',
-        // '@storybook/addon-controls',
+        '@storybook/addon-docs',
+        '@storybook/addon-controls',
         // '@storybook/addon-backgrounds',
         // '@storybook/addon-a11y',
     ],
-    webpackFinal: async (config, { configType }) => {
+    framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
+  },
+    webpackFinal:  (config, { configType }) => {
         const isProduction = configType === 'PRODUCTION';
 
         config.devtool = isProduction ? 'none' : 'cheap-module-source-map';
@@ -31,12 +35,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.html$/,
-                use: 'raw-loader',
-            },
-            {
-                test: /\.ya?ml$/,
-                use: 'js-yaml-loader',
+              test: /\.(md|html|yml|yaml)$/,
+              type: 'asset/source',
             },
         ];
 
