@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.10'
       - id: pip-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: .venv
           key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
@@ -36,7 +36,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - id: node-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
@@ -57,12 +57,12 @@ jobs:
         with:
           python-version: '3.10'
       - id: node-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
       - id: pip-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: .venv
           key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}-
