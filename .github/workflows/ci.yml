@@ -24,10 +24,10 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
       - if: steps.pip-cache.outputs.cache-hit != 'true'
         run: python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-      - run: flake8 demo
-      - run: black demo --check
-      - run: python manage.py check
-      - run: python manage.py render_patterns
+      - run: source .venv/bin/activate && flake8 demo
+      - run: source .venv/bin/activate && black demo --check
+      - run: source .venv/bin/activate && python manage.py check
+      - run: source .venv/bin/activate && python manage.py render_patterns
   test_node:
     runs-on: ubuntu-latest
     steps:
@@ -66,6 +66,5 @@ jobs:
         with:
           path: .venv
           key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}-
-      - run: source .venv/bin/activate
-      - run: python manage.py runserver 0:8001 &
+      - run: source .venv/bin/activate && python manage.py runserver 0:8001 &
       - run: npm run test
