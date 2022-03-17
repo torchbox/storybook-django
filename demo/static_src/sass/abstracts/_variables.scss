@@ -22,7 +22,7 @@ $color--border: $color--light-grey;
 // --------------------------------- Fonts --------------------------------------
 
 $font--primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 $font--secondary: $font--primary;
 
@@ -37,26 +37,26 @@ $weight--light: 200;
 $base-font-size: 16px;
 $base-line-height: 25px;
 $font-sizes: (
-    default: $base-font-size,
-    xxl: 42px,
-    xl: 28px,
-    l: 21px,
-    m: 18px,
-    s: 16px,
-    xs: 14px,
-    xxs: 12px,
+  default: $base-font-size,
+  xxl: 42px,
+  xl: 28px,
+  l: 21px,
+  m: 18px,
+  s: 16px,
+  xs: 14px,
+  xxs: 12px,
 );
 
 // --------------------------------- Breakpoints --------------------------------------
 // Ensure that all breakpoints are duplicated in the gutters array
 
 $breakpoints: (
-    'mob-portrait' '(min-width: 320px)',
-    'mob-landscape' '(min-width: 480px)',
-    'tablet-portrait' '(min-width: 768px)',
-    'tablet-landscape' '(min-width: 1024px)',
-    'desktop' '(min-width: 1280px)',
-    'desktop-wide' '(min-width: 2556px)'
+  'mob-portrait' '(min-width: 320px)',
+  'mob-landscape' '(min-width: 480px)',
+  'tablet-portrait' '(min-width: 768px)',
+  'tablet-landscape' '(min-width: 1024px)',
+  'desktop' '(min-width: 1280px)',
+  'desktop-wide' '(min-width: 2556px)'
 );
 
 // --------------------------------- Grid Dimensions --------------------------------------
@@ -74,13 +74,13 @@ $grid: 20px;
 
 // These should match the breakpoints array
 $gutters: (
-    'default': $grid,
-    'mob-portrait': $grid,
-    'mob-landscape': $grid,
-    'tablet-portrait': $grid,
-    'tablet-landscape': $grid * 1.25,
-    'desktop': $grid * 1.25,
-    'desktop-wide': $grid * 1.5,
+  'default': $grid,
+  'mob-portrait': $grid,
+  'mob-landscape': $grid,
+  'tablet-portrait': $grid,
+  'tablet-landscape': $grid * 1.25,
+  'desktop': $grid * 1.25,
+  'desktop-wide': $grid * 1.5,
 ) !default;
 
 // --------------------------------- Transitions --------------------------------------

@@ -1,91 +1,87 @@
 .cta-section {
-    $root: &;
-    @include pattern-bg($percentage: 35%, $size: auto, $direction: to top);
-    background-position: bottom left;
-    background-color: $color--dark-blue;
-    color: $color--white;
+  $root: &;
+  @include pattern-bg($percentage: 35%, $size: auto, $direction: to top);
+  background-position: bottom left;
+  background-color: $color--dark-blue;
+  color: $color--white;
+
+  @include media-query(tablet-landscape) {
+    @include pattern-bg($percentage: 20%, $size: auto, $direction: to right);
+    background-position: top left;
+    justify-items: end;
+    display: flex;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+
+  &__content {
+    padding: 30px 20px 50px;
 
     @include media-query(tablet-landscape) {
-        @include pattern-bg(
-            $percentage: 20%,
-            $size: auto,
-            $direction: to right
-        );
-        background-position: top left;
-        justify-items: end;
-        display: flex;
+      padding-top: 110px;
+      padding-bottom: 100px;
+      padding-left: 70px + 80px;
+      padding-right: 0;
+      width: 50%;
 
-        @supports (display: grid) {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-        }
-    }
-
-    &__content {
-        padding: 30px 20px 50px;
-
-        @include media-query(tablet-landscape) {
-            padding-top: 110px;
-            padding-bottom: 100px;
-            padding-left: 70px + 80px;
-            padding-right: 0;
-            width: 50%;
-
-            @supports (display: grid) {
-                width: 100%;
-                // Add a max-width equivalent to the proportion of the layout that this takes.
-                max-width: $site-width * (2 * 0.2);
-            }
-        }
-    }
-
-    &__description {
-        @include font-size(s);
-        line-height: 1.5;
-        margin-bottom: 30px;
-
-        @include media-query(tablet-portrait) {
-            @include font-size(m);
-            margin-bottom: 0;
-        }
-    }
-
-    &__button {
-        display: block;
-        text-align: center;
-
-        @include media-query(tablet-portrait) {
-            display: inline-block;
-            margin-top: 40px;
-        }
-    }
-
-    &__image-wrapper {
-        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
-
-        @include media-query(tablet-landscape) {
-            position: relative;
-            overflow: hidden;
-            min-height: 224px;
-            width: 50%;
-            height: 100%;
-            order: 2;
-            clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
-
-            @supports (display: grid) {
-                width: 100%;
-            }
-        }
-    }
-
-    &__image {
+      @supports (display: grid) {
         width: 100%;
-        height: auto;
-
-        @include media-query(tablet-landscape) {
-            @supports (display: grid) {
-                @include image-cover();
-            }
-        }
+        // Add a max-width equivalent to the proportion of the layout that this takes.
+        max-width: $site-width * (2 * 0.2);
+      }
     }
+  }
+
+  &__description {
+    @include font-size(s);
+    line-height: 1.5;
+    margin-bottom: 30px;
+
+    @include media-query(tablet-portrait) {
+      @include font-size(m);
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+
+    @include media-query(tablet-portrait) {
+      display: inline-block;
+      margin-top: 40px;
+    }
+  }
+
+  &__image-wrapper {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+
+    @include media-query(tablet-landscape) {
+      position: relative;
+      overflow: hidden;
+      min-height: 224px;
+      width: 50%;
+      height: 100%;
+      order: 2;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
+
+      @supports (display: grid) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+
+    @include media-query(tablet-landscape) {
+      @supports (display: grid) {
+        @include image-cover();
+      }
+    }
+  }
 }

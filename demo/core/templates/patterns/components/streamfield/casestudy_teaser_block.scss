@@ -1,58 +1,58 @@
 .teaser-card {
-    $root: &;
+  $root: &;
 
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 800px;
-    text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  text-decoration: none;
 
-    &:hover {
-        #{$root}__teaser-text {
-            color: $color--pink;
-            margin-bottom: 0;
-        }
-        #{$root}__image {
-            box-shadow: 13px 13px 0 0 $color--border;
-            transform: translate3d(-3px, -3px, 0) scale(1.015);
-        }
+  &:hover {
+    #{$root}__teaser-text {
+      color: $color--pink;
+      margin-bottom: 0;
     }
-
-    &__image-wrapper {
-        width: 100%;
-
-        @include media-query(mob-landscape) {
-            width: 40%;
-        }
+    #{$root}__image {
+      box-shadow: 13px 13px 0 0 $color--border;
+      transform: translate3d(-3px, -3px, 0) scale(1.015);
     }
+  }
 
-    &__image {
-        @include box-border-backdrop();
-        width: 100%;
-        height: auto;
-        transition: box-shadow $transition, transform $transition;
+  &__image-wrapper {
+    width: 100%;
+
+    @include media-query(mob-landscape) {
+      width: 40%;
     }
+  }
 
-    &__title {
-        @include font-size(xl);
-        color: $color--pink;
-        margin-bottom: 10px;
-        display: block;
+  &__image {
+    @include box-border-backdrop();
+    width: 100%;
+    height: auto;
+    transition: box-shadow $transition, transform $transition;
+  }
+
+  &__title {
+    @include font-size(xl);
+    color: $color--pink;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__teaser-text {
+    margin-top: 0;
+    transition: color $transition;
+  }
+
+  &__content {
+    width: 100%;
+    font-weight: $weight--semibold;
+    margin-top: 30px;
+
+    @include media-query(mob-landscape) {
+      padding: 0 30px;
+      margin-top: 0;
+      width: 60%;
     }
-
-    &__teaser-text {
-        margin-top: 0;
-        transition: color $transition;
-    }
-
-    &__content {
-        width: 100%;
-        font-weight: $weight--semibold;
-        margin-top: 30px;
-
-        @include media-query(mob-landscape) {
-            padding: 0 30px;
-            margin-top: 0;
-            width: 60%;
-        }
-    }
+  }
 }

@@ -6,74 +6,74 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // Prevent text size change on orientation change.
 html {
-    font-family: $font--primary;
-    /* stylelint-disable property-no-vendor-prefix */
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: $font--primary;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @mixin sticky-footer() {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-    main {
-        flex: 1;
-    }
+  main {
+    flex: 1;
+  }
 }
 
 body {
-    &.no-scroll {
-        overflow-y: hidden;
-    }
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 
 // Prevent empty space below images appearing
 img,
 svg {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 // Responsive images
 img {
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 button,
 input,
 select,
 textarea {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 select {
-    appearance: none;
+  appearance: none;
 }
 
 a {
-    color: $color--blue;
-    transition: color $transition;
+  color: $color--blue;
+  transition: color $transition;
 
-    &:hover {
-        color: darken($color--blue, 20%);
-        cursor: pointer;
-    }
+  &:hover {
+    color: darken($color--blue, 20%);
+    cursor: pointer;
+  }
 }
 
 ul,
 ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .restricted-width {
-    max-width: 710px;
+  max-width: 710px;
 }

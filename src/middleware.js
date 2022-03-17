@@ -2,12 +2,12 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // https://github.com/chimurai/http-proxy-middleware/issues/40#issuecomment-249430255
 const restream = (proxyReq, req) => {
-    if (req.body) {
-        const bodyData = JSON.stringify(req.body);
-        proxyReq.setHeader('Content-Type', 'application/json');
-        proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-        proxyReq.write(bodyData);
-    }
+  if (req.body) {
+    const bodyData = JSON.stringify(req.body);
+    proxyReq.setHeader('Content-Type', 'application/json');
+    proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+    proxyReq.write(bodyData);
+  }
 };
 
 /**
@@ -18,22 +18,22 @@ const restream = (proxyReq, req) => {
  * @param {function} options.proxy http-proxy-middleware module
  */
 const createDjangoAPIMiddleware = (options) => {
-    const { proxy, apiPath, origin } = options;
-    const createProxy = proxy || createProxyMiddleware;
-    const middleware = (router) => {
-        router.use(
-            apiPath,
-            createProxy({
-                target: origin,
-                changeOrigin: true,
-                onProxyReq: restream,
-            }),
-        );
-    };
+  const { proxy, apiPath, origin } = options;
+  const createProxy = proxy || createProxyMiddleware;
+  const middleware = (router) => {
+    router.use(
+      apiPath,
+      createProxy({
+        target: origin,
+        changeOrigin: true,
+        onProxyReq: restream,
+      }),
+    );
+  };
 
-    return middleware;
+  return middleware;
 };
 
 module.exports = {
-    createDjangoAPIMiddleware,
+  createDjangoAPIMiddleware,
 };

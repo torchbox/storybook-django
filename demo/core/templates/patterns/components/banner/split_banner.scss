@@ -1,176 +1,176 @@
 .split-banner {
-    $root: &;
-    background-color: $color--light-blue;
-    color: $color--white;
+  $root: &;
+  background-color: $color--light-blue;
+  color: $color--white;
+
+  @include media-query(tablet-landscape) {
+    display: flex;
+    min-height: 500px;
+    justify-items: end;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+
+  &__content {
+    padding: 30px 20px 50px;
+    text-align: center;
+    display: block;
+
+    &--anchor-links {
+      padding: 50px 20px 100px;
+    }
 
     @include media-query(tablet-landscape) {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 70px + 80px;
+      padding-right: 0;
+      padding-bottom: 50px;
+      text-align: left;
+    }
+
+    @supports (display: grid) {
+      width: 100%;
+      // Add a max-width equivalent to the proportion of the layout that this takes.
+      max-width: $site-width * (2 * 0.2);
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  &__description {
+    font-weight: $weight--normal;
+    width: 100%;
+  }
+
+  &__image-wrapper {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+
+    @include media-query(tablet-landscape) {
+      position: relative;
+      overflow: hidden;
+      min-height: 224px;
+      width: 50%;
+      height: 100%;
+      order: 2;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
+    }
+
+    @supports (display: grid) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+
+    @include media-query(tablet-landscape) {
+      @supports (display: grid) {
+        @include image-cover();
+      }
+    }
+  }
+
+  &--home {
+    @include pattern-bg($percentage: 20%, $size: auto, $direction: to top);
+    background-position: bottom left;
+    background-color: $color--dark-blue;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 50px;
+
+    @include media-query(tablet-landscape) {
+      margin-bottom: 70px;
+    }
+
+    @include media-query(tablet-landscape) {
+      min-height: 650px;
+      background-image: unset;
+      margin-bottom: 120px;
+    }
+
+    #{$root}__wrapper-grid {
+      &--image {
+        width: 100%;
+
+        @include media-query(tablet-landscape) {
+          top: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+
+      @include media-query(tablet-landscape) {
         display: flex;
-        min-height: 500px;
-        justify-items: end;
-
-        @supports (display: grid) {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-        }
+        flex-direction: row;
+        height: 100%;
+      }
     }
 
-    &__content {
-        padding: 30px 20px 50px;
-        text-align: center;
-        display: block;
-
-        &--anchor-links {
-            padding: 50px 20px 100px;
-        }
-
-        @include media-query(tablet-landscape) {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 70px + 80px;
-            padding-right: 0;
-            padding-bottom: 50px;
-            text-align: left;
-        }
-
-        @supports (display: grid) {
-            width: 100%;
-            // Add a max-width equivalent to the proportion of the layout that this takes.
-            max-width: $site-width * (2 * 0.2);
-        }
+    #{$root}__image-wrapper {
+      min-height: 300px;
+      position: relative;
+      @include media-query(tablet-landscape) {
+        min-height: 600px;
+        order: 2;
+        width: 50%;
+      }
     }
 
-    &__title {
-        line-height: 1.2;
-        margin-bottom: 0;
-        width: 100%;
+    #{$root}__image-spacer {
+      @include media-query(tablet-landscape) {
+        width: 50%;
+      }
     }
 
-    &__description {
-        font-weight: $weight--normal;
-        width: 100%;
+    #{$root}__wrapper-inner {
+      width: 100%;
     }
 
-    &__image-wrapper {
-        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    #{$root}__image {
+      min-width: 100%;
 
-        @include media-query(tablet-landscape) {
-            position: relative;
-            overflow: hidden;
-            min-height: 224px;
-            width: 50%;
-            height: 100%;
-            order: 2;
-            clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
-        }
-
-        @supports (display: grid) {
-            width: 100%;
-        }
+      @supports (display: grid) {
+        @include image-cover();
+      }
     }
 
-    &__image {
-        width: 100%;
-        height: auto;
-
-        @include media-query(tablet-landscape) {
-            @supports (display: grid) {
-                @include image-cover();
-            }
-        }
+    #{$root}__description {
+      display: inline-block;
     }
 
-    &--home {
-        @include pattern-bg($percentage: 20%, $size: auto, $direction: to top);
-        background-position: bottom left;
-        background-color: $color--dark-blue;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-        margin-bottom: 50px;
-
-        @include media-query(tablet-landscape) {
-            margin-bottom: 70px;
-        }
-
-        @include media-query(tablet-landscape) {
-            min-height: 650px;
-            background-image: unset;
-            margin-bottom: 120px;
-        }
-
-        #{$root}__wrapper-grid {
-            &--image {
-                width: 100%;
-
-                @include media-query(tablet-landscape) {
-                    top: 0;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                }
-            }
-
-            @include media-query(tablet-landscape) {
-                display: flex;
-                flex-direction: row;
-                height: 100%;
-            }
-        }
-
-        #{$root}__image-wrapper {
-            min-height: 300px;
-            position: relative;
-            @include media-query(tablet-landscape) {
-                min-height: 600px;
-                order: 2;
-                width: 50%;
-            }
-        }
-
-        #{$root}__image-spacer {
-            @include media-query(tablet-landscape) {
-                width: 50%;
-            }
-        }
-
-        #{$root}__wrapper-inner {
-            width: 100%;
-        }
-
-        #{$root}__image {
-            min-width: 100%;
-
-            @supports (display: grid) {
-                @include image-cover();
-            }
-        }
-
-        #{$root}__description {
-            display: inline-block;
-        }
-
-        #{$root}__title,
-        #{$root}__description {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        #{$root}__content {
-            align-items: flex-start;
-            padding: 30px 0;
-            text-align: left;
-
-            @include media-query(mob-landscape) {
-                padding: 50px 0;
-            }
-
-            @include media-query(tablet-landscape) {
-                padding: 40px 40px 40px 0;
-                width: 50%;
-            }
-        }
+    #{$root}__title,
+    #{$root}__description {
+      text-align: left;
+      margin-bottom: 30px;
     }
+
+    #{$root}__content {
+      align-items: flex-start;
+      padding: 30px 0;
+      text-align: left;
+
+      @include media-query(mob-landscape) {
+        padding: 50px 0;
+      }
+
+      @include media-query(tablet-landscape) {
+        padding: 40px 40px 40px 0;
+        width: 50%;
+      }
+    }
+  }
 }

@@ -2,139 +2,139 @@ $cl-table-pad: 35px;
 $cl-cell-margin: 20px;
 
 .customers-table {
-    border-collapse: separate;
-    border-spacing: 0 $cl-cell-margin;
-    margin-top: -$cl-cell-margin;
-    width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 $cl-cell-margin;
+  margin-top: -$cl-cell-margin;
+  width: 100%;
 
-    &__head {
+  &__head {
+    display: none;
+
+    @include media-query(tablet-portrait) {
+      display: table-header-group;
+    }
+
+    th {
+      @include media-query(tablet-portrait) {
+        @include font-size(xxs);
+        background-color: $color--white;
+        color: $color--blue;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+        font-weight: $weight--medium;
+        padding-top: 40px;
+        position: sticky;
+        top: 0;
+        cursor: pointer;
+
+        svg {
+          color: $color--blue;
+          width: 8px;
+          height: 6px;
+          margin-left: 2px;
+          transform: rotate(90deg);
+          vertical-align: 1px;
+        }
+
+        &[aria-sort='ascending'] svg {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &:first-child {
+        padding-left: $cl-table-pad;
+      }
+
+      &:last-child {
+        padding-right: $cl-table-pad;
+      }
+    }
+  }
+
+  &__body {
+    td {
+      border: solid 1px $color--table-border;
+      border-style: solid none;
+      border-bottom: 0;
+      padding: $cl-cell-margin;
+      height: 100px;
+
+      @include media-query(tablet-portrait) {
+        padding: 24px 0 8px;
+        height: auto;
+      }
+
+      a {
+        @include font-size(m);
+        font-weight: $weight--semibold;
+        color: $color--blue;
+        text-decoration: none;
+
+        .icon {
+          width: 11px;
+          height: 11px;
+          vertical-align: -1px;
+          opacity: 0;
+          transform: translateX(-1px);
+          transition: opacity 150ms, transform $transition;
+        }
+
+        &:hover {
+          // stylelint-disable-next-line max-nesting-depth
+          .icon {
+            opacity: 1;
+            transform: translateX(5px);
+          }
+        }
+      }
+
+      &:first-child {
+        border-left-style: solid;
+        border-top-left-radius: 4px;
+
+        @include media-query(tablet-portrait) {
+          padding-left: $cl-table-pad;
+          padding-right: 15px;
+        }
+      }
+
+      &:last-child {
+        border-right-style: solid;
+        border-top-right-radius: 4px;
+
+        @include media-query(tablet-portrait) {
+          padding-right: $cl-table-pad;
+        }
+      }
+
+      // Hide columns on mobile
+      &:nth-child(3),
+      &:nth-child(4) {
         display: none;
 
         @include media-query(tablet-portrait) {
-            display: table-header-group;
+          display: table-cell;
         }
+      }
+    }
+  }
 
-        th {
-            @include media-query(tablet-portrait) {
-                @include font-size(xxs);
-                background-color: $color--white;
-                color: $color--blue;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                text-align: left;
-                font-weight: $weight--medium;
-                padding-top: 40px;
-                position: sticky;
-                top: 0;
-                cursor: pointer;
+  &__no-results {
+    font-size: 1.5rem;
+    color: $color--blue;
+    font-weight: $weight--semibold;
+    text-align: center;
+    padding: 0;
+    line-height: 27px;
 
-                svg {
-                    color: $color--blue;
-                    width: 8px;
-                    height: 6px;
-                    margin-left: 2px;
-                    transform: rotate(90deg);
-                    vertical-align: 1px;
-                }
-
-                &[aria-sort='ascending'] svg {
-                    transform: rotate(-90deg);
-                }
-            }
-
-            &:first-child {
-                padding-left: $cl-table-pad;
-            }
-
-            &:last-child {
-                padding-right: $cl-table-pad;
-            }
-        }
+    @include media-query(tablet-portrait) {
+      padding: 50px 0;
     }
 
-    &__body {
-        td {
-            border: solid 1px $color--table-border;
-            border-style: solid none;
-            border-bottom: 0;
-            padding: $cl-cell-margin;
-            height: 100px;
-
-            @include media-query(tablet-portrait) {
-                padding: 24px 0 8px;
-                height: auto;
-            }
-
-            a {
-                @include font-size(m);
-                font-weight: $weight--semibold;
-                color: $color--blue;
-                text-decoration: none;
-
-                .icon {
-                    width: 11px;
-                    height: 11px;
-                    vertical-align: -1px;
-                    opacity: 0;
-                    transform: translateX(-1px);
-                    transition: opacity 150ms, transform $transition;
-                }
-
-                &:hover {
-                    // stylelint-disable-next-line max-nesting-depth
-                    .icon {
-                        opacity: 1;
-                        transform: translateX(5px);
-                    }
-                }
-            }
-
-            &:first-child {
-                border-left-style: solid;
-                border-top-left-radius: 4px;
-
-                @include media-query(tablet-portrait) {
-                    padding-left: $cl-table-pad;
-                    padding-right: 15px;
-                }
-            }
-
-            &:last-child {
-                border-right-style: solid;
-                border-top-right-radius: 4px;
-
-                @include media-query(tablet-portrait) {
-                    padding-right: $cl-table-pad;
-                }
-            }
-
-            // Hide columns on mobile
-            &:nth-child(3),
-            &:nth-child(4) {
-                display: none;
-
-                @include media-query(tablet-portrait) {
-                    display: table-cell;
-                }
-            }
-        }
+    &:first-child,
+    &:last-child {
+      border: 0;
     }
-
-    &__no-results {
-        font-size: 1.5rem;
-        color: $color--blue;
-        font-weight: $weight--semibold;
-        text-align: center;
-        padding: 0;
-        line-height: 27px;
-
-        @include media-query(tablet-portrait) {
-            padding: 50px 0;
-        }
-
-        &:first-child,
-        &:last-child {
-            border: 0;
-        }
-    }
+  }
 }

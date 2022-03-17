@@ -1,76 +1,76 @@
 .wrapper {
-    &--small {
-        max-width: $wrapper--small;
-        margin: 0 auto;
-    }
+  &--small {
+    max-width: $wrapper--small;
+    margin: 0 auto;
+  }
 
-    &--medium {
-        max-width: $wrapper--medium;
-        margin: 0 auto;
-    }
+  &--medium {
+    max-width: $wrapper--medium;
+    margin: 0 auto;
+  }
 
-    &--large {
-        max-width: $wrapper--large;
-        margin: 0 auto;
-    }
+  &--large {
+    max-width: $wrapper--large;
+    margin: 0 auto;
+  }
 
-    &--site {
-        max-width: $site-width;
-        margin: 0 auto;
-    }
+  &--site {
+    max-width: $site-width;
+    margin: 0 auto;
+  }
 
-    &--main {
+  &--main {
+    background-color: $color--white;
+  }
+
+  &--off-white {
+    background-color: $color--off-white;
+  }
+
+  &--flex {
+    display: flex;
+    flex-direction: column;
+
+    @include media-query(tablet-portrait) {
+      flex-direction: row;
+    }
+  }
+
+  &--pad {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media-query(tablet-portrait) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @include media-query(tablet-landscape) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
+  &--relative {
+    position: relative;
+  }
+
+  &--user-detail {
+    background-color: $color--white;
+
+    @include media-query(tablet-portrait) {
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 2fr 1.4fr;
+      align-items: start;
+      padding: 65px 0 80px;
+      margin: 0 auto;
+      max-width: $site-width;
+      background-color: transparent;
+
+      > * {
+        @include wrapper-border();
         background-color: $color--white;
+      }
     }
-
-    &--off-white {
-        background-color: $color--off-white;
-    }
-
-    &--flex {
-        display: flex;
-        flex-direction: column;
-
-        @include media-query(tablet-portrait) {
-            flex-direction: row;
-        }
-    }
-
-    &--pad {
-        padding-left: 20px;
-        padding-right: 20px;
-
-        @include media-query(tablet-portrait) {
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        @include media-query(tablet-landscape) {
-            padding-left: 80px;
-            padding-right: 80px;
-        }
-    }
-
-    &--relative {
-        position: relative;
-    }
-
-    &--user-detail {
-        background-color: $color--white;
-
-        @include media-query(tablet-portrait) {
-            display: grid;
-            grid-gap: 50px;
-            grid-template-columns: 2fr 1.4fr;
-            align-items: start;
-            padding: 65px 0 80px;
-            margin: 0 auto;
-            max-width: $site-width;
-            background-color: transparent;
-
-            > * {
-                @include wrapper-border();
-                background-color: $color--white;
-            }
-        }
-    }
+  }
 }

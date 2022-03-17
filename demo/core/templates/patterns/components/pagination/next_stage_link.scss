@@ -1,77 +1,77 @@
 .stage-link {
-    &__inner {
-        display: grid;
-        grid-template-columns: 1fr;
-        background: $color--off-white;
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: $color--off-white;
 
-        @include media-query(tablet-landscape) {
-            grid-template-columns: 3fr 1fr;
-        }
+    @include media-query(tablet-landscape) {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    background: $color--off-white;
+    padding: 30px 20px 40px 20px;
+
+    @include media-query(tablet-landscape) {
+      padding: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: $weight--semibold;
+    margin-bottom: 15px;
+    line-height: 1;
+
+    @include media-query(tablet-landscape) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__link-wrapper {
+    width: 100%;
+    color: $color--white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    background: $color--purple;
+    align-items: center;
+    position: relative;
+    padding: 50px 30px 30px;
+    clip-path: polygon(0 20%, 100% 5%, 100% 100%, 0% 100%);
+    transition: background $transition;
+
+    .icon {
+      margin-left: 10px;
+      transition: transform $transition;
     }
 
-    &__content {
-        width: 100%;
-        background: $color--off-white;
-        padding: 30px 20px 40px 20px;
+    &:hover {
+      color: $color--white;
+      background: $color--dark-blue;
 
-        @include media-query(tablet-landscape) {
-            padding: 40px;
-        }
+      .icon {
+        transform: translateX(5px);
+      }
     }
 
-    &__title {
-        font-weight: $weight--semibold;
-        margin-bottom: 15px;
-        line-height: 1;
-
-        @include media-query(tablet-landscape) {
-            margin-bottom: 5px;
-        }
+    @include media-query(tablet-landscape) {
+      padding: 20px;
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
     }
+  }
 
-    &__text {
-        margin: 0;
+  &__link-inner {
+    display: flex;
+    align-items: center;
+
+    @include media-query(tablet-landscape) {
+      margin-left: 60px;
     }
-
-    &__link-wrapper {
-        width: 100%;
-        color: $color--white;
-        font-weight: 600;
-        display: flex;
-        justify-content: center;
-        background: $color--purple;
-        align-items: center;
-        position: relative;
-        padding: 50px 30px 30px;
-        clip-path: polygon(0 20%, 100% 5%, 100% 100%, 0% 100%);
-        transition: background $transition;
-
-        .icon {
-            margin-left: 10px;
-            transition: transform $transition;
-        }
-
-        &:hover {
-            color: $color--white;
-            background: $color--dark-blue;
-
-            .icon {
-                transform: translateX(5px);
-            }
-        }
-
-        @include media-query(tablet-landscape) {
-            padding: 20px;
-            clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
-        }
-    }
-
-    &__link-inner {
-        display: flex;
-        align-items: center;
-
-        @include media-query(tablet-landscape) {
-            margin-left: 60px;
-        }
-    }
+  }
 }

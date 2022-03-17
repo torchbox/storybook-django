@@ -6,124 +6,124 @@
     Media queries
 */
 @mixin media-query($queries...) {
-    @each $query in $queries {
-        @each $breakpoint in $breakpoints {
-            $name: nth($breakpoint, 1);
-            $declaration: nth($breakpoint, 2);
+  @each $query in $queries {
+    @each $breakpoint in $breakpoints {
+      $name: nth($breakpoint, 1);
+      $declaration: nth($breakpoint, 2);
 
-            @if $query == $name and $declaration {
-                @media only screen and #{$declaration} {
-                    @content;
-                }
-            }
+      @if $query == $name and $declaration {
+        @media only screen and #{$declaration} {
+          @content;
         }
+      }
     }
+  }
 }
 
 /* ============================================
   Placeholder text
 */
 @mixin placeholder-text() {
-    &.placeholder {
-        @content;
-    }
+  &.placeholder {
+    @content;
+  }
 
-    &::placeholder {
-        @content;
-    }
+  &::placeholder {
+    @content;
+  }
 }
 
 /* ============================================
   Hide text
 */
 @mixin hidden() {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* ============================================
     Output a rem and px fallback value for the given property
 */
 @mixin rem($property, $values) {
-    $px: ();
-    $rem: ();
+  $px: ();
+  $rem: ();
 
-    @each $value in $values {
-        @if $value == 0 or $value == auto or $value == inherit {
-            $px: append($px, $value);
-            $rem: append($rem, $value);
-        } @else {
-            $px: append($px, $value);
-            $rem: append($rem, rem(strip-unit($value)));
-        }
+  @each $value in $values {
+    @if $value == 0 or $value == auto or $value == inherit {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $px: append($px, $value);
+      $rem: append($rem, rem(strip-unit($value)));
     }
-    #{$property}: $px;
-    #{$property}: $rem;
+  }
+  #{$property}: $px;
+  #{$property}: $rem;
 }
 
 /* ============================================
     Font sizes
 */
 @mixin font-size($keyword) {
-    $size: map-get($font-sizes, $keyword);
+  $size: map-get($font-sizes, $keyword);
 
-    @if $size == null {
-        @warn 'Font size ‘#{$keyword}’ does not exist';
-    } @else {
-        @include rem(font-size, $size);
-    }
+  @if $size == null {
+    @warn 'Font size ‘#{$keyword}’ does not exist';
+  } @else {
+    @include rem(font-size, $size);
+  }
 }
 
 /* ============================================
     Default UI border radius and shadow
 */
 @mixin wrapper-border() {
-    border-radius: 4px;
-    box-shadow: 0 0 4px 0 rgba(50, 50, 48, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 rgba(50, 50, 48, 0.2);
 }
 
 // Bullet lists with custom bullet styles.
 @mixin bullet-list {
-    list-style: none;
+  list-style: none;
 
-    li {
-        line-height: 1.375;
-        margin: 0 0 20px 20px;
-        position: relative;
-        color: $color--dark-grey;
+  li {
+    line-height: 1.375;
+    margin: 0 0 20px 20px;
+    position: relative;
+    color: $color--dark-grey;
 
-        &::before {
-            $size: 20px;
-            content: '\2022';
-            color: $color--pink;
-            width: $size;
-            margin-left: -1 * $size;
-            font-size: $size;
-            vertical-align: middle;
-            position: absolute;
-            top: -2px;
-        }
+    &::before {
+      $size: 20px;
+      content: '\2022';
+      color: $color--pink;
+      width: $size;
+      margin-left: -1 * $size;
+      font-size: $size;
+      vertical-align: middle;
+      position: absolute;
+      top: -2px;
     }
+  }
 }
 
 // Animate link chevron left/right
 @mixin link-arrow-hover($direction) {
-    &:hover {
-        .icon {
-            @if $direction == right {
-                transform: translateX(3px);
-            } @else {
-                transform: rotate(180deg) translateX(3px);
-            }
-        }
-    }
-
+  &:hover {
     .icon {
-        transition: transform $transition;
+      @if $direction == right {
+        transform: translateX(3px);
+      } @else {
+        transform: rotate(180deg) translateX(3px);
+      }
     }
+  }
+
+  .icon {
+    transition: transform $transition;
+  }
 }
 
 /* ============================================
@@ -132,25 +132,25 @@
      description: for adding textured backgrounds. Can pass in the percentage of the gradient, the pattern size and the direction: to bottom or to right
 */
 @mixin pattern-bg($percentage: 35%, $size: auto, $direction: to bottom) {
-    background-image: linear-gradient(
-        $direction,
-        rgba($color--dark-blue, 0) 0%,
-        rgba($color--dark-blue, 1) $percentage
-    );
-    background-repeat: repeat;
-    background-position: center;
-    background-size: $size;
+  background-image: linear-gradient(
+    $direction,
+    rgba($color--dark-blue, 0) 0%,
+    rgba($color--dark-blue, 1) $percentage
+  );
+  background-repeat: repeat;
+  background-position: center;
+  background-size: $size;
 }
 
 @mixin light-pattern-bg($percentage: 35%, $size: auto, $direction: to bottom) {
-    background-image: linear-gradient(
-        $direction,
-        rgba($color--light-blue, 0) 0%,
-        rgba($color--light-blue, 1) $percentage
-    );
-    background-repeat: repeat;
-    background-position: center;
-    background-size: $size;
+  background-image: linear-gradient(
+    $direction,
+    rgba($color--light-blue, 0) 0%,
+    rgba($color--light-blue, 1) $percentage
+  );
+  background-repeat: repeat;
+  background-position: center;
+  background-size: $size;
 }
 
 /* ============================================
@@ -159,48 +159,48 @@
      description: for adding a hard edge shadow effect to images and videos
 */
 @mixin box-border-backdrop() {
-    box-shadow: 10px 10px 0 0 $color--border;
+  box-shadow: 10px 10px 0 0 $color--border;
 }
 
 /* ============================================
     z index
 */
 @mixin z-index($key) {
-    z-index: z-index($key);
+  z-index: z-index($key);
 }
 
 @mixin image-cover() {
-    width: auto;
-    height: 100%;
-    min-width: 100%;
-    max-width: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  max-width: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 @mixin link-underline() {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $color--pink;
+    transition: width $transition;
+  }
+
+  &:hover {
     &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: $color--pink;
-        transition: width $transition;
+      width: 100%;
+      transform-origin: left;
     }
-
-    &:hover {
-        &::after {
-            width: 100%;
-            transform-origin: left;
-        }
-    }
+  }
 }

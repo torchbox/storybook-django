@@ -12,38 +12,38 @@ import { renderPattern, simulateLoading } from '../../src/storybook-django';
  * @param {object} props.tags Tags overrides for Django pattern library.
  */
 export const TemplatePattern = ({ element, template, context, tags }) => {
-    const ref = useRef(null);
+  const ref = useRef(null);
 
-    const template_name = template
-        .replace(/^.*demo\/core\/templates\//, '')
-        .replace('.stories.js', '.html');
-    useEffect(() => {
-        /* eslint-disable arrow-body-style */
-        renderPattern(
-            '/pattern-library/api/v1/render-pattern',
-            template_name,
-            context,
-            tags,
-        )
-            .catch((err) => simulateLoading(ref.current, err))
-            .then((res) => res.text())
-            .then((html) => simulateLoading(ref.current, html));
-    });
+  const template_name = template
+    .replace(/^.*demo\/core\/templates\//, '')
+    .replace('.stories.js', '.html');
+  useEffect(() => {
+    /* eslint-disable arrow-body-style */
+    renderPattern(
+      '/pattern-library/api/v1/render-pattern',
+      template_name,
+      context,
+      tags,
+    )
+      .catch((err) => simulateLoading(ref.current, err))
+      .then((res) => res.text())
+      .then((html) => simulateLoading(ref.current, html));
+  });
 
-    return React.createElement(element, { ref });
+  return React.createElement(element, { ref });
 };
 
 TemplatePattern.defaultProps = {
-    element: 'div',
-    context: null,
-    tags: null,
+  element: 'div',
+  context: null,
+  tags: null,
 };
 
 export const Pattern = ({ element, filename, tags, ...props }) => {
-    return React.createElement(TemplatePattern, {
-        element,
-        template: filename,
-        tags,
-        context: props,
-    });
+  return React.createElement(TemplatePattern, {
+    element,
+    template: filename,
+    tags,
+    context: props,
+  });
 };

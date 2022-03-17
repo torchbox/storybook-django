@@ -3,10 +3,10 @@ import React from 'react';
 import LoadingIndicator from './LoadingIndicator';
 
 export default {
-    title: 'LoadingIndicator',
-    component: LoadingIndicator,
+  title: 'LoadingIndicator',
+  component: LoadingIndicator,
 };
 
 export const Default = (args) => (
-    <LoadingIndicator {...args}>Loading…</LoadingIndicator>
+  <LoadingIndicator {...args}>Loading…</LoadingIndicator>
 );

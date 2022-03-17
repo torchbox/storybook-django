@@ -1,72 +1,72 @@
 .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+
+  &--home {
+    width: 15px;
+    height: 15px;
+  }
+
+  &--close {
+    width: 24px;
+    height: 24px;
+  }
+
+  &--cancel {
+    width: 11px;
+    height: 12px;
+  }
+
+  &--arrows {
+    width: 14px;
+    height: 14px;
+  }
+
+  &--chevron-right {
+    width: 9px;
+    height: 11px;
+  }
+
+  &--information {
+    width: 46px;
+    height: 46px;
+    fill: $color--pink;
+  }
+
+  &--microphone-on,
+  &--microphone-off {
+    width: 22px;
+    height: 23px;
+  }
+
+  &--search {
+    width: 18px;
+    height: 18px;
+  }
+
+  &--off-site {
+    width: 12px;
+    height: 12px;
+  }
+
+  &--profile-avatar {
+    width: 23px;
+    height: 19px;
+  }
+
+  &--checkmark {
+    width: 12px;
+    height: 10px;
+  }
+
+  &--fullscreen-enter {
+    width: 19px;
+    height: 19px;
+  }
+
+  &--fullscreen-exit {
     width: 20px;
     height: 20px;
-    fill: currentColor;
-
-    &--home {
-        width: 15px;
-        height: 15px;
-    }
-
-    &--close {
-        width: 24px;
-        height: 24px;
-    }
-
-    &--cancel {
-        width: 11px;
-        height: 12px;
-    }
-
-    &--arrows {
-        width: 14px;
-        height: 14px;
-    }
-
-    &--chevron-right {
-        width: 9px;
-        height: 11px;
-    }
-
-    &--information {
-        width: 46px;
-        height: 46px;
-        fill: $color--pink;
-    }
-
-    &--microphone-on,
-    &--microphone-off {
-        width: 22px;
-        height: 23px;
-    }
-
-    &--search {
-        width: 18px;
-        height: 18px;
-    }
-
-    &--off-site {
-        width: 12px;
-        height: 12px;
-    }
-
-    &--profile-avatar {
-        width: 23px;
-        height: 19px;
-    }
-
-    &--checkmark {
-        width: 12px;
-        height: 10px;
-    }
-
-    &--fullscreen-enter {
-        width: 19px;
-        height: 19px;
-    }
-
-    &--fullscreen-exit {
-        width: 20px;
-        height: 20px;
-    }
+  }
 }

@@ -1,12 +1,12 @@
 /* ============================================
     Base font
 */
-@use "sass:math";
+@use 'sass:math';
 
 html {
-    font-size: math.div($base-font-size, 16px) * 100%;
-    line-height: math.div($base-line-height, $base-font-size);
-    color: $color--off-black;
+  font-size: math.div($base-font-size, 16px) * 100%;
+  line-height: math.div($base-line-height, $base-font-size);
+  color: $color--off-black;
 }
 
 /* ============================================
@@ -15,31 +15,31 @@ html {
     :: to its default value, usually `inherit`) in all other font mixins.
 */
 @mixin heading-text() {
-    font-family: $font--primary;
-    font-style: inherit;
-    font-weight: 700;
-    line-height: 1;
+  font-family: $font--primary;
+  font-style: inherit;
+  font-weight: 700;
+  line-height: 1;
 }
 
 @mixin body-text() {
-    @include font-size(xs);
-    font-family: $font--primary;
-    font-style: inherit;
-    font-weight: inherit;
-    text-transform: inherit;
-    line-height: 1.5;
+  @include font-size(xs);
+  font-family: $font--primary;
+  font-style: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  line-height: 1.5;
 }
 
 @mixin quote-text() {
-    font-family: $font--secondary;
-    font-style: italic;
-    font-weight: inherit;
-    text-transform: inherit;
+  font-family: $font--secondary;
+  font-style: italic;
+  font-weight: inherit;
+  text-transform: inherit;
 }
 
 html,
 .body-text {
-    @include body-text();
+  @include body-text();
 }
 
 h1,
@@ -49,127 +49,127 @@ h4,
 h5,
 h6,
 .heading {
-    @include heading-text();
-    margin: 0 0 1rem;
+  @include heading-text();
+  margin: 0 0 1rem;
 }
 
 blockquote {
-    @include quote-text();
+  @include quote-text();
 }
 
 // Default sizes
 h1,
 .heading--1 {
-    @include font-size(xl);
-    @include media-query(tablet-portrait) {
-        @include font-size(xxl);
-    }
+  @include font-size(xl);
+  @include media-query(tablet-portrait) {
+    @include font-size(xxl);
+  }
 }
 
 h2,
 .heading--2 {
-    @include font-size(l);
-    line-height: 1.2;
-    @include media-query(tablet-portrait) {
-        @include font-size(xl);
-        line-height: 1;
-    }
+  @include font-size(l);
+  line-height: 1.2;
+  @include media-query(tablet-portrait) {
+    @include font-size(xl);
+    line-height: 1;
+  }
 }
 
 h3,
 .heading--3 {
-    @include font-size(m);
-    line-height: 1.2;
-    @include media-query(tablet-portrait) {
-        @include font-size(l);
-    }
+  @include font-size(m);
+  line-height: 1.2;
+  @include media-query(tablet-portrait) {
+    @include font-size(l);
+  }
 }
 
 h4,
 .heading--4 {
-    @include font-size(s);
-    line-height: 1.2;
-    @include media-query(tablet-portrait) {
-        @include font-size(m);
-        line-height: 1.5;
-    }
+  @include font-size(s);
+  line-height: 1.2;
+  @include media-query(tablet-portrait) {
+    @include font-size(m);
+    line-height: 1.5;
+  }
 }
 
 h5,
 .heading--5 {
-    @include font-size(xs);
-    line-height: 1.5;
-    @include media-query(tablet-portrait) {
-        @include font-size(s);
-    }
+  @include font-size(xs);
+  line-height: 1.5;
+  @include media-query(tablet-portrait) {
+    @include font-size(s);
+  }
 }
 
 h6,
 .heading--6 {
-    @include font-size(xxs);
+  @include font-size(xxs);
 }
 
 small,
 .supporting-text {
-    @include font-size(xxs);
-    line-height: 1.3;
+  @include font-size(xxs);
+  line-height: 1.3;
 
-    @include media-query(tablet-portrait) {
-        @include font-size(xs);
-        line-height: 1.5;
-    }
+  @include media-query(tablet-portrait) {
+    @include font-size(xs);
+    line-height: 1.5;
+  }
 }
 
 .page-introduction {
-    @include font-size(s);
-    line-height: 1.5;
-    font-weight: $weight--bold;
-    margin: 0;
+  @include font-size(s);
+  line-height: 1.5;
+  font-weight: $weight--bold;
+  margin: 0;
 
-    @include media-query(tablet-portrait) {
-        @include font-size(m);
-    }
+  @include media-query(tablet-portrait) {
+    @include font-size(m);
+  }
 }
 
 small {
-    @include font-size(xxs);
+  @include font-size(xxs);
 }
 
 .page-title {
-    margin: 0 0 50px;
+  margin: 0 0 50px;
 }
 
 .page-title--icon {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    @include media-query(tablet-portrait) {
-        flex-direction: row;
-        align-items: center;
-    }
+  @include media-query(tablet-portrait) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .standfirst {
-    @include font-size(l);
-    margin: 0 0 30px;
-    color: $color--blue;
+  @include font-size(l);
+  margin: 0 0 30px;
+  color: $color--blue;
 }
 
 p {
-    @include font-size(m);
-    letter-spacing: 0.25px;
+  @include font-size(m);
+  letter-spacing: 0.25px;
 }
 
 .link {
-    transition: color $transition;
-    font-weight: $weight--semibold;
+  transition: color $transition;
+  font-weight: $weight--semibold;
 
-    &--pink {
-        color: $color--pink;
+  &--pink {
+    color: $color--pink;
 
-        &:hover {
-            color: $color--purple;
-            text-decoration: underline;
-        }
+    &:hover {
+      color: $color--purple;
+      text-decoration: underline;
     }
+  }
 }

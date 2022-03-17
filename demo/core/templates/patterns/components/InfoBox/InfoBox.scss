@@ -2,83 +2,83 @@ $spacing--mobile: 20px;
 $spacing--desktop: 40px;
 
 .info-box {
-    $root: &;
-    position: relative;
-    padding: $spacing--mobile;
-    padding-top: 30px;
-    border: 1px solid transparent;
-    border-radius: 5px;
+  $root: &;
+  position: relative;
+  padding: $spacing--mobile;
+  padding-top: 30px;
+  border: 1px solid transparent;
+  border-radius: 5px;
 
-    @include media-query(tablet-portrait) {
-        padding: $spacing--desktop 30px 30px;
+  @include media-query(tablet-portrait) {
+    padding: $spacing--desktop 30px 30px;
+  }
+
+  &--default {
+    background: $color--white;
+    border-color: $color--blue;
+  }
+
+  &--checkmark {
+    background: transparent;
+    border-color: $color--pink;
+
+    #{$root}__icon {
+      background: $color--pink;
+      color: $color--white;
+      width: 46px;
+      height: 46px;
+      padding: 8px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      @include media-query(tablet-portrait) {
+        border-color: $color--light-blue;
+        left: initial;
+        right: initial;
+      }
     }
+  }
 
-    &--default {
-        background: $color--white;
-        border-color: $color--blue;
+  &__icon {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    color: $color--white;
+    border-radius: 100%;
+    border: 3px solid currentColor;
+  }
+
+  p {
+    color: $color--dark-grey;
+  }
+
+  ul {
+    @include bullet-list();
+  }
+
+  a {
+    @include link-arrow-hover(right);
+    color: $color--pink;
+    font-weight: $weight--semibold;
+
+    &:hover {
+      color: $color--purple;
     }
+  }
 
-    &--checkmark {
-        background: transparent;
-        border-color: $color--pink;
-
-        #{$root}__icon {
-            background: $color--pink;
-            color: $color--white;
-            width: 46px;
-            height: 46px;
-            padding: 8px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-
-            @include media-query(tablet-portrait) {
-                border-color: $color--light-blue;
-                left: initial;
-                right: initial;
-            }
-        }
-    }
-
-    &__icon {
-        position: absolute;
-        top: 0;
-        transform: translateY(-50%);
-        color: $color--white;
-        border-radius: 100%;
-        border: 3px solid currentColor;
-    }
-
-    p {
-        color: $color--dark-grey;
-    }
-
-    ul {
-        @include bullet-list();
-    }
-
+  &__cta {
     a {
-        @include link-arrow-hover(right);
-        color: $color--pink;
-        font-weight: $weight--semibold;
+      font-weight: $weight--semibold;
+      text-decoration: none;
 
-        &:hover {
-            color: $color--purple;
-        }
+      .icon {
+        width: 10px;
+        height: 12px;
+        margin-left: 6px;
+        stroke: currentColor;
+        vertical-align: middle;
+      }
     }
-
-    &__cta {
-        a {
-            font-weight: $weight--semibold;
-            text-decoration: none;
-
-            .icon {
-                width: 10px;
-                height: 12px;
-                margin-left: 6px;
-                stroke: currentColor;
-                vertical-align: middle;
-            }
-        }
-    }
+  }
 }

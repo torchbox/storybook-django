@@ -1,62 +1,62 @@
 // Note that these styles are also used by the streamfield faq block
 .accordion {
-    $root: &;
+  $root: &;
 
-    &__panel {
-        padding: 20px;
-        border-top: 1px solid $color--border;
+  &__panel {
+    padding: 20px;
+    border-top: 1px solid $color--border;
 
-        &:last-child {
-            border-bottom: 1px solid $color--border;
-        }
+    &:last-child {
+      border-bottom: 1px solid $color--border;
     }
+  }
 
-    &__toggle {
-        display: flex;
-        width: 100%;
-        padding: 15px 0;
-        align-items: baseline;
-        justify-content: space-between;
-        text-align: left;
-        appearance: none;
-        background-color: transparent;
-        background-image: none;
-        color: inherit;
-        border: 0;
-        cursor: pointer;
+  &__toggle {
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: left;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+
+  &__title-inner {
+    display: block;
+    flex: 1;
+  }
+
+  &__icon {
+    color: $color--pink;
+    transform: rotate(360deg);
+    transition: transform $transition;
+    margin-left: 10px;
+
+    #{$root}__toggle[aria-pressed='true'] & {
+      transform: rotate(180deg);
     }
+  }
 
-    &__title {
-        margin-bottom: 0;
-        line-height: 30px;
+  &__content {
+    @include font-size(xs);
+    line-height: 1.25;
+    max-width: $wrapper--small;
+    padding-bottom: 5px;
+
+    @include media-query(tablet-landscape) {
+      @include font-size(s);
+      line-height: 1.5;
+      padding-bottom: 25px;
     }
-
-    &__title-inner {
-        display: block;
-        flex: 1;
-    }
-
-    &__icon {
-        color: $color--pink;
-        transform: rotate(360deg);
-        transition: transform $transition;
-        margin-left: 10px;
-
-        #{$root}__toggle[aria-pressed='true'] & {
-            transform: rotate(180deg);
-        }
-    }
-
-    &__content {
-        @include font-size(xs);
-        line-height: 1.25;
-        max-width: $wrapper--small;
-        padding-bottom: 5px;
-
-        @include media-query(tablet-landscape) {
-            @include font-size(s);
-            line-height: 1.5;
-            padding-bottom: 25px;
-        }
-    }
+  }
 }

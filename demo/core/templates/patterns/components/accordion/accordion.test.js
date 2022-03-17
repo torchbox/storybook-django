@@ -4,8 +4,8 @@
 import { initAccordions } from './accordion';
 
 describe('Accordion', () => {
-    beforeEach(() => {
-        document.body.innerHTML = `
+  beforeEach(() => {
+    document.body.innerHTML = `
         <div class="accordion" data-accordion>
             <div class="accordion__panel" data-accordion-panel>
                 <h3 class="accordion__title heading heading--4">
@@ -29,33 +29,29 @@ describe('Accordion', () => {
             </div>
         </div>
         `;
-    });
+  });
 
-    it('shows the first answer by default', () => {
-        initAccordions();
-        expect(document.querySelector('#test-content-0').hidden).toBe(false);
-        expect(document.querySelector('#test-content-1').hidden).toBe(true);
-    });
+  it('shows the first answer by default', () => {
+    initAccordions();
+    expect(document.querySelector('#test-content-0').hidden).toBe(false);
+    expect(document.querySelector('#test-content-1').hidden).toBe(true);
+  });
 
-    it('shows the content when the toggle is clicked', () => {
-        initAccordions();
+  it('shows the content when the toggle is clicked', () => {
+    initAccordions();
 
-        const toggle = document.querySelector(
-            '[aria-controls="test-content-1"]',
-        );
-        toggle.dispatchEvent(new Event('click'));
-        expect(document.querySelector('#test-content-1').hidden).toBe(false);
-    });
+    const toggle = document.querySelector('[aria-controls="test-content-1"]');
+    toggle.dispatchEvent(new Event('click'));
+    expect(document.querySelector('#test-content-1').hidden).toBe(false);
+  });
 
-    it('hides the content when the toggle is clicked if already open', () => {
-        initAccordions();
+  it('hides the content when the toggle is clicked if already open', () => {
+    initAccordions();
 
-        const toggle = document.querySelector(
-            '[aria-controls="test-content-1"]',
-        );
-        toggle.dispatchEvent(new Event('click'));
-        expect(document.querySelector('#test-content-1').hidden).toBe(false);
-        toggle.dispatchEvent(new Event('click'));
-        expect(document.querySelector('#test-content-1').hidden).toBe(true);
-    });
+    const toggle = document.querySelector('[aria-controls="test-content-1"]');
+    toggle.dispatchEvent(new Event('click'));
+    expect(document.querySelector('#test-content-1').hidden).toBe(false);
+    toggle.dispatchEvent(new Event('click'));
+    expect(document.querySelector('#test-content-1').hidden).toBe(true);
+  });
 });
