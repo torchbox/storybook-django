@@ -1,6 +1,6 @@
 django==3.2.11
 wagtail==2.16.1
 django-pattern-library==0.7.0
-black==21.12b0
+black==22.1.0
 flake8==4.0.1
 gunicorn==20.1.0
