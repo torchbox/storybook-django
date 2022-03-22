@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import YAML from 'yaml';
 
-import { TemplatePattern } from './TemplatePattern';
+import { Pattern } from '../../src/react';
 
 import '../core/templates/patterns/base.html';
 
@@ -157,7 +157,7 @@ Object.entries(sources).forEach(([path, [rawYAML, source, rawMarkdown]]) => {
     (args) => {
       const patternContext = isBlock ? { [blockKey]: args } : args;
       return (
-        <TemplatePattern
+        <Pattern
           template={htmlPath}
           context={patternContext}
           tags={config.tags}

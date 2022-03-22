@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TemplatePattern } from '../../../../../storybook/TemplatePattern';
+import { Pattern } from '../../../../../../src/react';
 
 import Icon from './Icon';
 import iconTemplate from './icon.html';
@@ -35,10 +35,12 @@ export const ViewAllReact = () =>
 
 ViewAllReact.storyName = 'View all (React)';
 
-const path = 'patterns/components/icon/icon.html';
-
 const IconPattern = (props) => (
-  <TemplatePattern element="span" template={path} context={props} />
+  <Pattern
+    element="span"
+    template="patterns/components/icon/icon.html"
+    context={props}
+  />
 );
 
 export const ViewAllDjango = () =>
@@ -63,3 +65,11 @@ ViewAllDjango.storyName = 'View all (Django)';
 ViewAllDjango.parameters = {
   docs: { source: { code: iconTemplate } },
 };
+
+export const ReactDemoStory = () => (
+  <span>
+    <a href="https://www.example.com">
+      View our complete guide <IconPattern name="arrow" />
+    </a>
+  </span>
+);

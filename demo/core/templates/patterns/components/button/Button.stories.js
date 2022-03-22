@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pattern } from '../../../../../storybook/TemplatePattern';
+import { Pattern } from '../../../../../../src/react';
 
 import Button, { BUTTON_THEMES } from './Button';
 import buttonTemplate from './button.html';
@@ -44,7 +44,7 @@ export const ViewAllDjango = () =>
   BUTTON_THEMES.map((theme) => (
     <Pattern
       key={theme}
-      filename={__filename.toLowerCase()}
+      filename={__filename}
       label={theme}
       theme={theme}
       target_url="/"

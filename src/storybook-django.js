@@ -46,6 +46,7 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
   if (tags) {
     config.tags = tags;
   }
+
   return window.fetch(endpoint, {
     method: 'POST',
     mode: 'same-origin',

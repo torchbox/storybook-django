@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pattern } from '../../../../../storybook/TemplatePattern';
+import { Pattern } from '../../../../../../src/react';
 
 import template from './split_banner.html';
 

@@ -1,7 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../**/Welcome.stories.mdx', '../**/*.stories.*'],
+  stories: [
+    '../**/*.stories.mdx',
+    {
+      directory: 'core/templates/patterns/components/streamfield',
+      titlePrefix: 'Blocks',
+      files: '**/*.stories.*',
+    },
+    '../**/*.stories.*',
+  ],
   addons: [
     // '@storybook/addon-essentials',
     // '@storybook/addon-viewport',

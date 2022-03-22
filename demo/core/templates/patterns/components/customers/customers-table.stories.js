@@ -1,7 +1,7 @@
 import React from 'react';
 import YAML from 'yaml';
 
-import { Pattern } from '../../../../../storybook/TemplatePattern';
+import { Pattern } from '../../../../../../src/react';
 
 import './customers-table.html';
 import rawConfig from './customers-table.yaml';

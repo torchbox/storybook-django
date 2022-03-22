@@ -1,10 +1,10 @@
 {
   "name": "storybook-django",
   "version": "0.3.0",
-  "description": "Develop Django UI components in isolation, with Hot Reloading",
+  "description": "Implement, document, and test UI components in isolation from your Django views",
   "author": "Torchbox",
   "license": "MIT",
-  "homepage": "https://github.com/torchbox/storybook-django",
+  "homepage": "http://storybook-django.herokuapp.com/",
   "main": "src/storybook-django.js",
   "module": "src/storybook-django.js",
   "sideEffects": true,

@@ -1,30 +1,40 @@
 import React from 'react';
-
-import { Pattern } from '../../../../../storybook/TemplatePattern';
+import { Pattern } from '../../../../../../src/react';
 
 import docs from './quote_block.md';
 import template from './quote_block.html';
 
-const Block = (props) => <Pattern filename={__filename} value={props} />;
-
 export default {
-  title: 'StreamField / quote_block',
-  component: Block,
+  parameters: {
+    docs: {
+      source: { code: template },
+      extractComponentDescription: () => docs,
+    },
+  },
   argTypes: {
-    quote: { control: { type: 'text' } },
-    attribution: { control: { type: 'text' } },
+    quote: {
+      control: { type: 'text' },
+      description: 'Will be displayed first',
+    },
+    attribution: {
+      control: { type: 'text' },
+      description: 'Underneath the quote (optional)',
+    },
   },
 };
 
-export const Default = (args) => <Block {...args} />;
-Default.args = {
+export const Base = (args) => (
+  <Pattern filename={__filename} context={{ value: args }} />
+);
+
+Base.args = {
   quote: 'Someone believed in me once and now it’s time for me to do the same.',
   attribution: 'Young person',
 };
 
-Default.parameters = {
-  docs: {
-    source: { code: template },
-    extractComponentDescription: () => docs,
-  },
+export const NoAttribution = Base.bind({});
+
+NoAttribution.args = {
+  quote: Base.args.quote,
+  attribution: null,
 };
