@@ -62,30 +62,134 @@ module.exports = {
 
 ### React usage
 
-TODO
+Here is the most basic story for a Django template:
+
+```js
+import React from 'react';
+import { Pattern } from 'storybook-django/react';
+
+export default {};
+
+export const Base = () => (
+  <Pattern
+    template="patterns/components/streamfield/heading_block.html"
+    context={{ value: 'An important section' }}
+  />
+);
+```
+
+#### With Storybook features
+
+And here is a more advanced examples, showcasing different Storybook features:
+
+- Loading Markdown files to use as documentation.
+- Loading the component’s template to display alongside the docs, and for live-reloading.
+- Setting up [controls](https://storybook.js.org/docs/react/essentials/controls).
+- Having multiple stories with different data.
+
+```js
+import React from 'react';
+import { Pattern } from 'storybook-django/react';
+
+import docs from './quote_block.md';
+import template from './quote_block.html';
+
+export default {
+  parameters: {
+    docs: {
+      source: { code: template },
+      extractComponentDescription: () => docs,
+    },
+  },
+  argTypes: {
+    quote: {
+      control: { type: 'text' },
+      description: 'Will be displayed first',
+    },
+    attribution: {
+      control: { type: 'text' },
+      description: 'Underneath the quote (optional)',
+    },
+  },
+};
+
+export const Base = (args) => (
+  <Pattern filename={__filename} context={{ value: args }} />
+);
+
+Base.args = {
+  quote: 'Someone believed in me once and now it’s time for me to do the same.',
+  attribution: 'Young person',
+};
+
+export const NoAttribution = Base.bind({});
+
+NoAttribution.args = {
+  quote: Base.args.quote,
+  attribution: null,
+};
+```
+
+#### Making the most of React
+
+The point of using React is to be able to fully customise the context within which our Django components are displayed. Here is an example, with a simple SVG icon template:
+
+```js
+const IconPattern = (props) => (
+  <Pattern
+    element="span"
+    template="patterns/components/icon/icon.html"
+    context={props}
+  />
+);
+
+export const ReactDemoStory = () => (
+  <span>
+    <a href="https://www.example.com">
+      View our complete guide <IconPattern name="arrow" />
+    </a>
+  </span>
+);
+```
 
 ### Vue usage
 
-TODO
+We are working on Vue support. Please refer to [Usage with Vue #7](https://github.com/torchbox/storybook-django/issues/7) in the meantime, and provide feedback.
 
 ### Usage with other frameworks
 
-TODO
+storybook-django’s implementation is largely framework-agnostic, and should work equally as well with Storybook’s HTML and Web Components support.
+
+You will need to directly import the imperative APIs:
+
+```js
+import {
+  renderPattern,
+  simulateLoading,
+  insertHTMLWithScripts,
+} from 'storybook-django';
+```
+
+- `renderPattern` calls the django-pattern-library API rendering endpoint.
+- `simulateLoading` includes `insertHTMLWithScripts`, and fires a `DOMContentLoaded` event.
+- `insertHTMLWithScripts` is like `.innerHTML`, but additionally executing any `<script>` tags.
+
+### TypeScript usage
+
+There is nothing particular to change to make storybook-django work with TypeScript. Just make sure to configure TypeScript to understand `.md` and `.html` files if you use those features – here is a sample `stories.d.ts` file:
+
+```ts
+declare module '*.md';
+declare module '*.html';
+```
+
+### Advanced usage
+
+storybook-django is still very experimental. Head over to [Discussions](https://github.com/torchbox/storybook-django/discussions) to learn more about advanced usage.
 
 ## Where this is heading
 
 See [torchbox/django-pattern-library#103 – Storybook prototype of the pattern library](https://github.com/torchbox/django-pattern-library/issues/103) for more context on this project, and to keep up with changes to it in relation with django-pattern-library.
-
-## Demo site
-
-The demo site showcases:
-
-- storybook-django, [storybook-django.herokuapp.com](https://storybook-django.herokuapp.com/).
-- The equivalent django-pattern-library, [storybook-django.herokuapp.com/pattern-library/](https://storybook-django.herokuapp.com/pattern-library/).
-- Storybook v6 with the docs, controls, a11y, backgrounds, viewport addons.
-- A migration setup dynamically generating Storybook stories from Django pattern library YAML files.
-- Examples of using JS in stories, or displaying Markdown alongside the components in docs mode.
-- Stories for React components alongside the Django ones.
 
 ## Contributing
 
@@ -96,3 +200,7 @@ If you just want to set up the project on your own computer, the contribution gu
 ## Credits
 
 View the full list of [contributors](https://github.com/torchbox/storybook-django/graphs/contributors). [MIT](LICENSE) licensed.
+
+```
+
+```
