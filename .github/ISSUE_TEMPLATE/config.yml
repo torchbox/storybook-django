@@ -1,0 +1,4 @@
+contact_links:
+  - name: '❓ Questions'
+    url: https://github.com/torchbox/storybook-django/discussions
+    about: Use GitHub Discussions to get help with this project.
