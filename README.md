@@ -2,25 +2,75 @@
 
 [![npm](https://img.shields.io/npm/v/storybook-django.svg)](https://www.npmjs.com/package/storybook-django) [![Build status](https://github.com/torchbox/storybook-django/workflows/CI/badge.svg)](https://github.com/torchbox/storybook-django/actions)
 
-Storybook for Django is an experimental UI development environment for your Django UI components. Work on components in isolation from your site or app. Test them with mock data. Document as you go. Have a look at our [online demo](https://storybook-django.herokuapp.com/).
+Storybook for Django is an experimental UI development environment for Django components. It allows you to implement, document, and test UI components in isolation from your Django views. Have a look at our [online demo](https://storybook-django.herokuapp.com/).
 
 ![Screenshot of the Storybook UI, with a Django UI component displaying](.github/storybook-django-screenshot.png)
 
 ## How it works
 
-Server-side, this uses [Django pattern library](https://github.com/torchbox/django-pattern-library) to mock template context and template tags. Client-side, we use [Storybook’s React API](https://storybook.js.org/docs/guides/guide-react/) to create stories from our templates.
+Server-side, this uses [django-pattern-library](https://github.com/torchbox/django-pattern-library) to mock template context and template tags. Client-side, we use [Storybook](https://storybook.js.org/) to create stories from our templates.
 
 ## Getting started
 
-Does this sound useful? Great, let’s get you set up. First, start by setting up [django-pattern-library](https://github.com/torchbox/django-pattern-library). Then, from the root of your project,
+Let’s get you set up. There are two requirements:
+
+1. First, start by setting up [django-pattern-library](https://github.com/torchbox/django-pattern-library), v0.7.0 and up. Have a look at our [demo settings.py](https://github.com/torchbox/storybook-django/blob/main/demo/settings.py) as an example.
+2. Then, set up [Storybook](https://storybook.js.org/). We expect storybook-django to work with any framework supported by Storybook, and provide built-in support for React and Vue.
+
+Next, install our package:
 
 ```sh
-npx -p @storybook/cli sb init
-# Once the project is set up,
 npm install --save-dev storybook-django
 ```
 
-Then, copy the code from `demo/storybook` into your project.
+### Middleware
+
+Add a `middleware.js` inside your Storybook configuration folder (`.storybook` by default):
+
+```js
+const { createDjangoAPIMiddleware } = require('storybook-django/middleware');
+
+module.exports = createDjangoAPIMiddleware({
+  // Point this at your Django runserver instance, with the correct port number.
+  origin: 'http://localhost:8001',
+  apiPath: ['/pattern-library/'],
+});
+```
+
+This will forward pattern library API requests to Django. You may optionally add more API path patterns to `apiPath` to make other requests to your Django backend.
+
+### Optional Webpack configuration
+
+This is optional but highly recommended. To leverage Storybook’s live-reloading and documentation capabilities, we need to configure it to load our templates. Edit your Storybook `main.js` file to customise the `webpackFinal` option:
+
+```js
+module.exports = {
+  webpackFinal: (config) => {
+    config.module.rules = config.module.rules.concat([
+      {
+        test: /\.html$/,
+        // Webpack 5:
+        type: 'asset/source',
+        // Webpack 4 (make sure to also install the raw-loader package):
+        // use: 'raw-loader',
+      },
+    ]);
+
+    return config;
+  }
+```
+
+### React usage
+
+TODO
+
+### Vue usage
+
+TODO
+
+### Usage with other frameworks
+
+TODO
 
 ## Where this is heading
 
