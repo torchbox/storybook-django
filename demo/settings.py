@@ -102,20 +102,18 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/stable/ref/settings/#static-root
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")
+
 # This is where Django will look for static files outside the directories of
 # applications which are used by default.
 # https://docs.djangoproject.com/en/stable/ref/settings/#staticfiles-dirs
 STATICFILES_DIRS = [
-    # "static_compiled" is a folder used by the front-end tooling
-    # to output compiled static assets.
-    os.path.join(PROJECT_DIR, "demo", "static_compiled")
+    STORYBOOK_DIR
 ]
 
 PATTERN_LIBRARY = {
     "SECTIONS": (("components", ["patterns/components"]),),
     "PATTERN_BASE_TEMPLATE_NAME": "patterns/base.html",
 }
-
-STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
