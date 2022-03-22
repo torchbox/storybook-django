@@ -6,7 +6,7 @@
         <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
     </head>
 
     <body class="{% block body_class %}template-{{ page.get_verbose_name|slugify }}{% endblock %}">
@@ -23,6 +23,12 @@
         </main>
 
         {% block footer %}{% endblock %}
+
+    <script type="module">
+        import { initAccordions } from "{% static 'accordion.js' %}";
+
+        initAccordions();
+    </script>
     </body>
 </html>
 

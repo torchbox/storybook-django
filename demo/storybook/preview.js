@@ -1,5 +1,7 @@
 import iconSprite from '../core/templates/patterns/sprites/sprites.html';
 
+import '../static_src/main';
+
 const hasIcons = document.querySelector('[data-storybook-svg-icons]');
 
 if (!hasIcons) {
@@ -8,5 +10,3 @@ if (!hasIcons) {
   icons.innerHTML = iconSprite;
   document.body.appendChild(icons);
 }
-
-require('../static_src/main');
