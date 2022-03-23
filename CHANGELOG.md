@@ -4,6 +4,12 @@
 
 ## Unreleased
 
+### Added
+
+- Documentation for project setup and usage.
+- Add new optional React API as `storybook-django/react` module.
+- Add experimental documentation generation capabilities.
+
 ## [[v0.3.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.3.0) (2022-02-16)
 
 ### Changed

@@ -1,19 +1,14 @@
 import React from 'react';
-import { Pattern } from '../../../../../../src/react';
+import { Pattern, generateDocs } from '../../../../../../src/react';
 
 import template from './home_banner.html';
 
+const { docs, argTypes } = generateDocs(template);
+
 export default {
   title: 'home_banner',
-  parameters: {
-    docs: {
-      source: { code: template },
-    },
-  },
-  argTypes: {
-    title: { control: { type: 'text' } },
-    description: { control: { type: 'text' } },
-  },
+  parameters: { docs },
+  argTypes,
 };
 
 export const Default = (args) => <Pattern filename={__filename} {...args} />;

@@ -1,21 +1,19 @@
 import React from 'react';
-import { Pattern } from '../../../../../../src/react';
+import { Pattern, generateDocs } from '../../../../../../src/react';
 
 import template from './split_banner.html';
 
-const SplitBanner = (props) => <Pattern filename={__filename} {...props} />;
+const { docs, argTypes } = generateDocs(template);
 
 export default {
   title: 'Split Banner',
-  component: SplitBanner,
-  argTypes: {
-    title: { control: { type: 'text' } },
-    description: { control: { type: 'text' } },
-  },
+  parameters: { docs },
+  argTypes,
 };
 
-export const Default = (args) => (
-  <SplitBanner
+export const Base = (args) => (
+  <Pattern
+    filename={__filename}
     tags={{
       image: {
         'image fill-889x500 class="split-banner__image" alt=""': {
@@ -23,16 +21,10 @@ export const Default = (args) => (
         },
       },
     }}
-    {...args}
+    context={args}
   />
 );
-Default.args = {
+Base.args = {
   title: 'Whisperly Ltd',
   description: 'Stories from our Salesforce migration',
-};
-
-Default.parameters = {
-  docs: {
-    source: { code: template },
-  },
 };

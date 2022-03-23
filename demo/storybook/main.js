@@ -4,7 +4,7 @@ module.exports = {
   stories: [
     '../**/*.stories.mdx',
     {
-      directory: 'core/templates/patterns/components/streamfield',
+      directory: '../core/templates/patterns/components/streamfield',
       titlePrefix: 'Blocks',
       files: '**/*.stories.*',
     },

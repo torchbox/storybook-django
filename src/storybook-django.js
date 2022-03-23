@@ -61,3 +61,51 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
     }),
   });
 };
+
+export const extractDocsComment = (template) => {
+  const comments = template.match(
+    /{% comment "text\/markdown" %}\n*((.|\n)+){% endcomment %}/m,
+  );
+
+  if (comments) {
+    return comments[1].replace(/(\n|^) {4}/g, '\n');
+  }
+
+  return null;
+};
+
+const generateArgTypes = (descriptionComment) => {
+  if (!descriptionComment) {
+    return {};
+  }
+
+  const props = descriptionComment.match(/(-|\*) `([^`]+)`.+/g);
+
+  if (props) {
+    const argTypes = Object.fromEntries(
+      props.map((item) => {
+        const data = item.match(/`([^`]+)`([^a-zA-Z([]+)(.+)/);
+        const name = data ? data[1] : '';
+        const description = data ? data[3] : '';
+        return [name, { description }];
+      }),
+    );
+    return argTypes;
+  }
+
+  return {};
+};
+
+export const generateDocs = (template) => {
+  const description = extractDocsComment(template);
+
+  const output = {
+    docs: {
+      source: { code: template },
+      extractComponentDescription: () => description,
+    },
+    argTypes: generateArgTypes(description),
+  };
+
+  return output;
+};

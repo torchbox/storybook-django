@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from 'react';
 
 import { renderPattern, simulateLoading } from './storybook-django';
 
+export { generateDocs } from './storybook-django';
+
 const getTemplateName = (template, filename) => {
   if (template) {
     return template;

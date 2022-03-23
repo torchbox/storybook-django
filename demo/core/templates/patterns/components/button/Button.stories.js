@@ -2,7 +2,7 @@ import React from 'react';
 import { Pattern } from '../../../../../../src/react';
 
 import Button, { BUTTON_THEMES } from './Button';
-import buttonTemplate from './button.html';
+import template from './button.html';
 
 export default {
   title: 'Button',
@@ -54,5 +54,5 @@ export const ViewAllDjango = () =>
 ViewAllDjango.storyName = 'View All (Django)';
 
 ViewAllDjango.parameters = {
-  docs: { source: { code: buttonTemplate } },
+  docs: { source: { code: template } },
 };
