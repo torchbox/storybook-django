@@ -200,7 +200,3 @@ If you just want to set up the project on your own computer, the contribution gu
 ## Credits
 
 View the full list of [contributors](https://github.com/torchbox/storybook-django/graphs/contributors). [MIT](LICENSE) licensed.
-
-```
-
-```

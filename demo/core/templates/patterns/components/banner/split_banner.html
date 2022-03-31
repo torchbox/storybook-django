@@ -1,5 +1,14 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
-{% comment "text/markdown" %}A simple banner for a page’s hero area{% endcomment %}
+{% comment "text/markdown" %}
+A simple banner for a page’s hero area.
+
+A more extensive description. A more extensive description. A more extensive description. A more extensive description.
+
+- `hero_image`: Displayed without alt text
+- `hero_title`: Defaulting to `title` if unset
+- `description` — Optional
+
+{% endcomment %}
 <div class="split-banner">
     <div class="split-banner__image-wrapper">
         {% image image fill-889x500 class="split-banner__image" alt="" %}

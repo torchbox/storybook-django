@@ -11,7 +11,9 @@ export default {
   argTypes,
 };
 
-export const Default = (args) => <Pattern filename={__filename} {...args} />;
+export const Default = (args) => (
+  <Pattern filename={__filename} context={args} />
+);
 Default.args = {
   hero_title:
     'Free advice and support for SMEs looking to adopt new technology',
