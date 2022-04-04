@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-v2-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
       - if: steps.pip-cache.outputs.cache-hit != 'true'
         run: python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
       - run: source .venv/bin/activate && flake8 demo
@@ -65,6 +65,6 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-v2-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
       - run: source .venv/bin/activate && python manage.py runserver 0:8001 &
       - run: npm run test
