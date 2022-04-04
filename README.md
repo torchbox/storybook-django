@@ -15,7 +15,7 @@ Server-side, this uses [django-pattern-library](https://github.com/torchbox/djan
 Let’s get you set up. There are two requirements:
 
 1. First, start by setting up [django-pattern-library](https://github.com/torchbox/django-pattern-library), v0.7.0 and up. Have a look at our [demo settings.py](https://github.com/torchbox/storybook-django/blob/main/demo/settings.py) as an example.
-2. Then, set up [Storybook](https://storybook.js.org/). We expect storybook-django to work with any framework supported by Storybook, and provide built-in support for React and Vue.
+2. Then, set up [Storybook](https://storybook.js.org/). We expect `storybook-django` to work with any framework supported by Storybook, and provide built-in support for React (Vue in progress).
 
 Next, install our package:
 
@@ -82,6 +82,7 @@ export const Base = () => (
 
 And here is a more advanced examples, showcasing different Storybook features:
 
+- Setting a custom title for the story.
 - Loading Markdown files to use as documentation.
 - Loading the component’s template to display alongside the docs, and for live-reloading.
 - Setting up [controls](https://storybook.js.org/docs/react/essentials/controls).
@@ -95,6 +96,7 @@ import docs from './quote_block.md';
 import template from './quote_block.html';
 
 export default {
+  title: 'Components / quote_block',
   parameters: {
     docs: {
       source: { code: template },
@@ -185,7 +187,51 @@ declare module '*.html';
 
 ### Advanced usage
 
-storybook-django is still very experimental. Head over to [Discussions](https://github.com/torchbox/storybook-django/discussions) to learn more about advanced usage.
+`storybook-django` is still very experimental. Head over to [Discussions](https://github.com/torchbox/storybook-django/discussions) to share information about more advanced usage.
+
+#### Storyshots supports
+
+`storybook-django` is compatible with Storyshots, with two constraints since rendering happens with Django via an API:
+
+- You need a running Django server while the Storyshots test suite is running.
+- Components render asynchronously, so we need to make sure to test the final rendering _from Django_, rather than an intermediary state.
+
+Getting a Django server up and running is as simple as starting it in the background ahead of running the test suite. Here is a [GitHub Actions example](https://github.com/torchbox/storybook-django/blob/main/.github/workflows/ci.yml#L48-L70):
+
+```yaml
+- run: source .venv/bin/activate && python manage.py runserver 0:8001 &
+- run: npm run test
+```
+
+To handle asynchronous components, we should ideally rely on an event fired by the component. This isn’t implemented currently, we instead rely on waiting a bit for the response from Django before running any tests. Here is an [example of automated accessibility tests with Axe](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots.test.js):
+
+```js
+import initStoryshots from '@storybook/addon-storyshots';
+import { axe, toHaveNoViolations } from 'jest-axe';
+import { render } from '@testing-library/react';
+
+expect.extend(toHaveNoViolations);
+
+initStoryshots({
+  suite: 'Storyshots smoke tests',
+  configPath: 'demo/storybook',
+  renderer: render,
+  test: async ({ story }) => {
+    const { container } = render(story.render());
+
+    await new Promise((r) => setTimeout(r, 2000));
+
+    const results = await axe(container, {
+      rules: {
+        // Disabled because stories are expected to be rendered outside of landmarks for testing.
+        region: { enabled: false },
+      },
+    });
+
+    expect(results).toHaveNoViolations();
+  },
+});
+```
 
 ## Where this is heading
 
