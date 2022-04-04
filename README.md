@@ -78,6 +78,32 @@ export const Base = () => (
 );
 ```
 
+`Pattern` uses a hard-coded `endpoint` of `/pattern-library/api/v1/render-pattern` by default. To change this, pass a different value. For example,
+
+```js
+<Pattern endpoint="/storybook-patterns/api/v1/render-pattern" />
+```
+
+If this is a necessity for your project, consider creating your own wrapper for the `Pattern` component rather than having to define the `endpoint` in all stories.
+
+#### With auto-generated template paths
+
+Our `Pattern` component has to be told which `template` to render, Alternatively, we can use [Webpack’s `__filename`](https://webpack.js.org/api/module-variables/#__filename-nodejs) support to auto-generate the template path. First, configure Webpack:
+
+```js
+config.node = {
+  __filename: true,
+};
+```
+
+Then, use the `filename` prop instead of `template`:
+
+```js
+<Pattern filename={__filename} />
+```
+
+This `filename` prop assumes the template is in the same folder as the template, with the same file name except for the extension (replaces `.stories.(js|tsx)` with `.html`).
+
 #### With Storybook features
 
 And here is a more advanced examples, showcasing different Storybook features:
