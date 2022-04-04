@@ -42,7 +42,6 @@ export const Pattern = ({
   const template_name = getTemplateName(template, filename);
 
   useEffect(() => {
-    /* eslint-disable arrow-body-style */
     renderPattern(endpoint, template_name, context, tags)
       .catch((err) => simulateLoading(ref.current, err))
       .then((res) => res.text())
