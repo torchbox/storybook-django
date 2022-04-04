@@ -35,6 +35,14 @@
   "dependencies": {
     "http-proxy-middleware": "^2.0.0"
   },
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@storybook/addon-controls": "6.4.19",
     "@storybook/addon-docs": "6.4.19",
