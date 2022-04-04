@@ -82,27 +82,15 @@ It supports:
     ).toMatchInlineSnapshot(`
       Object {
         "description": Object {
-          "control": Object {
-            "type": "text",
-          },
           "description": "optional",
         },
         "hero_image": Object {
-          "control": Object {
-            "type": "text",
-          },
           "description": "displayed without alt text",
         },
         "hero_title": Object {
-          "control": Object {
-            "type": "text",
-          },
           "description": "defaulting to \`title\` if unset",
         },
         "link_url": Object {
-          "control": Object {
-            "type": "text",
-          },
           "description": "(string)",
         },
       }
