@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es2020",
-    "noImplicitAny": false, // TODO: Enable once all existing code is typed
+    "jsx": "react-jsx",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "downlevelIteration": true
+    "allowJs": true
+    // Although this catches valid issues, it also catches a lot of issues that
+    // are extremely hard to fix without converting code to TypeScript.
+    // "checkJs": true
   },
   "include": ["src", "demo"],
   "exclude": ["node_modules", "static"]

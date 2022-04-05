@@ -1,6 +1,6 @@
 module.exports = {
   // See https://github.com/torchbox/eslint-config-torchbox for rules.
-  extends: 'torchbox/typescript',
+  extends: ['torchbox/typescript', 'plugin:react/jsx-runtime'],
   rules: {
     'import/no-extraneous-dependencies': [
       2,

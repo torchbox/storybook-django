@@ -11,17 +11,19 @@ module.exports = {
     '../**/*.stories.*',
   ],
   addons: [
-    // '@storybook/addon-essentials',
-    // '@storybook/addon-viewport',
+    '@storybook/addon-viewport',
     '@storybook/addon-docs',
     '@storybook/addon-controls',
-    // '@storybook/addon-backgrounds',
-    // '@storybook/addon-a11y',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
   },
+  /**
+   * @param {any} config
+   */
   webpackFinal: (config) => {
     const rules = [
       {

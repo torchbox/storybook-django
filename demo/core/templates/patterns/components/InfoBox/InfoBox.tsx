@@ -21,7 +21,7 @@ interface InfoBoxProps {
   ctaLabel?: string;
   ctaTo?: string;
   ctaHref?: string;
-  theme?: string;
+  theme?: Theme;
   className?: string;
 }
 

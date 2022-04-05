@@ -1,5 +1,3 @@
-import React from 'react';
-
 const THEMES = {
   centre: 'loading-indicator loading-indicator--centre',
   left: 'loading-indicator loading-indicator--left',

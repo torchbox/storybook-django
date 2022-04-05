@@ -13,14 +13,16 @@ export const insertHTMLWithScripts = (element, html) => {
     );
 
     newScript.appendChild(document.createTextNode(script.innerHTML));
-    script.parentNode.replaceChild(newScript, script);
+    if (script.parentNode) {
+      script.parentNode.replaceChild(newScript, script);
+    }
   });
 };
 
 /**
  * Inserts HTML into an element, executing embedded script tags,
  * firing default loading events and custom ones.
- * @param {HTMLElement} element
+ * @param {HTMLElement|null} element
  * @param {string} html
  */
 export const simulateLoading = (element, html) => {
@@ -85,24 +87,32 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
   });
 };
 
+/**
+ * Generates / extracts documentation from a template’s source.
+ * @param {string} template The Django Template source.
+ */
 export const extractDocsComment = (template) => {
   const comments = template.match(
     /{% comment "text\/markdown" %}\n*((.|\n)+){% endcomment %}/m,
   );
 
-  if (comments) {
+  if (comments && comments[1]) {
     return comments[1].replace(/(\n|^) {4}/g, '\n');
   }
 
   return null;
 };
 
-const generateArgTypes = (descriptionComment) => {
-  if (!descriptionComment) {
+/**
+ * Generates / extracts documentation from a template’s source.
+ * @param {string|null} comment A Django Template `{% comment %}` block.
+ */
+const generateArgTypes = (comment) => {
+  if (!comment) {
     return {};
   }
 
-  const props = descriptionComment.match(/(-|\*) `([^`]+)`.+/g);
+  const props = comment.match(/(-|\*) `([^`]+)`.+/g);
 
   if (props) {
     const argTypes = Object.fromEntries(
@@ -120,11 +130,8 @@ const generateArgTypes = (descriptionComment) => {
 };
 
 /**
- * Fetches a template’s HTML via the API.
- * @param {string} template The Django Template.
- * @param {string} template_name -For example `patterns/components/icon/icon.html`.
- * @param {object} context Context for the Django template partial.
- * @param {object} tags Tags overrides for django-pattern-library.
+ * Generates / extracts documentation from a template’s source.
+ * @param {string} template The Django Template source.
  */
 export const generateDocs = (template) => {
   const description = extractDocsComment(template);

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pattern, generateDocs } from '../../../../../../src/react';
 
 import template from './home_banner.html';
@@ -11,7 +10,7 @@ export default {
   argTypes,
 };
 
-export const Default = (args) => (
+export const Default = (args: object) => (
   <Pattern filename={__filename} context={args} />
 );
 Default.args = {

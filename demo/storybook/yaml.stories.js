@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/react';
-import React from 'react';
 import YAML from 'yaml';
 
 import { Pattern } from '../../src/react';

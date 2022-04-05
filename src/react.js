@@ -30,7 +30,7 @@ const getTemplateName = (template, filename) => {
  * @param {string} template_name -For example `patterns/components/icon/icon.html`.
  * @param {object} context Context for the Django template partial.
  * @param {object} tags Tags overrides for django-pattern-library.
- * @param {function} callback On server response.
+ * @param {(param: any) => PromiseLike} callback On server response.
  * @param {string} [endpoint="/pattern-library/api/v1/render-pattern"] API endpoint to fetch the HTML.
  */
 export const getTemplatePattern = (
@@ -74,7 +74,10 @@ export const Pattern = ({
       (html) => simulateLoading(ref.current, html),
       endpoint,
     );
-    ref.current.dataset.state = 'loading';
+
+    if (ref.current) {
+      ref.current.dataset.state = 'loading';
+    }
   });
 
   return React.createElement(element, {

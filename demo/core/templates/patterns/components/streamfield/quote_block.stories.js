@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pattern } from '../../../../../../src/react';
 
 import docs from './quote_block.md';
@@ -36,5 +35,7 @@ export const NoAttribution = Base.bind({});
 
 NoAttribution.args = {
   quote: Base.args.quote,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   attribution: null,
 };

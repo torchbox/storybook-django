@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Pattern } from '../../../../../../src/react';
 
 export default {};

@@ -3,6 +3,11 @@
  */
 import { initAccordions } from './accordion';
 
+const getContentVisibility = () =>
+  [...document.querySelectorAll<HTMLDivElement>('.accordion__content')].map(
+    (e) => e.hidden,
+  );
+
 describe('Accordion', () => {
   beforeEach(() => {
     document.body.innerHTML = `
@@ -33,25 +38,30 @@ describe('Accordion', () => {
 
   it('shows the first answer by default', () => {
     initAccordions();
-    expect(document.querySelector('#test-content-0').hidden).toBe(false);
-    expect(document.querySelector('#test-content-1').hidden).toBe(true);
+    expect(getContentVisibility()).toEqual([false, true]);
   });
 
   it('shows the content when the toggle is clicked', () => {
     initAccordions();
 
     const toggle = document.querySelector('[aria-controls="test-content-1"]');
+    if (!toggle) {
+      return;
+    }
     toggle.dispatchEvent(new Event('click'));
-    expect(document.querySelector('#test-content-1').hidden).toBe(false);
+    expect(getContentVisibility()).toEqual([false, false]);
   });
 
   it('hides the content when the toggle is clicked if already open', () => {
     initAccordions();
 
     const toggle = document.querySelector('[aria-controls="test-content-1"]');
+    if (!toggle) {
+      return;
+    }
     toggle.dispatchEvent(new Event('click'));
-    expect(document.querySelector('#test-content-1').hidden).toBe(false);
+    expect(getContentVisibility()).toEqual([false, false]);
     toggle.dispatchEvent(new Event('click'));
-    expect(document.querySelector('#test-content-1').hidden).toBe(true);
+    expect(getContentVisibility()).toEqual([false, true]);
   });
 });

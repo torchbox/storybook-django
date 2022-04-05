@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pattern } from '../../../../../../src/react';
 
 import Button, { BUTTON_THEMES } from './Button';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import InfoBox from './InfoBox';
 
 const wrapperStyles = {

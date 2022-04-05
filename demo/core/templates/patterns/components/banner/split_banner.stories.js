@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pattern, generateDocs } from '../../../../../../src/react';
 
 import template from './split_banner.html';
