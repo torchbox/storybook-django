@@ -35,7 +35,11 @@ Interactive.args = Base.args;
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-Interactive.play = async ({ canvasElement }: { canvasElement: unknown }) => {
+Interactive.play = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
   const canvas = within(canvasElement);
 
   const pattern = canvas.getByTestId('storybook-django');
