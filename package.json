@@ -11,11 +11,6 @@
   "files": [
     "src/*.js"
   ],
-  "exports": {
-    ".": "./src/storybook-django.js",
-    "./middleware": "./src/middleware.js",
-    "./react": "./src/react.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/torchbox/storybook-django.git"

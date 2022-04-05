@@ -16,7 +16,7 @@
 
 - Documentation for project basic setup and usage, and optional Webpack integrations.
 - Documentation for advanced usage: TypeScript, Storyshots.
-- Add new optional React API as `storybook-django/react` module.
+- Add new optional React API as `storybook-django/src/react` module.
 - Document expected usage with Vue (WIP).
 - Add experimental documentation generation capabilities.
 

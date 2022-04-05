@@ -28,7 +28,9 @@ npm install --save-dev storybook-django
 Add a `middleware.js` inside your Storybook configuration folder (`.storybook` by default):
 
 ```js
-const { createDjangoAPIMiddleware } = require('storybook-django/middleware');
+const {
+  createDjangoAPIMiddleware,
+} = require('storybook-django/src/middleware');
 
 module.exports = createDjangoAPIMiddleware({
   // Point this at your Django runserver instance, with the correct port number.
@@ -65,7 +67,7 @@ module.exports = {
 Here is the most basic story for a Django template:
 
 ```js
-import { Pattern } from 'storybook-django/react';
+import { Pattern } from 'storybook-django/src/react';
 
 export default {};
 
@@ -114,7 +116,7 @@ And here is a more advanced examples, showcasing different Storybook features:
 - Having multiple stories with different data.
 
 ```js
-import { Pattern } from 'storybook-django/react';
+import { Pattern } from 'storybook-django/src/react';
 
 import docs from './quote_block.md';
 import template from './quote_block.html';
