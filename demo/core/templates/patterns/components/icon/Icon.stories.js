@@ -12,7 +12,7 @@ export default {
   component: Icon,
 };
 
-export const Default = (args) => <Icon name="profile-avatar" {...args} />;
+export const Base = (args) => <Icon name="profile-avatar" {...args} />;
 
 export const ViewAllReact = () =>
   ICONS.map((icon) => (

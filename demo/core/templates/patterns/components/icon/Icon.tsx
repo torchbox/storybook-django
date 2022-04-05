@@ -24,12 +24,8 @@ export type IconName = typeof ICONS[number];
  * Accessible icon component, built with <use> references to an inline SVG symbols sprite.
  */
 const Icon = ({ name, className }: { name: IconName; className?: string }) => (
-  <svg
-    className={`icon icon--${name} ${className || ''}`}
-    aria-hidden="true"
-    focusable="false"
-  >
-    <use xlinkHref={`#${name}`} />
+  <svg className={`icon icon--${name} ${className || ''}`} aria-hidden="true">
+    <use href={`#${name}`} />
   </svg>
 );
 

@@ -5,6 +5,6 @@ export default {
   component: LoadingIndicator,
 };
 
-export const Default = (args) => (
+export const Base = (args) => (
   <LoadingIndicator {...args}>Loading…</LoadingIndicator>
 );

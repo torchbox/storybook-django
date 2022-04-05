@@ -10,10 +10,10 @@ export default {
   argTypes,
 };
 
-export const Default = (args: object) => (
+export const Base = (args: object) => (
   <Pattern filename={__filename} context={args} />
 );
-Default.args = {
+Base.args = {
   hero_title:
     'Free advice and support for SMEs looking to adopt new technology',
   description:

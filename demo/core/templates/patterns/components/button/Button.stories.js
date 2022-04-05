@@ -8,8 +8,8 @@ export default {
   component: Button,
 };
 
-export const Default = (args) => <Button {...args} />;
-Default.args = { children: 'Test button' };
+export const Base = (args) => <Button {...args} />;
+Base.args = { children: 'Test button' };
 
 export const ViewAllreact = () =>
   BUTTON_THEMES.map((theme) => (

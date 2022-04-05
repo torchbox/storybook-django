@@ -16,7 +16,7 @@ export default {
   ],
 };
 
-export const Default = (args) => (
+export const Base = (args) => (
   <InfoBox {...args}>
     <h2>This is a title</h2>
     <ul>
@@ -26,10 +26,10 @@ export const Default = (args) => (
     </ul>
   </InfoBox>
 );
-Default.args = { ctaLabel: 'CTA Text learn more', ctaHref: '/faq' };
+Base.args = { ctaLabel: 'CTA Text learn more', ctaHref: '/faq' };
 
-export const CheckmarkTheme = Default.bind(null);
-CheckmarkTheme.args = { ...Default.args, theme: 'checkmark' };
+export const CheckmarkTheme = Base.bind(null);
+CheckmarkTheme.args = { ...Base.args, theme: 'checkmark' };
 
 export const Headings = () => (
   <InfoBox>
