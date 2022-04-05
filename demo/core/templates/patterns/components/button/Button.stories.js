@@ -44,10 +44,13 @@ export const ViewAllDjango = () =>
   BUTTON_THEMES.map((theme) => (
     <Pattern
       key={theme}
+      element="span"
       filename={__filename}
-      label={theme}
-      theme={theme}
-      target_url="/"
+      context={{
+        label: theme,
+        theme,
+        target_url: '/',
+      }}
     />
   ));
 

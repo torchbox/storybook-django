@@ -8,7 +8,7 @@ import rawConfig from './customers-table.yaml';
 
 const config = YAML.parse(rawConfig);
 
-const Table = (props) => <Pattern filename={__filename} {...props} />;
+const Table = (props) => <Pattern filename={__filename} context={props} />;
 
 export default {
   component: Table,

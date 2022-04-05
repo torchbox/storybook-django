@@ -9,7 +9,9 @@ export default { component: Pattern, title: 'Customers / Header' };
 export const header = () => (
   <Pattern
     filename={__filename}
-    request={{ path: 'test' }}
-    search_query="Potato"
+    context={{
+      request: { path: 'test' },
+      search_query: 'Potato',
+    }}
   />
 );
