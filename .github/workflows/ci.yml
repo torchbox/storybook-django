@@ -74,6 +74,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: storybook_compiled
+          path: demo/storybook_compiled
       - run: source .venv/bin/activate && python manage.py runserver 0:8001 &
       - run: npm run test
       - uses: actions/upload-artifact@v3
