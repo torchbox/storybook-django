@@ -12,9 +12,13 @@ export default {
   argTypes,
 };
 
-export const Base = (args: object) => (
+const Template = (args: object) => (
   <Pattern filename={__filename} context={args} />
 );
+
+export const Base = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Base.args = {
   accordions: [
     { title: 'Demoing interactions A', description: 'This is interactions A.' },
@@ -24,23 +28,28 @@ Base.args = {
   ],
 };
 
-export const Interactive = Base.bind({});
-
+export const Interactive = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Interactive.args = Base.args;
 
-Interactive.play = async ({ canvasElement }) => {
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+Interactive.play = async ({ canvasElement }: { canvasElement: any }) => {
   const canvas = within(canvasElement);
 
   const pattern = canvas.getByTestId('storybook-django');
   await waitFor(
     () => expect(pattern.dataset.state).toBe('loaded'),
     {},
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     { timeout: 5000 },
   );
 
   const buttons: HTMLButtonElement[] = canvas.queryAllByRole('button');
 
-  if (buttons.length === 0) {
+  if (!buttons || !buttons[0]) {
     return;
   }
 
