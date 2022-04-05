@@ -4,11 +4,25 @@
 
 ## Unreleased
 
+## [[v0.4.1]](https://github.com/torchbox/storybook-django/releases/tag/v0.4.1) (2022-04-05)
+
+### Fixed
+
+- Use Node [exports](https://nodejs.org/api/packages.html#subpath-exports) to export correct paths in published package.
+
+## [[v0.4.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.4.0) (2022-04-05)
+
 ### Added
 
-- Documentation for project setup and usage.
+- Documentation for project basic setup and usage, and optional Webpack integrations.
+- Documentation for advanced usage: TypeScript, Storyshots.
 - Add new optional React API as `storybook-django/react` module.
+- Document expected usage with Vue (WIP).
 - Add experimental documentation generation capabilities.
+
+### Fixed
+
+- Fix API client forcing tags to explicit null
 
 ## [[v0.3.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.3.0) (2022-02-16)
 
