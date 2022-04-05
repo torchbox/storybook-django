@@ -8,10 +8,9 @@ import { render, waitFor } from '@testing-library/react';
 expect.extend(toHaveNoViolations);
 
 initStoryshots({
-  suite: 'Storyshots smoke tests',
+  suite: 'Storyshots accessibility tests',
   configPath: 'demo/storybook',
   test: async ({ story }) => {
-    // Rendering the story already constitutes a smoke test – if it fails to render there is a runtime error to investigate.
     const { container, queryAllByTestId } = render(story.render());
 
     const patterns = queryAllByTestId('storybook-django');

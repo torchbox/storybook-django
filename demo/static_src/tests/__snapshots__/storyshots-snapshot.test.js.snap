@@ -1,0 +1,3860 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots snapshot tests Blocks/Heading Block Base 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/heading_block.html"
+    data-testid="storybook-django"
+  >
+    
+    
+    <h2>
+      An important section
+    </h2>
+    
+
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Blocks/Quote Block Base 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/quote_block.html"
+    data-testid="storybook-django"
+  >
+    <blockquote
+      class="quote-block block--spacing"
+    >
+      
+    
+      <div
+        class="quote-block__text"
+      >
+        
+        
+        <p
+          class="quote-block__quote heading--3"
+        >
+          Someone believed in me once and now it’s time for me to do the same.
+        </p>
+        
+        
+            
+        <p
+          class="quote-block__attribution"
+        >
+          Young person
+        </p>
+        
+        
+    
+      </div>
+      
+
+    </blockquote>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Blocks/Quote Block No Attribution 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/quote_block.html"
+    data-testid="storybook-django"
+  >
+    <blockquote
+      class="quote-block block--spacing"
+    >
+      
+    
+      <div
+        class="quote-block__text"
+      >
+        
+        
+        <p
+          class="quote-block__quote heading--3"
+        >
+          Someone believed in me once and now it’s time for me to do the same.
+        </p>
+        
+        
+    
+      </div>
+      
+
+    </blockquote>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Button Base 1`] = `
+<div>
+  <button
+    class="button  "
+    type="button"
+  >
+    Test button
+  </button>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Button Button Icons 1`] = `
+<div>
+  <p>
+    Icon before:
+  </p>
+  <button
+    class="button button--secondary-ghost  "
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--off-site button__icon button__icon--before"
+    >
+      <use
+        href="#off-site"
+      />
+    </svg>
+    View calendar
+  </button>
+  <p>
+    Icon after:
+  </p>
+  <button
+    class="button button--secondary-ghost  "
+    type="button"
+  >
+    View calendar
+    <svg
+      aria-hidden="true"
+      class="icon icon--off-site button__icon button__icon--after"
+    >
+      <use
+        href="#off-site"
+      />
+    </svg>
+  </button>
+  <p>
+    Icon before & after:
+  </p>
+  <button
+    class="button button--secondary-ghost  "
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--off-site button__icon button__icon--before"
+    >
+      <use
+        href="#off-site"
+      />
+    </svg>
+    View calendar
+    <svg
+      aria-hidden="true"
+      class="icon icon--off-site button__icon button__icon--after"
+    >
+      <use
+        href="#off-site"
+      />
+    </svg>
+  </button>
+  <p>
+    Icon only:
+  </p>
+  <button
+    aria-label="View calendar"
+    class="button button--secondary-ghost  button--icon-only"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--off-site button__icon button__icon--center"
+    >
+      <use
+        href="#off-site"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Button View All (Django) 1`] = `
+<div>
+  <span
+    data-state="loading"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  />
+  <span
+    data-state="loading"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  />
+  <span
+    data-state="loaded"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <a
+      class="button button-rounded button--default "
+      href="/"
+    >
+      
+    
+    ghost
+    
+
+    </a>
+    
+
+  </span>
+  <span
+    data-state="loading"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  />
+  <span
+    data-state="loading"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  />
+</div>
+`;
+
+exports[`Storyshots snapshot tests Button View All (React) 1`] = `
+<div>
+  <button
+    class="button  "
+    type="button"
+  >
+    default
+  </button>
+  <button
+    class="button button--primary  "
+    type="button"
+  >
+    primary
+  </button>
+  <button
+    class="button button--primary-ghost  "
+    type="button"
+  >
+    ghost
+  </button>
+  <button
+    class="button button--secondary  "
+    type="button"
+  >
+    secondary
+  </button>
+  <button
+    class="button button--secondary-ghost  "
+    type="button"
+  >
+    secondaryGhost
+  </button>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Customers / Header Header 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customers-header.html"
+    data-testid="storybook-django"
+  >
+    <form
+      action="test"
+      class="customers-header"
+      method="get"
+    >
+      
+    
+      <h1
+        class="customers-header__heading"
+      >
+        Customers overview
+      </h1>
+      
+
+    
+    
+      <div
+        class="customers-header__search-wrapper"
+      >
+        
+        
+        <label
+          class="u-visually-hidden"
+          for="id_search"
+        >
+          Search user
+        </label>
+        
+        
+        <input
+          id="id_search"
+          name="query"
+          placeholder="Search user"
+          type="search"
+          value="Potato"
+        />
+        
+        
+        <button
+          type="submit"
+          value="submit"
+        >
+          
+            
+          <span
+            class="u-visually-hidden"
+          >
+            Submit
+          </span>
+          
+            
+          <svg
+            aria-hidden="true"
+            class="icon icon--search"
+          >
+            
+    
+            <use
+              href="#search"
+            />
+            
+
+          </svg>
+          
+
+        
+        </button>
+        
+    
+      </div>
+      
+
+    </form>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Customers / Table Empty Table 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customers-table.html"
+    data-testid="storybook-django"
+  >
+    <table
+      class="customers-table"
+    >
+      
+    
+      <caption
+        class="u-visually-hidden"
+      >
+        Customers list
+      </caption>
+      
+    
+      <thead
+        class="customers-table__head"
+      >
+        
+        
+        <tr>
+          <th>
+            
+            Name 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            User ID 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            Status 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+    
+        </tr>
+      </thead>
+      
+    
+      <tbody
+        class="customers-table__body"
+      >
+        
+        
+            
+        <tr>
+          
+                
+          <td
+            class="customers-table__no-results"
+            colspan="100%"
+          >
+            
+                    No results found. Try a different search.
+                
+          </td>
+          
+            
+        </tr>
+        
+        
+    
+      </tbody>
+      
+
+    </table>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Customers / Table From YAML 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customers-table.html"
+    data-testid="storybook-django"
+  >
+    <table
+      class="customers-table"
+    >
+      
+    
+      <caption
+        class="u-visually-hidden"
+      >
+        Customers list
+      </caption>
+      
+    
+      <thead
+        class="customers-table__head"
+      >
+        
+        
+        <tr>
+          <th>
+            
+            Name 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            User ID 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            Status 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+    
+        </tr>
+      </thead>
+      
+    
+      <tbody
+        class="customers-table__body"
+      >
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Anthony Richardson
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            655992
+          </td>
+          
+                
+          <td>
+            Pending
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Benjamin Cole-Hawkins
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            708993
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Charlie Nicholls
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000183
+          </td>
+          
+                
+          <td>
+            Closed
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Dan Hove
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            098667
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Georgina Sheppard
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            478928
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Anthony Richardson
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000382
+          </td>
+          
+                
+          <td>
+            Pending
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Benjamin Cole-Hawkins
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            032219
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Charlie Nicholls
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            007883
+          </td>
+          
+                
+          <td>
+            Closed
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Dan Hove
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000093
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Georgina Sheppard
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            001552
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+    
+      </tbody>
+      
+
+    </table>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Customers / Table Full Table 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customers-table.html"
+    data-testid="storybook-django"
+  >
+    <table
+      class="customers-table"
+    >
+      
+    
+      <caption
+        class="u-visually-hidden"
+      >
+        Customers list
+      </caption>
+      
+    
+      <thead
+        class="customers-table__head"
+      >
+        
+        
+        <tr>
+          <th>
+            
+            Name 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            User ID 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            Status 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+    
+        </tr>
+      </thead>
+      
+    
+      <tbody
+        class="customers-table__body"
+      >
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Anthony Richardson
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            655992
+          </td>
+          
+                
+          <td>
+            Pending
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Benjamin Cole-Hawkins
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            708993
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Charlie Nicholls
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000183
+          </td>
+          
+                
+          <td>
+            Closed
+          </td>
+          
+            
+        </tr>
+        
+        
+    
+      </tbody>
+      
+
+    </table>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / accordion / accordion Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/accordion/accordion.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <div
+      class="accordion"
+      data-accordion=""
+    >
+      
+    
+        
+      <div
+        class="accordion__panel"
+        data-accordion-panel=""
+      >
+        
+            
+        <h3
+          class="accordion__title heading heading--4"
+        >
+          
+                
+          <button
+            aria-controls="test-content-1"
+            aria-expanded="true"
+            aria-pressed="true"
+            class="accordion__toggle"
+            data-accordion-toggle=""
+            type="button"
+          >
+            
+                    
+            <span
+              class="accordion__title-inner"
+            >
+              Title A
+            </span>
+            
+                    
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-down accordion__icon"
+            >
+              
+    
+              <use
+                href="#chevron-down"
+              />
+              
+
+            </svg>
+            
+
+                
+          </button>
+          
+            
+        </h3>
+        
+            
+        <div
+          class="accordion__content"
+          data-accordion-content=""
+          id="test-content-1"
+        >
+          
+                
+          <p>
+            Description A. Ask for help.
+          </p>
+          
+            
+        </div>
+        
+        
+      </div>
+      
+    
+        
+      <div
+        class="accordion__panel"
+        data-accordion-panel=""
+      >
+        
+            
+        <h3
+          class="accordion__title heading heading--4"
+        >
+          
+                
+          <button
+            aria-controls="test-content-2"
+            aria-expanded="false"
+            aria-pressed="false"
+            class="accordion__toggle"
+            data-accordion-toggle=""
+            type="button"
+          >
+            
+                    
+            <span
+              class="accordion__title-inner"
+            >
+              Title B
+            </span>
+            
+                    
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-down accordion__icon"
+            >
+              
+    
+              <use
+                href="#chevron-down"
+              />
+              
+
+            </svg>
+            
+
+                
+          </button>
+          
+            
+        </h3>
+        
+            
+        <div
+          class="accordion__content"
+          data-accordion-content=""
+          hidden=""
+          id="test-content-2"
+        >
+          
+                
+          <p>
+            Description B. Ask for help.
+          </p>
+          
+            
+        </div>
+        
+        
+      </div>
+      
+    
+        
+      <div
+        class="accordion__panel"
+        data-accordion-panel=""
+      >
+        
+            
+        <h3
+          class="accordion__title heading heading--4"
+        >
+          
+                
+          <button
+            aria-controls="test-content-3"
+            aria-expanded="false"
+            aria-pressed="false"
+            class="accordion__toggle"
+            data-accordion-toggle=""
+            type="button"
+          >
+            
+                    
+            <span
+              class="accordion__title-inner"
+            >
+              Title C
+            </span>
+            
+                    
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-down accordion__icon"
+            >
+              
+    
+              <use
+                href="#chevron-down"
+              />
+              
+
+            </svg>
+            
+
+                
+          </button>
+          
+            
+        </h3>
+        
+            
+        <div
+          class="accordion__content"
+          data-accordion-content=""
+          hidden=""
+          id="test-content-3"
+        >
+          
+                
+          <p>
+            Description C. Ask for help.
+          </p>
+          
+            
+        </div>
+        
+        
+      </div>
+      
+    
+        
+      <div
+        class="accordion__panel"
+        data-accordion-panel=""
+      >
+        
+            
+        <h3
+          class="accordion__title heading heading--4"
+        >
+          
+                
+          <button
+            aria-controls="test-content-4"
+            aria-expanded="false"
+            aria-pressed="false"
+            class="accordion__toggle"
+            data-accordion-toggle=""
+            type="button"
+          >
+            
+                    
+            <span
+              class="accordion__title-inner"
+            >
+              Title D
+            </span>
+            
+                    
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-down accordion__icon"
+            >
+              
+    
+              <use
+                href="#chevron-down"
+              />
+              
+
+            </svg>
+            
+
+                
+          </button>
+          
+            
+        </h3>
+        
+            
+        <div
+          class="accordion__content"
+          data-accordion-content=""
+          hidden=""
+          id="test-content-4"
+        >
+          
+                
+          <p>
+            Description D. Ask for help.
+          </p>
+          
+            
+        </div>
+        
+        
+      </div>
+      
+    
+
+    </div>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / accordion / accordion_section Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/accordion/accordion_section.html"
+    data-testid="storybook-django"
+  >
+    <div
+      class="accordion-section__wrapper wrapper--off-white"
+    >
+      
+    
+      <div
+        class="wrapper--site"
+      >
+        
+        
+        <div
+          class="accordion-section"
+        >
+          
+            
+          <h2
+            class="accordion-section__headline"
+          >
+            Samya’s Top Takeaways
+          </h2>
+          
+            
+          <div
+            class="accordion-section__content"
+          >
+            
+                
+
+            <div
+              class="accordion"
+              data-accordion=""
+            >
+              
+    
+        
+              <div
+                class="accordion__panel"
+                data-accordion-panel=""
+              >
+                
+            
+                <h3
+                  class="accordion__title heading heading--4"
+                >
+                  
+                
+                  <button
+                    aria-controls="samyas-top-takeaways-content-1"
+                    aria-expanded="true"
+                    aria-pressed="true"
+                    class="accordion__toggle"
+                    data-accordion-toggle=""
+                    type="button"
+                  >
+                    
+                    
+                    <span
+                      class="accordion__title-inner"
+                    >
+                      Title A
+                    </span>
+                    
+                    
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon--chevron-down accordion__icon"
+                    >
+                      
+    
+                      <use
+                        href="#chevron-down"
+                      />
+                      
+
+                    </svg>
+                    
+
+                
+                  </button>
+                  
+            
+                </h3>
+                
+            
+                <div
+                  class="accordion__content"
+                  data-accordion-content=""
+                  id="samyas-top-takeaways-content-1"
+                >
+                  
+                
+                  <p>
+                    Description A. Ask for help.
+                  </p>
+                  
+            
+                </div>
+                
+        
+              </div>
+              
+    
+        
+              <div
+                class="accordion__panel"
+                data-accordion-panel=""
+              >
+                
+            
+                <h3
+                  class="accordion__title heading heading--4"
+                >
+                  
+                
+                  <button
+                    aria-controls="samyas-top-takeaways-content-2"
+                    aria-expanded="false"
+                    aria-pressed="false"
+                    class="accordion__toggle"
+                    data-accordion-toggle=""
+                    type="button"
+                  >
+                    
+                    
+                    <span
+                      class="accordion__title-inner"
+                    >
+                      Title B
+                    </span>
+                    
+                    
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon--chevron-down accordion__icon"
+                    >
+                      
+    
+                      <use
+                        href="#chevron-down"
+                      />
+                      
+
+                    </svg>
+                    
+
+                
+                  </button>
+                  
+            
+                </h3>
+                
+            
+                <div
+                  class="accordion__content"
+                  data-accordion-content=""
+                  hidden=""
+                  id="samyas-top-takeaways-content-2"
+                >
+                  
+                
+                  <p>
+                    Description B. Ask for help.
+                  </p>
+                  
+            
+                </div>
+                
+        
+              </div>
+              
+    
+        
+              <div
+                class="accordion__panel"
+                data-accordion-panel=""
+              >
+                
+            
+                <h3
+                  class="accordion__title heading heading--4"
+                >
+                  
+                
+                  <button
+                    aria-controls="samyas-top-takeaways-content-3"
+                    aria-expanded="false"
+                    aria-pressed="false"
+                    class="accordion__toggle"
+                    data-accordion-toggle=""
+                    type="button"
+                  >
+                    
+                    
+                    <span
+                      class="accordion__title-inner"
+                    >
+                      Title C
+                    </span>
+                    
+                    
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon--chevron-down accordion__icon"
+                    >
+                      
+    
+                      <use
+                        href="#chevron-down"
+                      />
+                      
+
+                    </svg>
+                    
+
+                
+                  </button>
+                  
+            
+                </h3>
+                
+            
+                <div
+                  class="accordion__content"
+                  data-accordion-content=""
+                  hidden=""
+                  id="samyas-top-takeaways-content-3"
+                >
+                  
+                
+                  <p>
+                    Description C. Ask for help.
+                  </p>
+                  
+            
+                </div>
+                
+        
+              </div>
+              
+    
+        
+              <div
+                class="accordion__panel"
+                data-accordion-panel=""
+              >
+                
+            
+                <h3
+                  class="accordion__title heading heading--4"
+                >
+                  
+                
+                  <button
+                    aria-controls="samyas-top-takeaways-content-4"
+                    aria-expanded="false"
+                    aria-pressed="false"
+                    class="accordion__toggle"
+                    data-accordion-toggle=""
+                    type="button"
+                  >
+                    
+                    
+                    <span
+                      class="accordion__title-inner"
+                    >
+                      Title D
+                    </span>
+                    
+                    
+                    <svg
+                      aria-hidden="true"
+                      class="icon icon--chevron-down accordion__icon"
+                    >
+                      
+    
+                      <use
+                        href="#chevron-down"
+                      />
+                      
+
+                    </svg>
+                    
+
+                
+                  </button>
+                  
+            
+                </h3>
+                
+            
+                <div
+                  class="accordion__content"
+                  data-accordion-content=""
+                  hidden=""
+                  id="samyas-top-takeaways-content-4"
+                >
+                  
+                
+                  <p>
+                    Description D. Ask for help.
+                  </p>
+                  
+            
+                </div>
+                
+        
+              </div>
+              
+    
+
+            </div>
+            
+
+            
+          </div>
+          
+        
+        </div>
+        
+    
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / banner / home_banner Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/banner/home_banner.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    <div
+      class="split-banner split-banner--home"
+    >
+      
+
+    
+      <div
+        class="split-banner__wrapper-grid split-banner__wrapper-grid--image"
+      >
+        
+        
+        
+        <div
+          class="split-banner__image-wrapper"
+        >
+          
+            
+          <img
+            alt=""
+            class="split-banner__image"
+            height="650"
+            src="https://source.unsplash.com/Yh6K2eTr_FY/822x650"
+            width="822"
+          />
+          
+        
+        </div>
+        
+        
+        <div
+          class="split-banner__image-spacer"
+        />
+        
+    
+      </div>
+      
+
+    
+      <div
+        class="wrapper--site wrapper--pad wrapper--relative split-banner__wrapper-inner"
+      >
+        
+        
+        <div
+          class="split-banner__wrapper-grid"
+        >
+          
+            
+          <div
+            class="split-banner__content"
+          >
+            
+                
+            <h1
+              class="split-banner__title heading--2"
+            >
+              
+                    Free advice and support for SMEs looking to adopt new technology
+                
+            </h1>
+            
+                
+                
+            <span
+              class="split-banner__description heading--5"
+            >
+              
+                    We’re a government funded charity that offers information, We don’t push specific products
+                
+            </span>
+            
+                
+                
+                    
+
+            <a
+              class="button button-rounded button--primary split-banner__button"
+              href="/"
+            >
+              
+    
+    View our case studies
+    
+
+            </a>
+            
+
+                
+            
+          </div>
+          
+        
+        </div>
+        
+    
+      </div>
+      
+
+    </div>
+    
+
+
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / banner / split_banner Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/banner/split_banner.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    <div
+      class="split-banner"
+    >
+      
+    
+      <div
+        class="split-banner__image-wrapper"
+      >
+        
+        
+        <img
+          alt=""
+          class="split-banner__image"
+          height="500"
+          src="https://source.unsplash.com/M_sreLCqT6k/889x500"
+          width="889"
+        />
+        
+
+    
+      </div>
+      
+
+    
+      <div
+        class="split-banner__content "
+      >
+        
+        
+        <h1
+          class="split-banner__title heading--2"
+        >
+          
+            Stories from our Salesforce migration
+            
+            
+          <br />
+          
+            
+          <span
+            class="split-banner__description"
+          >
+            
+                Whisperly Ltd
+            
+          </span>
+          
+            
+        
+        </h1>
+        
+
+    
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / button / button Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/button/button.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <a
+      class="button button-rounded button--primary "
+      href="/"
+    >
+      
+    
+    Get started
+    
+
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / cta / call_to_action Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/cta/call_to_action.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    
+    <div
+      class="call-to-action block--spacing"
+    >
+      
+        
+      <div
+        class="call-to-action__wrapper"
+      >
+        
+            
+        <h3>
+          Create your requirements template
+        </h3>
+        
+
+            
+        <div
+          class="heading--4"
+        >
+          We’ll get you started by asking you a few questions about your business.
+        </div>
+        
+
+            
+                
+
+        <a
+          class="button button-rounded button--primary call-to-action__button"
+          href="#"
+        >
+          
+    
+    Sign up for useful updates
+    
+
+        </a>
+        
+
+            
+        
+      </div>
+      
+    
+    </div>
+    
+
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / cta / cta_section Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/cta/cta_section.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    <div
+      class="cta-section"
+    >
+      
+    
+      <div
+        class="cta-section__image-wrapper"
+      >
+        
+        
+        <img
+          alt=""
+          class="cta-section__image"
+          height="500"
+          src="https://source.unsplash.com/Yh6K2eTr_FY/889x500"
+          width="889"
+        />
+        
+
+    
+      </div>
+      
+
+    
+      <div
+        class="cta-section__content"
+      >
+        
+        
+        <h2
+          class="cta-section__title"
+        >
+          
+            Find the right balance in life
+        
+        </h2>
+        
+
+        
+            
+        <div
+          class="cta-section__description"
+        >
+          
+                
+          <p>
+            Use our 6 step implementation process
+          </p>
+          
+            
+        </div>
+        
+        
+
+        
+            
+
+        <a
+          class="button button-rounded button--primary cta-section__button"
+          href="/"
+        >
+          
+    
+    Get started
+    
+
+        </a>
+        
+
+        
+    
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / customers / customer-detail Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customer-detail.html"
+    data-testid="storybook-django"
+  >
+    <div
+      class="wrapper wrapper--user-detail"
+    >
+      
+
+      <div
+        class="user-detail"
+      >
+        
+    
+        <a
+          class="user-detail__customers"
+          href="/form"
+        >
+          
+        
+          <svg
+            aria-hidden="true"
+            class="icon icon--chevron-right"
+          >
+            
+    
+            <use
+              href="#chevron-right"
+            />
+            
+
+          </svg>
+          
+
+        View full list
+    
+        </a>
+        
+
+    
+        <h1>
+          Timothy Carpenter
+        </h1>
+        
+    
+        <ul
+          class="user-detail__list"
+        >
+          
+        
+          <li>
+            
+            
+            <span>
+              User ID:
+            </span>
+            
+            
+            <span
+              class="user-detail__value"
+            >
+              079654
+            </span>
+            
+        
+          </li>
+          
+        
+          <li>
+            
+            
+            <span>
+              Contact number:
+            </span>
+            
+            
+            <span
+              class="user-detail__value"
+            >
+              +443069990123
+            </span>
+            
+        
+          </li>
+          
+    
+        </ul>
+        
+
+    
+        <h2
+          class="user-detail__subheading"
+        >
+          Situation
+        </h2>
+        
+
+    
+        <div
+          class="user-detail__situation"
+        >
+          
+        
+          <p>
+            Turpis egestas sed tempus urna et pharetra. Accumsan tortor posuere ac ut consequat semper viverra. Turpis tincidunt id aliquet risus feugiat. Mollis nunc sed id semper risus in hendrerit. At in tellus integer feugiat scelerisque varius morbi enim nunc. Donec adipiscing tristique risus nec feugiat in fermentum posuere. My wife died in December after being ill with cancer for 2 years. Although she had been ill for some time, her death was unexpected and sudden. I went back to work soon after the funeral, which was probably a mistake. I don’t feel like I’ve had time to grieve properly and would like to talk about this. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant. Semper feugiat nibh sed pulvinar proin. Consequat semper viverra nam libero justo. In aliquam sem fringilla ut morbi tincidunt augue. Egestas diam in arcu cursus euismod quis viverra nibh. Placerat in egestas erat imperdiet sed euismod. At risus viverra adipiscing at in tellus integer feugiat. Lobortis elementum nibh tellus molestie nunc. A cras semper auctor neque vitae tempus quam. Sed vulputate mi sit amet mauris. Interdum velit laoreet id donec ultrices tincidunt arcu non. Iaculis nunc sed augue lacus viverra vitae. Turpis egestas sed tempus urna et pharetra. Accumsan tortor posuere ac ut consequat semper viverra. Turpis tincidunt id aliquet risus feugiat. Mollis nunc sed id semper risus in hendrerit. At in tellus integer feugiat scelerisque varius morbi enim nunc. Donec adipiscing tristique risus nec feugiat in fermentum posuere.
+          </p>
+          
+    
+        </div>
+        
+
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / customers / customers-table Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/customers/customers-table.html"
+    data-testid="storybook-django"
+  >
+    <table
+      class="customers-table"
+    >
+      
+    
+      <caption
+        class="u-visually-hidden"
+      >
+        Customers list
+      </caption>
+      
+    
+      <thead
+        class="customers-table__head"
+      >
+        
+        
+        <tr>
+          <th>
+            
+            Name 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            User ID 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+        
+          <th>
+            
+            Status 
+            <svg
+              aria-hidden="true"
+              class="icon icon--chevron-right"
+            >
+              
+    
+              <use
+                href="#chevron-right"
+              />
+              
+
+            </svg>
+            
+
+        
+          </th>
+          
+    
+        </tr>
+      </thead>
+      
+    
+      <tbody
+        class="customers-table__body"
+      >
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Anthony Richardson
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            655992
+          </td>
+          
+                
+          <td>
+            Pending
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Benjamin Cole-Hawkins
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            708993
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Charlie Nicholls
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000183
+          </td>
+          
+                
+          <td>
+            Closed
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Dan Hove
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            098667
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Georgina Sheppard
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            478928
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Anthony Richardson
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000382
+          </td>
+          
+                
+          <td>
+            Pending
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Benjamin Cole-Hawkins
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            032219
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Charlie Nicholls
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            007883
+          </td>
+          
+                
+          <td>
+            Closed
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Dan Hove
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            000093
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+            
+        <tr>
+          
+                
+          <td>
+            
+                    
+            <a
+              href="/test"
+            >
+              
+                        Georgina Sheppard
+                        
+              <svg
+                aria-hidden="true"
+                class="icon icon--chevron-right"
+              >
+                
+    
+                <use
+                  href="#chevron-right"
+                />
+                
+
+              </svg>
+              
+
+                    
+            </a>
+            
+                
+          </td>
+          
+                
+          <td>
+            001552
+          </td>
+          
+                
+          <td>
+            Open
+          </td>
+          
+            
+        </tr>
+        
+        
+    
+      </tbody>
+      
+
+    </table>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / pagination / next_stage_link Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/pagination/next_stage_link.html"
+    data-testid="storybook-django"
+  >
+    <nav
+      aria-label="Next step"
+      class="stage-link"
+    >
+      
+    
+      <div
+        class="stage-link__inner"
+      >
+        
+        
+        <div
+          class="stage-link__content  stage-link__content--with-link "
+        >
+          
+            
+          <h4
+            class="stage-link__title heading--5"
+          >
+            What to expect next
+          </h4>
+          
+            
+          <p
+            class="stage-link__text heading--5"
+          >
+            We will reach new heights
+          </p>
+          
+        
+        </div>
+        
+        
+            
+        <a
+          class="stage-link__link-wrapper heading--5"
+          href="/"
+          rel="next"
+        >
+          
+                
+          <span
+            class="stage-link__link-inner"
+          >
+            
+                Go to step 2
+                
+            <svg
+              aria-hidden="true"
+              class="icon icon--arrow-right"
+            >
+              
+    
+              <use
+                href="#arrow-right"
+              />
+              
+
+            </svg>
+            
+
+                
+          </span>
+          
+            
+        </a>
+        
+        
+    
+      </div>
+      
+
+    </nav>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / pagination / pagination Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/pagination/pagination.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <nav
+      aria-label="Pagination"
+      role="navigation"
+    >
+      
+    
+      <ul
+        class="pagination"
+      >
+        
+        
+
+        
+        <li
+          class="current"
+        >
+          
+            1/10
+        
+        </li>
+        
+
+        
+            
+        <li>
+          <a
+            class="next"
+            href="?page=2"
+          >
+            next
+          </a>
+        </li>
+        
+        
+    
+      </ul>
+      
+
+    </nav>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield / call_to_action_block Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/call_to_action_block.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    
+    <div
+      class="call-to-action block--spacing"
+    >
+      
+        
+      <div
+        class="call-to-action__wrapper"
+      >
+        
+            
+        <h3>
+          Stub content
+        </h3>
+        
+
+            
+        <div
+          class="heading--4"
+        >
+          Check out our awesome stub content
+        </div>
+        
+
+            
+                
+
+        <a
+          class="button button-rounded button--primary call-to-action__button"
+          href="#"
+        >
+          
+    
+    Click here
+    
+
+        </a>
+        
+
+            
+        
+      </div>
+      
+    
+    </div>
+    
+
+
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield / casestudy_teaser_block Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/casestudy_teaser_block.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <a
+      class="teaser-card"
+      href="#"
+    >
+      
+    
+      <div
+        class="teaser-card__image-wrapper"
+      >
+        
+        
+        <img
+          alt=""
+          class="teaser-card__image"
+          height="160"
+          src="https://source.unsplash.com/VLdaxYyXJvw/285x160"
+          width="285"
+        />
+        
+
+    
+      </div>
+      
+    
+      <div
+        class="teaser-card__content"
+      >
+        
+        
+        <span
+          class="teaser-card__title heading--5"
+        >
+          Case Study
+          <span
+            class="u-sr-only"
+          >
+            .
+          </span>
+        </span>
+        
+        
+        <p
+          class="teaser-card__teaser-text heading--5"
+        >
+          
+            See how Dan and the team at Greensail UK decided on which challenges to tackle
+        
+        </p>
+        
+    
+      </div>
+      
+
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield / heading_block Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/heading_block.html"
+    data-testid="storybook-django"
+  >
+    
+    
+    <h2>
+      Heading text
+    </h2>
+    
+
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield / quote_block Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/quote_block.html"
+    data-testid="storybook-django"
+  >
+    <blockquote
+      class="quote-block block--spacing"
+    >
+      
+    
+      <div
+        class="quote-block__text"
+      >
+        
+        
+        <p
+          class="quote-block__quote heading--3"
+        >
+          Compassion is the radicalism of our time.
+        </p>
+        
+        
+            
+        <p
+          class="quote-block__attribution"
+        >
+          The Dalai Lama
+        </p>
+        
+        
+    
+      </div>
+      
+
+    </blockquote>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield/pop / related_link Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/pop/related_link.html"
+    data-testid="storybook-django"
+  >
+    
+
+    <a
+      href="https://www.example.com/"
+    >
+      Link to an internal page!
+    </a>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Django Patterns / streamfield/pop / related_links Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/streamfield/pop/related_links.html"
+    data-testid="storybook-django"
+  >
+    
+​
+
+  None
+
+​
+
+    <ul
+      class="md:mt-8 mt-5"
+    >
+      
+  
+    
+      <li>
+        
+      
+        <a
+          href="/internal-page/#hash"
+        >
+          Link to an external page
+        </a>
+        
+
+    
+      </li>
+      
+  
+    
+      <li>
+        
+      
+        <a
+          href="/internal-page/#hash"
+        >
+          Link to an external page
+        </a>
+        
+
+    
+      </li>
+      
+  
+    
+      <li>
+        
+      
+        <a
+          href="/internal-page/#hash"
+        >
+          Link to an external page
+        </a>
+        
+
+    
+      </li>
+      
+  
+
+    </ul>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Icon Base 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    class="icon icon--profile-avatar "
+  >
+    <use
+      href="#profile-avatar"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Icon React Demo Story 1`] = `
+<div>
+  <span>
+    <a
+      href="https://www.example.com"
+    >
+      View our complete guide 
+      <span
+        data-state="loaded"
+        data-template="patterns/components/icon/icon.html"
+        data-testid="storybook-django"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--arrow"
+        >
+          
+    
+          <use
+            href="#arrow"
+          />
+          
+
+        </svg>
+        
+
+      </span>
+    </a>
+  </span>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Icon View all (Django) 1`] = `<div />`;
+
+exports[`Storyshots snapshot tests Icon View all (React) 1`] = `<div />`;
+
+exports[`Storyshots snapshot tests InfoBox Base 1`] = `
+<div>
+  <div
+    style="margin: 23px;"
+  >
+    <aside
+      class="info-box info-box--default "
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--information info-box__icon"
+      >
+        <use
+          href="#information"
+        />
+      </svg>
+      <h2>
+        This is a title
+      </h2>
+      <ul>
+        <li>
+          List item 1
+        </li>
+        <li>
+          List item 2
+        </li>
+        <li>
+          List item 3
+        </li>
+      </ul>
+      <div
+        class="info-box__cta"
+      >
+        <a
+          class="button  "
+          href="/faq"
+          rel="noreferrer"
+          target="_blank"
+        >
+          CTA Text learn more
+          <svg
+            aria-hidden="true"
+            class="icon icon--chevron-right button__icon button__icon--after"
+          >
+            <use
+              href="#chevron-right"
+            />
+          </svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests InfoBox Checkmark Theme 1`] = `
+<div>
+  <div
+    style="margin: 23px;"
+  >
+    <aside
+      class="info-box info-box--checkmark "
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--checkmark info-box__icon"
+      >
+        <use
+          href="#checkmark"
+        />
+      </svg>
+      <h2>
+        This is a title
+      </h2>
+      <ul>
+        <li>
+          List item 1
+        </li>
+        <li>
+          List item 2
+        </li>
+        <li>
+          List item 3
+        </li>
+      </ul>
+      <div
+        class="info-box__cta"
+      >
+        <a
+          class="button  "
+          href="/faq"
+          rel="noreferrer"
+          target="_blank"
+        >
+          CTA Text learn more
+          <svg
+            aria-hidden="true"
+            class="icon icon--chevron-right button__icon button__icon--after"
+          >
+            <use
+              href="#chevron-right"
+            />
+          </svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests InfoBox Headings 1`] = `
+<div>
+  <div
+    style="margin: 23px;"
+  >
+    <aside
+      class="info-box info-box--default "
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--information info-box__icon"
+      >
+        <use
+          href="#information"
+        />
+      </svg>
+      <h2>
+        This is a title
+      </h2>
+      <h3>
+        This is a title
+      </h3>
+      <h4>
+        This is a title
+      </h4>
+      <p>
+        This is a paragraph 
+        <a
+          href="#link"
+        >
+          Link text
+        </a>
+         and stuff and text and things. This is a paragraph tag text and stuff and text and things.
+      </p>
+    </aside>
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests LoadingIndicator Base 1`] = `
+<div>
+  <div
+    class="loading-indicator loading-indicator--centre "
+  >
+    <div
+      aria-hidden="true"
+      class="loading-indicator__animation"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+    <div
+      class="loading-indicator__content"
+    >
+      <h2
+        class="loading-indicator__heading"
+      >
+        Please wait one moment
+      </h2>
+      <p
+        class="loading-indicator__message"
+      >
+        Loading…
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests Split Banner Base 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/banner/split_banner.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    <div
+      class="split-banner"
+    >
+      
+    
+      <div
+        class="split-banner__image-wrapper"
+      >
+        
+        
+        <img
+          alt=""
+          class="split-banner__image"
+          height="500"
+          src="https://source.unsplash.com/M_sreLCqT6k/889x500"
+          width="889"
+        />
+        
+    
+      </div>
+      
+
+    
+      <div
+        class="split-banner__content "
+      >
+        
+        
+        <h1
+          class="split-banner__title heading--2"
+        >
+          
+            Whisperly Ltd
+            
+            
+          <br />
+          
+            
+          <span
+            class="split-banner__description"
+          >
+            
+                Stories from our Salesforce migration
+            
+          </span>
+          
+            
+        
+        </h1>
+        
+
+    
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots snapshot tests home_banner Base 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns/components/banner/home_banner.html"
+    data-testid="storybook-django"
+  >
+    
+
+
+    <div
+      class="split-banner split-banner--home"
+    >
+      
+
+    
+      <div
+        class="split-banner__wrapper-grid split-banner__wrapper-grid--image"
+      >
+        
+        
+        
+        <div
+          class="split-banner__image-wrapper"
+        >
+          
+            
+          <img
+            alt=""
+            class="split-banner__image"
+            height="650"
+            src="https://source.unsplash.com/Yh6K2eTr_FY/822x650"
+            width="822"
+          />
+          
+        
+        </div>
+        
+        
+        <div
+          class="split-banner__image-spacer"
+        />
+        
+    
+      </div>
+      
+
+    
+      <div
+        class="wrapper--site wrapper--pad wrapper--relative split-banner__wrapper-inner"
+      >
+        
+        
+        <div
+          class="split-banner__wrapper-grid"
+        >
+          
+            
+          <div
+            class="split-banner__content"
+          >
+            
+                
+            <h1
+              class="split-banner__title heading--2"
+            >
+              
+                    Free advice and support for SMEs looking to adopt new technology
+                
+            </h1>
+            
+                
+                
+            <span
+              class="split-banner__description heading--5"
+            >
+              
+                    We’re a government funded charity that offers information, We don’t push specific products
+                
+            </span>
+            
+                
+                
+                    
+
+            <a
+              class="button button-rounded button--primary split-banner__button"
+              href="/"
+            >
+              
+    
+    View our case studies
+    
+
+            </a>
+            
+
+                
+            
+          </div>
+          
+        
+        </div>
+        
+    
+      </div>
+      
+
+    </div>
+    
+
+
+
+  </div>
+</div>
+`;
