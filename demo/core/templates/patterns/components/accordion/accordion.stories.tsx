@@ -64,3 +64,14 @@ Interactive.play = async ({
   await userEvent.click(buttons[0]);
   await expect(buttons[0].getAttribute('aria-expanded')).toBe('false');
 };
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+Interactive.parameters = {
+  beforeScreenshot: async (page: {
+    waitFor: (timeout: number) => PromiseLike<void>;
+  }) => {
+    // Wait for the end of the expand animation.
+    await page.waitFor(300);
+  },
+};

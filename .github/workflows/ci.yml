@@ -45,6 +45,11 @@ jobs:
       - run: npm run lint:js
       - run: npm run lint:format
       - run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: storybook_compiled
+          path: demo/storybook_compiled
+          retention-days: 1
   test_storyshots:
     runs-on: ubuntu-latest
     needs: [test_python, test_node]
@@ -66,5 +71,13 @@ jobs:
         with:
           path: .venv
           key: ${{ runner.os }}-pip-v2-${{ hashFiles('**/runtime.txt') }}-${{ hashFiles('**/requirements.txt') }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: storybook_compiled
       - run: source .venv/bin/activate && python manage.py runserver 0:8001 &
       - run: npm run test
+      - uses: actions/upload-artifact@v3
+        with:
+          name: image_snapshots
+          path: demo/static_src/tests/__image_snapshots__
+          retention-days: 30
