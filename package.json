@@ -1,6 +1,6 @@
 {
   "name": "storybook-django",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Implement, document, and test UI components in isolation from your Django views",
   "author": "Torchbox",
   "license": "MIT",
@@ -11,6 +11,11 @@
   "files": [
     "src/*.js"
   ],
+  "exports": {
+    ".": "./src/storybook-django.js",
+    "./middleware": "./src/middleware.js",
+    "./react": "./src/react.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/torchbox/storybook-django.git"
