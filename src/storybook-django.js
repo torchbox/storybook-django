@@ -1,6 +1,6 @@
 /**
  * Inserts HTML into an element, executing embedded script tags.
- * @param {Element} element
+ * @param {HTMLElement} element
  * @param {string} html
  */
 export const insertHTMLWithScripts = (element, html) => {
@@ -19,8 +19,8 @@ export const insertHTMLWithScripts = (element, html) => {
 
 /**
  * Inserts HTML into an element, executing embedded script tags,
- * firing a DOMContentLoaded event.
- * @param {Element} element
+ * firing default loading events and custom ones.
+ * @param {HTMLElement} element
  * @param {string} html
  */
 export const simulateLoading = (element, html) => {
@@ -30,14 +30,37 @@ export const simulateLoading = (element, html) => {
 
   insertHTMLWithScripts(element, html);
 
+  // Indicate the element has loaded at least once.
+  element.dataset.testid = 'storybook-django';
+  element.dataset.state = 'loaded';
+
   window.document.dispatchEvent(
     new Event('DOMContentLoaded', {
       bubbles: true,
       cancelable: true,
     }),
   );
+  window.dispatchEvent(
+    new Event('DOMContentLoaded', {
+      bubbles: true,
+      cancelable: true,
+    }),
+  );
+  window.dispatchEvent(
+    new Event('load', {
+      bubbles: true,
+      cancelable: true,
+    }),
+  );
 };
 
+/**
+ * Fetches a template’s HTML via the API.
+ * @param {string} endpoint API endpoint to fetch the HTML.
+ * @param {string} template_name -For example `patterns/components/icon/icon.html`.
+ * @param {object} context Context for the Django template partial.
+ * @param {object} tags Tags overrides for django-pattern-library.
+ */
 export const renderPattern = (endpoint, template_name, context, tags) => {
   const config = {};
   if (context) {
@@ -96,6 +119,13 @@ const generateArgTypes = (descriptionComment) => {
   return {};
 };
 
+/**
+ * Fetches a template’s HTML via the API.
+ * @param {string} template The Django Template.
+ * @param {string} template_name -For example `patterns/components/icon/icon.html`.
+ * @param {object} context Context for the Django template partial.
+ * @param {object} tags Tags overrides for django-pattern-library.
+ */
 export const generateDocs = (template) => {
   const description = extractDocsComment(template);
 

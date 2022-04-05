@@ -219,8 +219,8 @@ declare module '*.html';
 
 `storybook-django` is compatible with Storyshots, with two constraints since rendering happens with Django via an API:
 
-- You need a running Django server while the Storyshots test suite is running.
-- Components render asynchronously, so we need to make sure to test the final rendering _from Django_, rather than an intermediary state.
+1. We need a running Django server while the Storyshots test suite is running.
+2. Components render asynchronously, so we need to make sure to test the final rendering _from Django_, rather than an intermediary state.
 
 Getting a Django server up and running is as simple as starting it in the background ahead of running the test suite. Here is a [GitHub Actions example](https://github.com/torchbox/storybook-django/blob/main/.github/workflows/ci.yml#L48-L70):
 
@@ -229,25 +229,37 @@ Getting a Django server up and running is as simple as starting it in the backgr
 - run: npm run test
 ```
 
-To handle asynchronous components, we should ideally rely on an event fired by the component. This isn’t implemented currently, we instead rely on waiting a bit for the response from Django before running any tests. Here is an [example of automated accessibility tests with Axe](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots.test.js):
+To check whether Django patterns have finished rendering, we use a `data-state="loaded"` attribute set by storybook-django when it first inserts the HTML into the DOM. Here is an [example of automated accessibility tests with Axe](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots.test.js):
 
 ```js
+/**
+ * @jest-environment jsdom
+ */
 import initStoryshots from '@storybook/addon-storyshots';
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 
 expect.extend(toHaveNoViolations);
 
 initStoryshots({
   suite: 'Storyshots smoke tests',
   configPath: 'demo/storybook',
-  renderer: render,
   test: async ({ story }) => {
-    const { container } = render(story.render());
+    const { container, queryAllByTestId } = render(story.render());
 
-    await new Promise((r) => setTimeout(r, 2000));
+    const patterns = queryAllByTestId('storybook-django');
+
+    if (patterns.length > 0) {
+      await waitFor(
+        () => expect(patterns.map((p) => p.dataset.state)).toContain('loaded'),
+        { timeout: 10000 },
+      );
+    }
 
     const results = await axe(container, {
+      // See https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md for a list of rules.
+      // Try to only disable rules if strictly needed, alternatively also consider excluding stories from those tests
+      // with the `storyshots` parameter: https://github.com/storybookjs/storybook/tree/master/addons/storyshots/storyshots-core#disable.
       rules: {
         // Disabled because stories are expected to be rendered outside of landmarks for testing.
         region: { enabled: false },
