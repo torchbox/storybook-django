@@ -3,20 +3,20 @@ class Accordion {
     return '[data-accordion]';
   }
 
-  constructor(node: HTMLDivElement) {
-    const panels = [
-      ...node.querySelectorAll<HTMLDivElement>('[data-accordion-panel]'),
-    ];
+  /**
+   * @param {HTMLDivElement} node
+   */
+  constructor(node) {
+    /** @type {HTMLDivElement[]} */
+    const panels = [...node.querySelectorAll('[data-accordion-panel]')];
 
     panels.forEach((panel, i) => {
       const isFirst = i === 0;
 
-      const toggle = panel.querySelector<HTMLButtonElement>(
-        '[data-accordion-toggle]',
-      );
-      const content = panel.querySelector<HTMLDivElement>(
-        '[data-accordion-content]',
-      );
+      /** @type {HTMLButtonElement[]} */
+      const toggle = panel.querySelector('[data-accordion-toggle]');
+      /** @type {HTMLDivElement[]} */
+      const content = panel.querySelector('[data-accordion-content]');
 
       if (!toggle || !content) {
         return;
@@ -49,8 +49,7 @@ class Accordion {
 export default Accordion;
 
 export const initAccordions = () => {
-  const accordions = [
-    ...document.querySelectorAll<HTMLDivElement>('[data-accordion]'),
-  ];
+  /** @type {HTMLDivElement[]} */
+  const accordions = [...document.querySelectorAll('[data-accordion]')];
   return accordions.map((accordion) => new Accordion(accordion));
 };
