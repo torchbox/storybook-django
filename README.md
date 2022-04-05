@@ -215,12 +215,13 @@ declare module '*.html';
 
 `storybook-django` is still very experimental. Head over to [Discussions](https://github.com/torchbox/storybook-django/discussions) to share information about more advanced usage.
 
-#### Storyshots supports
+#### Storyshots support
 
-`storybook-django` is compatible with Storyshots, with two constraints since rendering happens with Django via an API:
+`storybook-django` is compatible with Storyshots, with a few constraints due to rendering happening with Django via an API:
 
 1. We need a running Django server while the Storyshots test suite is running.
 2. Components render asynchronously, so we need to make sure to test the final rendering _from Django_, rather than an intermediary state.
+3. We need to use Jest’s `jsdom` environment, and include a polyfill for `window.fetch` such as `whatwg-fetch`.
 
 Getting a Django server up and running is as simple as starting it in the background ahead of running the test suite. Here is a [GitHub Actions example](https://github.com/torchbox/storybook-django/blob/main/.github/workflows/ci.yml#L48-L70):
 
@@ -229,49 +230,48 @@ Getting a Django server up and running is as simple as starting it in the backgr
 - run: npm run test
 ```
 
-To check whether Django patterns have finished rendering, we use a `data-state="loaded"` attribute set by storybook-django when it first inserts the HTML into the DOM. Here is an [example of automated accessibility tests with Axe](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots.test.js):
+To check whether Django patterns have finished rendering, we use a `data-state="loaded"` attribute set by storybook-django when it first inserts the HTML into the DOM. Here is an [example of automated accessibility tests with Axe](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-axe.test.js), with `@testing-library/react`:
 
 ```js
-/**
- * @jest-environment jsdom
- */
-import initStoryshots from '@storybook/addon-storyshots';
-import { axe, toHaveNoViolations } from 'jest-axe';
-import { render, waitFor } from '@testing-library/react';
+const { container, queryAllByTestId } = render(story.render());
 
-expect.extend(toHaveNoViolations);
+const patterns = queryAllByTestId('storybook-django');
 
-initStoryshots({
-  suite: 'Storyshots smoke tests',
-  configPath: 'demo/storybook',
-  test: async ({ story }) => {
-    const { container, queryAllByTestId } = render(story.render());
-
-    const patterns = queryAllByTestId('storybook-django');
-
-    if (patterns.length > 0) {
-      await waitFor(
-        () => expect(patterns.map((p) => p.dataset.state)).toContain('loaded'),
-        { timeout: 10000 },
-      );
-    }
-
-    const results = await axe(container, {
-      // See https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md for a list of rules.
-      // Try to only disable rules if strictly needed, alternatively also consider excluding stories from those tests
-      // with the `storyshots` parameter: https://github.com/storybookjs/storybook/tree/master/addons/storyshots/storyshots-core#disable.
-      rules: {
-        // Disabled because stories are expected to be rendered outside of landmarks for testing.
-        region: { enabled: false },
-      },
-    });
-
-    expect(results).toHaveNoViolations();
-  },
-});
+if (patterns.length > 0) {
+  await waitFor(
+    () => expect(patterns.map((p) => p.dataset.state)).toContain('loaded'),
+    { timeout: 10000 },
+  );
+}
 ```
 
-This example supports running Storyshots both for vanilla React and Django Templates components, hence why we only wait for stories to be loaded in some cases.
+#### Storyshots: snapshots
+
+After checking the patterns are loaded, it’s as simple as `expect(container).toMatchSnapshot();`. See the [full snapshot example](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-snapshot.test.js).
+
+#### Storyshots: accessibility
+
+With `jest-axe`, after checking the patterns are loaded,
+
+```js
+const results = await axe(container, {
+  // See https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md for a list of rules.
+  // Try to only disable rules if strictly needed, alternatively also consider excluding stories from those tests
+  // with the `storyshots` parameter: https://github.com/storybookjs/storybook/tree/master/addons/storyshots/storyshots-core#disable.
+  rules: {
+    // Disabled because stories are expected to be rendered outside of landmarks for testing.
+    region: { enabled: false },
+  },
+});
+
+expect(results).toHaveNoViolations();
+```
+
+See the [full jest-axe example](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-axe.test.js).
+
+#### Storyshots: image snapshots
+
+This is possible as well, with Storybook’s `@storybook/addon-storyshots-puppeteer`. View the [full image snapshots example](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-image-snapshot.test.js).
 
 #### YAML for mock context and tags
 
@@ -279,6 +279,16 @@ A few of the stories in our demo project use YAML to store a pattern’s mock co
 
 - There is currently no way to override context in _other templates_ via API calls. YAML files make this possible.
 - Similarly there is no way to override tags in other templates – again made possible with YAML files.
+
+### Hosting
+
+Since storybook-django relies on a Django backend, in this context the Storybook export can’t be hosted as a fully static site. We instead need to:
+
+1. Build a static export with `build-storybook`
+2. Configure a Django server to serve the static export
+3. Host the Django server
+
+This repository’s `demo` site has an example of how to do this, serving the static files with Django’s `django.views.static.serve`, and hosting in Heroku.
 
 ## Where storybook-django is heading
 

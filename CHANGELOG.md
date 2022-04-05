@@ -4,6 +4,19 @@
 
 ## Unreleased
 
+## [[v0.5.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.5.0) (2022-04-06)
+
+### Fixed
+
+- Change path imports for middleware and React code rather than using Node `exports` mapping.
+
+### Added
+
+- Add JSDoc-based TypeScript typing for the public API.
+- Add a `data-testid="storybook-django"` attribute to facilitate automated testing.
+- Add a `data-state="empty|loading|loaded"` attribute to run code once templates are loaded.
+- Add a `data-template="path/to/template/component.html"` attribute to simplify troubleshooting.
+
 ## [[v0.4.1]](https://github.com/torchbox/storybook-django/releases/tag/v0.4.1) (2022-04-05)
 
 ### Fixed
