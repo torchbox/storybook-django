@@ -93,7 +93,7 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
  */
 export const extractDocsComment = (template) => {
   const comments = template.match(
-    /{% comment "text\/markdown" %}\n*((.|\n)+){% endcomment %}/m,
+    /{% comment "text\/markdown" %}\n*((.|\n)+?){% endcomment %}/m,
   );
 
   if (comments && comments[1]) {

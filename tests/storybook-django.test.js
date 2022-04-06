@@ -35,6 +35,7 @@ describe('extractDocsComment', () => {
     \`\`\`
 {% endcomment %}
 <div class="split-banner split-banner--home">
+{% comment %}Add an initial disabled & hidden submit button so that pressing 'enter' will not submit form. Reload not required as the content is dynamically loaded.{% endcomment %}
 `),
     ).toMatchInlineSnapshot(`
       "
