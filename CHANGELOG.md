@@ -4,6 +4,12 @@
 
 ## Unreleased
 
+## [[v0.5.1]](https://github.com/torchbox/storybook-django/releases/tag/v0.5.1) (2022-04-06)
+
+### Fixed
+
+- Fix comment expansion being too greedy
+
 ## [[v0.5.0]](https://github.com/torchbox/storybook-django/releases/tag/v0.5.0) (2022-04-06)
 
 ### Fixed
