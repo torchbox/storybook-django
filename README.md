@@ -290,9 +290,44 @@ Since storybook-django relies on a Django backend, in this context the Storybook
 
 This repository’s `demo` site has an example of how to do this, serving the static files with Django’s `django.views.static.serve`, and hosting in Heroku.
 
-## Where storybook-django is heading
+## Common questions
+
+### How does this compare with django-pattern-library?
+
+[django-pattern-library](https://github.com/torchbox/django-pattern-library) makes it possible to work with Django templates as UI components. It comes with its own rudimentary pattern library UI. storybook-django uses [Storybook](https://storybook.js.org/)’s UI instead, and Storybook’s APIs to work on components, write tests, and documentation.
+
+### Features comparison table
+
+| Feature                                 | django-pattern-library                                                                                                                                                    | storybook-django                                                                                                                                                        |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UI framework support                    | Vanilla Django templates only                                                                                                                                             | Vanilla templates and all frameworks Storybook supports                                                                                                                 |
+| Dependencies                            | 1 PyPI package                                                                                                                                                            | 1 PyPI package, 1 npm package, all Storybook dependencies                                                                                                               |
+| Hosting                                 | Django server or [static site export](https://torchbox.github.io/django-pattern-library/guides/static-site-export/)                                                       | Django server only                                                                                                                                                      |
+| Components documentation                | Separate Markdown file                                                                                                                                                    | Storybook [Docs addon](https://storybook.js.org/addons/@storybook/addon-docs) with separate Markdown file, or Django templates comments extraction, or write in stories |
+| Browser support                         | No restrictions                                                                                                                                                           | Modern browsers only                                                                                                                                                    |
+| Live reload                             | No (bring your own)                                                                                                                                                       | Yes, if configured                                                                                                                                                      |
+| View components at multiple breakpoints | Yes, with [predefined breakpoints only](https://github.com/torchbox/django-pattern-library/issues/101)                                                                    | Yes, with [viewport addon](https://storybook.js.org/docs/react/essentials/viewport)                                                                                     |
+| Tweak template data in UI               | No                                                                                                                                                                        | Yes, Storybook [controls](https://storybook.js.org/docs/react/essentials/controls)                                                                                      |
+| Component variations                    | [No](https://torchbox.github.io/django-pattern-library/reference/known-issues/#no-support-for-pattern-variations)                                                         | Yes                                                                                                                                                                     |
+| Component status                        | [No](https://github.com/torchbox/django-pattern-library/issues/91)                                                                                                        | Yes, with Docs addon                                                                                                                                                    |
+| Components homepage                     | [No](https://github.com/torchbox/django-pattern-library/issues/94) (build your own)                                                                                       | No (build your own)                                                                                                                                                     |
+| Pattern library theming                 | [No](https://github.com/torchbox/django-pattern-library/issues/107)                                                                                                       | Yes                                                                                                                                                                     |
+| Customizing a component’s surroundings  | No, [create a new template for this](https://torchbox.github.io/django-pattern-library/guides/customizing-template-rendering/#customizing-a-single-patterns-surroundings) | Yes                                                                                                                                                                     |
+| Automated snapshot tests                | [Basic support](https://torchbox.github.io/django-pattern-library/guides/automated-tests/#with-render_patterns)                                                           | Yes, with [Storyshots](https://storybook.js.org/addons/@storybook/addon-storyshots)                                                                                     |
+| Automated accessibility tests           | [Basic support](https://torchbox.github.io/django-pattern-library/guides/automated-tests/#accessibility-testing)                                                          | Yes, with [Storyshots](https://storybook.js.org/addons/@storybook/addon-storyshots) or [a11y addon](https://www.npmjs.com/package/@storybook/addon-a11y)                |
+| Automated visual regression tests       | [Basic support](https://torchbox.github.io/django-pattern-library/guides/automated-tests/#visual-regression-testing)                                                      | Yes, with [Storyshots](https://storybook.js.org/addons/@storybook/addon-storyshots) or any other Storybook integration                                                  |
+
+### How does this compare with Storybook’s official server support?
+
+Compared to this project, [`@storybook/server`](https://www.npmjs.com/package/@storybook/server) only supports simple use cases.
+
+### What is the future of storybook-django?
 
 See [torchbox/django-pattern-library#103 – Storybook prototype of the pattern library](https://github.com/torchbox/django-pattern-library/issues/103) for more context on this project, and to keep up with changes to it in relation with django-pattern-library.
+
+### Should I use storybook-django, or stick with django-pattern-library only?
+
+Are Storybook’s capabilities appealing to you? Consider using storybook-django. If not, stick with django-pattern-library if you’re ok with its [known limitations](https://torchbox.github.io/django-pattern-library/reference/known-issues/). It’s simpler to start with django-pattern-library and add Storybook later, than the other way around.
 
 ## Contributing
 
