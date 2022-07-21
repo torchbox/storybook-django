@@ -211,6 +211,41 @@ declare module '*.md';
 declare module '*.html';
 ```
 
+### Tag overrides
+
+[Tag overrides](https://torchbox.github.io/django-pattern-library/guides/overriding-template-tags/) are a feature of django-pattern-library. They’re very simple to use with storybook-django too. Here is an example:
+
+```js
+import React from 'react';
+import { Pattern, generateDocs } from 'storybook-django/src/react';
+
+import template from './page_status_tag_new.html';
+
+export default {};
+
+const PublicTemplate = (args) => (
+  <Pattern
+    filename={__filename}
+    tags={{
+      test_page_is_public: {
+        'page as is_public': {
+          raw: false,
+        },
+      },
+    }}
+    context={{ page: args }}
+  />
+);
+
+export const Public = PublicTemplate.bind({});
+Public.args = {
+  live: true,
+  url: '#',
+};
+```
+
+This is the same API as that of django-pattern-library, but as JS objects rather than YAML.
+
 ### Advanced usage
 
 `storybook-django` is still very experimental. Head over to [Discussions](https://github.com/torchbox/storybook-django/discussions) to share information about more advanced usage.
