@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "6.4.20",
+    "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-backgrounds": "6.4.20",
     "@storybook/addon-controls": "6.4.19",
     "@storybook/addon-docs": "6.4.19",
@@ -79,10 +80,10 @@
     "yaml": "2.0.0-10"
   },
   "scripts": {
-    "start": "start-storybook -c demo/storybook -s demo/public -p 6006 --no-open --no-version-updates --no-release-notes --quiet --modern",
+    "start": "start-storybook -c demo/storybook -p 6006 --no-open --no-version-updates --no-release-notes --quiet --modern",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "build-storybook -c demo/storybook -s demo/public -o demo/storybook_compiled --quiet --modern && npm run build:css -s && npm run build:js -s",
+    "build": "build-storybook -c demo/storybook -o demo/storybook_compiled --quiet --modern && npm run build:css -s && npm run build:js -s",
     "build:css": "sass --style compressed --source-map demo/static_src/main.scss:demo/static_compiled/main.css",
     "build:js": "cp demo/core/templates/patterns/components/accordion/accordion.js demo/static_compiled/accordion.js",
     "lint": "npm run lint:js && npm run lint:format",
