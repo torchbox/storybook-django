@@ -1,8 +1,8 @@
-# [Storybook for Django](https://storybook-django.herokuapp.com/) [<img src="https://raw.githubusercontent.com/torchbox/storybook-django/main/.github/storybook-django-logo.svg?sanitize=true" alt="Demo site" width="90" height="90" align="right">](https://storybook-django.herokuapp.com/)
+# Storybook for Django <img src="https://raw.githubusercontent.com/torchbox/storybook-django/main/.github/storybook-django-logo.svg?sanitize=true" alt="" width="90" height="90" align="right">
 
 [![npm](https://img.shields.io/npm/v/storybook-django.svg)](https://www.npmjs.com/package/storybook-django) [![Build status](https://github.com/torchbox/storybook-django/workflows/CI/badge.svg)](https://github.com/torchbox/storybook-django/actions)
 
-Storybook for Django is an experimental UI development environment for Django components. It allows you to implement, document, and test UI components in isolation from your Django views. Have a look at our [online demo](https://storybook-django.herokuapp.com/).
+Storybook for Django is an experimental UI development environment for Django components. It allows you to implement, document, and test UI components in isolation from your Django views.
 
 ![Screenshot of the Storybook UI, with a Django UI component displaying](.github/storybook-django-screenshot.png)
 
