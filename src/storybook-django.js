@@ -76,7 +76,7 @@ export const renderPattern = (endpoint, template_name, context, tags) => {
     method: 'POST',
     mode: 'same-origin',
     cache: 'no-cache',
-    credentials: 'omit',
+    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json',
     },
