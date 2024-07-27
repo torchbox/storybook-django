@@ -4,6 +4,12 @@
 
 ## Unreleased
 
+## [[v1.0.0]](https://github.com/torchbox/storybook-django/releases/tag/v1.0.0) (2024-07-27)
+
+### Added
+
+- Pattern library API requests done with the `fetch` API now [include credentials](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials) for same-origin requests. Thank you to [@jkevingutierrez](https://github.com/jkevingutierrez) ([#12](https://github.com/torchbox/storybook-django/pull/12)).
+
 ## [[v0.5.1]](https://github.com/torchbox/storybook-django/releases/tag/v0.5.1) (2022-04-06)
 
 ### Fixed

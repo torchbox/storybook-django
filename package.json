@@ -1,6 +1,6 @@
 {
   "name": "storybook-django",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Implement, document, and test UI components in isolation from your Django views",
   "author": "Torchbox",
   "license": "MIT",
