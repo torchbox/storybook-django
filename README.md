@@ -323,7 +323,7 @@ Since storybook-django relies on a Django backend, in this context the Storybook
 2. Configure a Django server to serve the static export
 3. Host the Django server
 
-This repository’s `demo` site has an example of how to do this, serving the static files with Django’s `django.views.static.serve`, and hosting in Heroku.
+This repository’s `demo` site has an example of how to do this, serving the static files with Django’s `django.views.static.serve`.
 
 ## Common questions
 

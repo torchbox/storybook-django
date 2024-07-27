@@ -4,7 +4,7 @@
   "description": "Implement, document, and test UI components in isolation from your Django views",
   "author": "Torchbox",
   "license": "MIT",
-  "homepage": "http://storybook-django.herokuapp.com/",
+  "homepage": "https://github.com/torchbox/storybook-django",
   "main": "src/storybook-django.js",
   "module": "src/storybook-django.js",
   "sideEffects": true,
@@ -89,7 +89,6 @@
     "lint": "npm run lint:js && npm run lint:format",
     "lint:js": "eslint --ext .js,.ts,.tsx --report-unused-disable-directives .",
     "lint:format": "prettier --check '**/?(.)*.{md,css,scss,js,json,json5,ts,tsx,yaml,yml,vue}'",
-    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,ts,tsx,yaml,yml,vue}'",
-    "heroku-postbuild": "npm run build -s"
+    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,json5,ts,tsx,yaml,yml,vue}'"
   }
 }
