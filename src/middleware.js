@@ -20,15 +20,18 @@ const restream = (proxyReq, req) => {
 const createDjangoAPIMiddleware = (options) => {
   const { proxy, apiPath, origin } = options;
   const createProxy = proxy || createProxyMiddleware;
+  const paths = Array.isArray(apiPath) ? apiPath : [apiPath];
   const middleware = (router) => {
-    router.use(
-      apiPath,
-      createProxy({
-        target: origin,
-        changeOrigin: true,
-        onProxyReq: restream,
-      }),
-    );
+    paths.forEach((path) => {
+      router.use(
+        path,
+        createProxy({
+          target: origin,
+          changeOrigin: true,
+          onProxyReq: restream,
+        }),
+      );
+    });
   };
 
   return middleware;
