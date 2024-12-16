@@ -33,7 +33,7 @@
     "nunjucks"
   ],
   "dependencies": {
-    "http-proxy-middleware": "^2.0.0"
+    "http-proxy-middleware": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.0  || ^17.0.0 || ^18.0.0"

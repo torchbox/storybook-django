@@ -1,15 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-// https://github.com/chimurai/http-proxy-middleware/issues/40#issuecomment-249430255
-const restream = (proxyReq, req) => {
-  if (req.body) {
-    const bodyData = JSON.stringify(req.body);
-    proxyReq.setHeader('Content-Type', 'application/json');
-    proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-    proxyReq.write(bodyData);
-  }
-};
-
 /**
  * Initialises a http-proxy-middleware for Storybook to talk to Django without CORS issues.
  * @param {object} options options
@@ -24,9 +14,8 @@ const createDjangoAPIMiddleware = (options) => {
     router.use(
       apiPath,
       createProxy({
-        target: origin,
+        target: `${origin}${apiPath}`,
         changeOrigin: true,
-        onProxyReq: restream,
       }),
     );
   };
