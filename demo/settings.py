@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     "wagtail.documents",
     "wagtail.images",
     "wagtail.admin",
-    "wagtail.core",
+    "wagtail",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     "demo.core",
     "rest_framework",
 ]
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
+    }
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -119,3 +126,7 @@ PATTERN_LIBRARY = {
 STORYBOOK_DIR = os.path.join(PROJECT_DIR, "demo", "storybook_compiled")
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+SILENCED_SYSTEM_CHECKS = ["templates.W003"]
+
+WAGTAILADMIN_BASE_URL = "/admin/"
