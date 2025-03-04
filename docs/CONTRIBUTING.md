@@ -57,4 +57,4 @@ npm publish
 - Finally, go to GitHub and create a release and a tag for the new version.
 - Done!
 
-> As a last step, you may want to go update a project using this library to check that all is well in a fully separate environment.
+As a last step, you may want to go update a project using this library to check that all is well in a fully separate environment.
