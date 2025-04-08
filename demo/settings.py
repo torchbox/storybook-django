@@ -2,7 +2,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
@@ -64,6 +64,9 @@ ROOT_URLCONF = "demo.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            "demo/core/templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -74,7 +77,22 @@ TEMPLATES = [
             ],
             "builtins": ["pattern_library.loader_tags"],
         },
-    }
+    },
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [
+            "demo/core/jinja",
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "environment": "demo.jinja2.environment",
+            "extensions": [
+                "jinja2.ext.do",
+                "jinja2.ext.i18n",
+                "jinja2.ext.loopcontrols",
+            ],
+        },
+    },
 ]
 
 WSGI_APPLICATION = "demo.wsgi.application"
@@ -115,11 +133,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     # "static_compiled" is a folder used by the front-end tooling
     # to output compiled static assets.
-    os.path.join(PROJECT_DIR, "demo", "static_compiled")
+    os.path.join(PROJECT_DIR, "static_compiled")
 ]
 
 PATTERN_LIBRARY = {
-    "SECTIONS": (("components", ["patterns/components"]),),
+    "SECTIONS": (
+        ("components", ["patterns/components"]),
+        ("jinja", ["patterns_jinja/jinja_components"]),
+    ),
     "PATTERN_BASE_TEMPLATE_NAME": "patterns/base.html",
 }
 
