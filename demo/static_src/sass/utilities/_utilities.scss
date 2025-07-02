@@ -1,3 +1,5 @@
+@use '../abstracts/tools' as *;
+
 .u-visually-hidden {
   @include hidden();
 }

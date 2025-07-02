@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 .quote-block {
   $dash-base: 25px;
   color: $color--pink;
@@ -25,7 +27,9 @@
 
   &__quote {
     color: $color--off-black;
-    font: 600 1.602rem/2rem proxima-nova, sans-serif;
+    font:
+      600 1.602rem/2rem proxima-nova,
+      sans-serif;
 
     &::after {
       content: '\201D';
@@ -34,7 +38,14 @@
   &__attribution {
     color: $color--blue;
     letter-spacing: 0;
-    font: 300 1.266rem/1.75rem system-ui, -apple-system, Segoe UI, Roboto,
-      Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font:
+      300 1.266rem/1.75rem system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Ubuntu,
+      Cantarell,
+      Noto Sans,
+      sans-serif;
   }
 }

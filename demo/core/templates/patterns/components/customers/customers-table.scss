@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 $cl-table-pad: 35px;
 $cl-cell-margin: 20px;
 
@@ -77,7 +79,9 @@ $cl-cell-margin: 20px;
           vertical-align: -1px;
           opacity: 0;
           transform: translateX(-1px);
-          transition: opacity 150ms, transform $transition;
+          transition:
+            opacity 150ms,
+            transform $transition;
         }
 
         &:hover {

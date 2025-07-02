@@ -1,3 +1,5 @@
+@use '../abstracts/tools' as *;
+
 .section {
   &--main {
     max-width: $wrapper--small;

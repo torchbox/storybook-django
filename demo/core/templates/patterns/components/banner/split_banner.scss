@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 .split-banner {
   $root: &;
   background-color: $color--light-blue;

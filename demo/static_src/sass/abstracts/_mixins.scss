@@ -1,3 +1,18 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// Strip the unit from the given value and return the value
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+// Return an em unit based on the pixel value and context
+@function rem($px, $context: $base-font-size) {
+  @return #{strip-unit(math.div($px, strip-unit($context)))}rem;
+}
+
 /* ------------------------------------ *\
     $MIXINS
 \* ------------------------------------ */
@@ -8,8 +23,8 @@
 @mixin media-query($queries...) {
   @each $query in $queries {
     @each $breakpoint in $breakpoints {
-      $name: nth($breakpoint, 1);
-      $declaration: nth($breakpoint, 2);
+      $name: list.nth($breakpoint, 1);
+      $declaration: list.nth($breakpoint, 2);
 
       @if $query == $name and $declaration {
         @media only screen and #{$declaration} {
@@ -17,19 +32,6 @@
         }
       }
     }
-  }
-}
-
-/* ============================================
-  Placeholder text
-*/
-@mixin placeholder-text() {
-  &.placeholder {
-    @content;
-  }
-
-  &::placeholder {
-    @content;
   }
 }
 
@@ -53,11 +55,11 @@
 
   @each $value in $values {
     @if $value == 0 or $value == auto or $value == inherit {
-      $px: append($px, $value);
-      $rem: append($rem, $value);
+      $px: list.append($px, $value);
+      $rem: list.append($rem, $value);
     } @else {
-      $px: append($px, $value);
-      $rem: append($rem, rem(strip-unit($value)));
+      $px: list.append($px, $value);
+      $rem: list.append($rem, rem(strip-unit($value)));
     }
   }
   #{$property}: $px;
@@ -68,7 +70,7 @@
     Font sizes
 */
 @mixin font-size($keyword) {
-  $size: map-get($font-sizes, $keyword);
+  $size: map.get($font-sizes, $keyword);
 
   @if $size == null {
     @warn 'Font size ‘#{$keyword}’ does not exist';

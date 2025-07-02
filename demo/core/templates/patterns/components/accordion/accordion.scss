@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 // Note that these styles are also used by the streamfield faq block
 .accordion {
   $root: &;

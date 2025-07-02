@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 .stage-link {
   &__inner {
     display: grid;
