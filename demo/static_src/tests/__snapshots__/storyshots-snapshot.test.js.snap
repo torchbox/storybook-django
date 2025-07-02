@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Storyshots snapshot tests Blocks/Heading Block Base 1`] = `
+exports[`Storyshots snapshot tests Blocks/heading_block Base 1`] = `
 <div>
   <div
     data-state="loaded"
@@ -19,7 +19,7 @@ exports[`Storyshots snapshot tests Blocks/Heading Block Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots snapshot tests Blocks/Quote Block Base 1`] = `
+exports[`Storyshots snapshot tests Blocks/quote_block Base 1`] = `
 <div>
   <div
     data-state="loaded"
@@ -62,7 +62,7 @@ exports[`Storyshots snapshot tests Blocks/Quote Block Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots snapshot tests Blocks/Quote Block No Attribution 1`] = `
+exports[`Storyshots snapshot tests Blocks/quote_block No Attribution 1`] = `
 <div>
   <div
     data-state="loaded"
@@ -3070,6 +3070,52 @@ exports[`Storyshots snapshot tests Django Patterns / customers / customers-table
 </div>
 `;
 
+exports[`Storyshots snapshot tests Django Patterns / jinja_quote_block / quote_block Default 1`] = `
+<div>
+  <div
+    data-state="loaded"
+    data-template="patterns_jinja/jinja_components/quote_block/quote_block.html"
+    data-testid="storybook-django"
+  >
+    <blockquote
+      class="quote-block block--spacing"
+    >
+      
+    
+      <div
+        class="quote-block__text"
+      >
+        
+        
+        <p
+          class="quote-block__quote heading--3"
+        >
+          Jinja is the best template engine.
+        </p>
+        
+        
+            
+        <p
+          class="quote-block__attribution"
+        >
+          The Dalai Lama
+        </p>
+        
+        
+    
+      </div>
+      
+
+    </blockquote>
+    
+
+    <p>
+      6 wise words!
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots snapshot tests Django Patterns / pagination / next_stage_link Default 1`] = `
 <div>
   <div
@@ -3434,7 +3480,7 @@ exports[`Storyshots snapshot tests Django Patterns / streamfield/pop / related_l
     
 ​
 
-  None
+  [{'value': {'computed_level': 'h2', 'computed_class': 'text-h3', 'text': 'Heading 2'}}]
 
 ​
 

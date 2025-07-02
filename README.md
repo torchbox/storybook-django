@@ -304,10 +304,6 @@ expect(results).toHaveNoViolations();
 
 See the [full jest-axe example](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-axe.test.js).
 
-#### Storyshots: image snapshots
-
-This is possible as well, with Storybook’s `@storybook/addon-storyshots-puppeteer`. View the [full image snapshots example](https://github.com/torchbox/storybook-django/blob/main/demo/static_src/tests/storyshots-image-snapshot.test.js).
-
 #### YAML for mock context and tags
 
 A few of the stories in our demo project use YAML to store a pattern’s mock context and tags. This is largely a demonstration of compatibility with how [django-pattern-library](https://github.com/torchbox/django-pattern-library) works, and for most users defining context and tags with Storybook APIs is more suitable. There are a few cases where the YAML setup can help:

@@ -4,7 +4,7 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
   transform: {
-    '\\.(yml|yaml)$': 'jest-raw-loader',
+    '\\.(yml|yaml)$': '@glen/jest-raw-loader',
     '\\.(js|ts|tsx)$': 'ts-jest',
     '\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
   },
@@ -17,5 +17,7 @@ module.exports = {
   collectCoverageFrom: ['<rootDir>/demo/**/*.js'],
   setupFiles: ['<rootDir>/demo/static_src/tests/environment.js'],
   setupFilesAfterEnv: ['<rootDir>/demo/static_src/tests/setupTests.js'],
-  testURL: 'http://localhost:8001',
+  testEnvironmentOptions: {
+    url: process.env.TEST_ORIGIN || 'http://localhost:8001',
+  },
 };

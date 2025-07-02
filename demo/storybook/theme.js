@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { create } from '@storybook/theming/create';
 
 export default create({

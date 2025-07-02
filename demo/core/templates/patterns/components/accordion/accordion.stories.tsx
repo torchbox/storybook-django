@@ -1,5 +1,3 @@
-import { expect } from '@storybook/jest';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { Pattern, generateDocs } from '../../../../../../src/react';
 
 import template from './accordion.html';
@@ -35,15 +33,9 @@ Interactive.args = Base.args;
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-Interactive.play = async ({
-  canvasElement,
-}: {
-  canvasElement: HTMLElement;
-}) => {
-  const canvas = within(canvasElement);
-
+Interactive.play = async ({ canvas, userEvent }) => {
   const pattern = canvas.getByTestId('storybook-django');
-  await waitFor(
+  await canvas.waitFor(
     () => expect(pattern.dataset.state).toBe('loaded'),
     {},
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

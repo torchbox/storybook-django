@@ -71,7 +71,9 @@ export const Pattern = ({
       template_name,
       context,
       tags,
-      (html) => simulateLoading(ref.current, html),
+      (html) => {
+        simulateLoading(ref.current, html);
+      },
       endpoint,
     );
 

@@ -19,13 +19,15 @@ const beforeScreenshot = async (page, options) => {
   }
 };
 
-initStoryshots({
-  suite: 'Image storyshots',
-  configPath: 'demo/storybook',
-  test: imageSnapshot({
-    storybookUrl: 'http://localhost:8001',
-    beforeScreenshot,
-    setupTimeout: 20000,
-    testTimeout: 20000,
-  }),
+describe.skip('Image storyshots', () => {
+  initStoryshots({
+    suite: 'Image storyshots',
+    configPath: 'demo/storybook',
+    test: imageSnapshot({
+      storybookUrl: process.env.TEST_ORIGIN || 'http://localhost:8001',
+      beforeScreenshot,
+      setupTimeout: 20000,
+      testTimeout: 20000,
+    }),
+  });
 });

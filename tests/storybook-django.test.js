@@ -39,7 +39,7 @@ describe('extractDocsComment', () => {
 `),
     ).toMatchInlineSnapshot(`
       "
-      Meant for the \\"hero\\" area of the homepage only, with an image to the left and the page’s \`<h1>\` title to the right, along with a description.
+      Meant for the "hero" area of the homepage only, with an image to the left and the page’s \`<h1>\` title to the right, along with a description.
 
       It’s based on \`split_banner\`, with slight variations for the homepage.
 
@@ -55,8 +55,8 @@ describe('extractDocsComment', () => {
       Example usage:
 
       \`\`\`html
-      <div class=\\"section--grey-bg\\">
-          {% include \\"patterns/components/banner/home_banner.html\\" with title=page.title hero_title=page.hero_title description=page.strapline hero_image=page.hero_image link_text=page.hero_link_label link_url=page.hero_link.url %}
+      <div class="section--grey-bg">
+          {% include "patterns/components/banner/home_banner.html" with title=page.title hero_title=page.hero_title description=page.strapline hero_image=page.hero_image link_text=page.hero_link_label link_url=page.hero_link.url %}
           {# […] #}
       </div>
       \`\`\`
@@ -81,17 +81,17 @@ It supports:
 {% endcomment %}
 `).argTypes,
     ).toMatchInlineSnapshot(`
-      Object {
-        "description": Object {
+      {
+        "description": {
           "description": "optional",
         },
-        "hero_image": Object {
+        "hero_image": {
           "description": "displayed without alt text",
         },
-        "hero_title": Object {
+        "hero_title": {
           "description": "defaulting to \`title\` if unset",
         },
-        "link_url": Object {
+        "link_url": {
           "description": "(string)",
         },
       }

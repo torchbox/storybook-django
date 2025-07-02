@@ -1,6 +1,9 @@
 import { Pattern } from '../../../../../../src/react';
 
-export default {};
+export default {
+  title: 'heading_block',
+  component: Pattern,
+};
 
 /**
  * This demonstrates the most basic usage of storybook-django.
