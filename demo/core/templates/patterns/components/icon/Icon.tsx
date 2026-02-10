@@ -18,7 +18,7 @@ export const ICONS = [
   'checkmark',
 ] as const;
 
-export type IconName = typeof ICONS[number];
+export type IconName = (typeof ICONS)[number];
 
 /**
  * Accessible icon component, built with <use> references to an inline SVG symbols sprite.

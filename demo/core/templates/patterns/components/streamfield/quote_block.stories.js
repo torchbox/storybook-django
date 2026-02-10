@@ -4,6 +4,7 @@ import docs from './quote_block.md';
 import template from './quote_block.html';
 
 export default {
+  title: 'quote_block',
   parameters: {
     docs: {
       source: { code: template },

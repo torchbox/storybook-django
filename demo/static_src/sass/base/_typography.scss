@@ -1,3 +1,5 @@
+@use '../abstracts/tools' as *;
+
 /* ============================================
     Base font
 */
@@ -12,7 +14,7 @@ html {
 /* ============================================
     Families – one mixin per typeface
     :: For each font mixin defined here, make sure each property is negated (set
-    :: to its default value, usually `inherit`) in all other font mixins.
+    :: to its default value, usually `inherit`) in all other font 
 */
 @mixin heading-text() {
   font-family: $font--primary;

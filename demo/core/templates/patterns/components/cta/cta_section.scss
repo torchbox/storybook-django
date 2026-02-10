@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 .cta-section {
   $root: &;
   @include pattern-bg($percentage: 35%, $size: auto, $direction: to top);

@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use '../abstracts/tools' as *;
+
 /* ------------------------------------ *\
 	$BASE DEFAULTS
 \* ------------------------------------ */
@@ -62,7 +65,7 @@ a {
   transition: color $transition;
 
   &:hover {
-    color: darken($color--blue, 20%);
+    color: color.adjust($color--blue, $lightness: -20%);
     cursor: pointer;
   }
 }

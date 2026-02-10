@@ -1,3 +1,5 @@
+@use '../../../../../static_src/sass/abstracts/tools' as *;
+
 .teaser-card {
   $root: &;
 
@@ -29,7 +31,9 @@
     @include box-border-backdrop();
     width: 100%;
     height: auto;
-    transition: box-shadow $transition, transform $transition;
+    transition:
+      box-shadow $transition,
+      transform $transition;
   }
 
   &__title {

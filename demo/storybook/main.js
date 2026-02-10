@@ -1,6 +1,7 @@
 const path = require('path');
 
-module.exports = {
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
   stories: [
     '../**/*.stories.mdx',
     {
@@ -20,14 +21,28 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-interactions',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: 'webpack5',
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+  features: {
+    storyStoreV7: false,
+  },
+  babel: async (options) => ({
+    ...options,
+    plugins: [],
+    presets: [
+      ['@babel/preset-typescript', { allowDeclareFields: true }],
+      ['@babel/preset-react', { runtime: 'automatic' }],
+    ],
+  }),
+  docs: {
+    autodocs: 'tag',
   },
   /**
    * @param {any} config
    */
-  webpackFinal: (config) => {
+  webpackFinal: (webpackConfig) => {
     const rules = [
       {
         test: /\.(css|scss)$/,
@@ -49,13 +64,15 @@ module.exports = {
       },
     ];
 
-    config.module.rules = config.module.rules.concat(rules);
+    webpackConfig.module.rules = webpackConfig.module.rules.concat(rules);
 
-    config.node = {
+    webpackConfig.node = {
       __filename: true,
       __dirname: true,
     };
 
-    return config;
+    return webpackConfig;
   },
 };
+
+module.exports = config;

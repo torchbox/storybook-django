@@ -1,32 +1,27 @@
 // Vendor
-@import './sass/vendor/normalize';
-
-// Abstracts
-@import './sass/abstracts/variables';
-@import './sass/abstracts/functions';
-@import './sass/abstracts/mixins';
+@use 'sass/vendor/normalize';
 
 // Base
-@import './sass/base/base';
-@import './sass/base/typography';
-@import './sass/base/wrapper';
-@import './sass/base/section';
+@use 'sass/base/base';
+@use 'sass/base/typography';
+@use 'sass/base/wrapper';
+@use 'sass/base/section';
 
 // Components
-@import '../core/templates/patterns/components/icon/icon';
-@import '../core/templates/patterns/components/button/button';
-@import '../core/templates/patterns/components/accordion/accordion';
-@import '../core/templates/patterns/components/banner/split_banner';
-@import '../core/templates/patterns/components/cta/call_to_action';
-@import '../core/templates/patterns/components/cta/cta_section';
-@import '../core/templates/patterns/components/customers/customer-detail';
-@import '../core/templates/patterns/components/customers/customers-header';
-@import '../core/templates/patterns/components/customers/customers-table';
-@import '../core/templates/patterns/components/InfoBox/InfoBox';
-@import '../core/templates/patterns/components/LoadingIndicator/LoadingIndicator';
-@import '../core/templates/patterns/components/pagination/next_stage_link';
-@import '../core/templates/patterns/components/streamfield/casestudy_teaser_block';
-@import '../core/templates/patterns/components/streamfield/quote_block';
+@use '../core/templates/patterns/components/icon/icon';
+@use '../core/templates/patterns/components/button/button';
+@use '../core/templates/patterns/components/accordion/accordion';
+@use '../core/templates/patterns/components/banner/split_banner';
+@use '../core/templates/patterns/components/cta/call_to_action';
+@use '../core/templates/patterns/components/cta/cta_section';
+@use '../core/templates/patterns/components/customers/customer-detail';
+@use '../core/templates/patterns/components/customers/customers-header';
+@use '../core/templates/patterns/components/customers/customers-table';
+@use '../core/templates/patterns/components/InfoBox/InfoBox';
+@use '../core/templates/patterns/components/LoadingIndicator/LoadingIndicator';
+@use '../core/templates/patterns/components/pagination/next_stage_link';
+@use '../core/templates/patterns/components/streamfield/casestudy_teaser_block';
+@use '../core/templates/patterns/components/streamfield/quote_block';
 
 // Utilities
-@import './sass/utilities/utilities';
+@use 'sass/utilities/utilities';

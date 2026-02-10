@@ -41,6 +41,9 @@ import quote_block from '../core/templates/patterns/components/streamfield/quote
 import quote_blockHTML from '../core/templates/patterns/components/streamfield/quote_block.html';
 import quote_blockMD from '../core/templates/patterns/components/streamfield/quote_block.md';
 
+import jinja_quote_block from '../core/jinja/patterns_jinja/jinja_components/quote_block/quote_block.yaml';
+import jinja_quote_blockHTML from '../core/jinja/patterns_jinja/jinja_components/quote_block/quote_block.html';
+
 const sources = {
   'components/accordion/accordion': [accordion, accordionHTML],
   'components/accordion/accordion_section': [
@@ -77,6 +80,10 @@ const sources = {
     quote_block,
     quote_blockHTML,
     quote_blockMD,
+  ],
+  'jinja_components/quote_block/quote_block': [
+    jinja_quote_block,
+    jinja_quote_blockHTML,
   ],
 };
 
@@ -139,7 +146,12 @@ Object.entries(sources).forEach(([path, [rawYAML, source, rawMarkdown]]) => {
   const folders = `Django Patterns / ${pathElts
     .join('/')
     .replace('components/', '')}`;
-  const htmlPath = `patterns/${path}.html`;
+  let htmlPath;
+  if (path.includes('jinja')) {
+    htmlPath = `patterns_jinja/${path}.html`;
+  } else {
+    htmlPath = `patterns/${path}.html`;
+  }
   const description = `${rawMarkdown ?? ''}
 ### Usage
 
