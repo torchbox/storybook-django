@@ -1,4 +1,3 @@
-from django.apps import apps
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.template.context_processors import csrf
 from django.template.defaultfilters import (
