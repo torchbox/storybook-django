@@ -49,6 +49,6 @@ This project uses [Prettier](https://prettier.io/) and [ESLint](https://eslint.o
 - Push
 - GitHub Actions is set up for [Trusted publishing for npm packages](https://docs.npmjs.com/trusted-publishers)
 
-Done! Verify all is well in GitHub Actions / npm after the publish job has 
+Done! Verify all is well in GitHub Actions / npm after the publish job has
 
 As a last step, you may want to go update a project using this library to check that all is well in a fully separate environment.
