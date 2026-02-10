@@ -4,6 +4,12 @@
 
 ## Unreleased
 
+## [[v1.1.0]](https://github.com/torchbox/storybook-django/releases/tag/v1.1.0) (2026-02-10)
+
+### Added
+
+- Add [support for Storybook v8](https://storybook.js.org/blog/storybook-8/)
+
 ### Changed
 
 - Upgrade to http-proxy-middleware v3
