@@ -45,16 +45,10 @@ This project uses [Prettier](https://prettier.io/) and [ESLint](https://eslint.o
 - Update the [CHANGELOG](CHANGELOG.md).
 - Update the version number in `package.json` and `package-lock.json`, following semver.
 - Make a PR and squash merge it.
-- Back on the main branch with the PR merged, follow the instructions below.
+- Tag the release commit with the version number prefixed with `v`.
+- Push
+- GitHub Actions is set up for [Trusted publishing for npm packages](https://docs.npmjs.com/trusted-publishers)
 
-```sh
-npm run build
-# Use irish-pub to check the package content. Install w/ npm install -g first.
-irish-pub
-npm publish
-```
-
-- Finally, go to GitHub and create a release and a tag for the new version.
-- Done!
+Done! Verify all is well in GitHub Actions / npm after the publish job has 
 
 As a last step, you may want to go update a project using this library to check that all is well in a fully separate environment.
