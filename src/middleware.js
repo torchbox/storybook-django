@@ -10,14 +10,17 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const createDjangoAPIMiddleware = (options) => {
   const { proxy, apiPath, origin } = options;
   const createProxy = proxy || createProxyMiddleware;
+  const paths = Array.isArray(apiPath) ? apiPath : [apiPath];
   const middleware = (router) => {
-    router.use(
-      apiPath,
-      createProxy({
-        target: `${origin}${apiPath}`,
-        changeOrigin: true,
-      }),
-    );
+    paths.forEach((path) => {
+      router.use(
+        path,
+        createProxy({
+          target: `${origin}${path}`,
+          changeOrigin: true,
+        }),
+      );
+    });
   };
 
   return middleware;
